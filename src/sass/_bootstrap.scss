@@ -1,4 +1,3 @@
-
 @import '../../node_modules/bootstrap/scss/functions';
 
 @import 'variables';
@@ -9,11 +8,9 @@
 
 @import 'utilities';
 
-// init - Merge maps
-
+//Init - Merge maps
+$theme-colors: map-merge($awe-colors, $theme-colors);
 $spacers: map-merge($awe-spacers, $spacers);
-
-// end - Merge maps
 
 @import '../../node_modules/bootstrap/scss/mixins';
 

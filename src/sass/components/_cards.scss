@@ -1,0 +1,17 @@
+//cards de videos
+.card-video {
+    max-width: 383px;
+    .player-hover-2 {
+        background: radial-gradient(50% 50% at 50% 50%, rgba(34, 34, 34, 0.84) 0%, rgba(34, 34, 34, 0) 100%);
+    }
+    &:hover * {
+        .player-hover-1 {
+            box-shadow: inset 0px 0px 0px 5px $ui-color-primary-light;
+            transition: all 0.3s ease-in-out;
+    
+        }
+        .player-hover-2 {
+            background: radial-gradient(50% 50% at 50% 50%, #222222 0%, rgba(34, 34, 34, 0.57) 100%);
+        }
+    }
+}

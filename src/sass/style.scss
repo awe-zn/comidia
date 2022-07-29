@@ -1,5 +1,105 @@
-@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
 
-* {
-    font-family: 'Inter', sans-serif;
+//variáveis das cores
+$ui-color-danger-light: #eb5151;
+$ui-color-danger: #e62121;
+$ui-color-danger-dark: #c11616;
+$black-2: #1f2d3d;
+$aco: #273444;
+$prata: #3c4858;
+$prata-2: #707c8c;
+$gray: #8492a6;
+$fumaca-extra-dark: #c0ccda;
+$neve-extra-dark: #e5e9f2;
+$neve-dark: #eff2f7;
+$neve: #f9fafc;
+$white: #ffffff;
+$text-link: #3a95e9;
+$transparent: #00000000;
+
+//Importações de arquivos
+@import "bootstrap";
+@import "components";
+
+//Importações de fontes
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap");
+
+//Definição da largura máxima do container e remoção do padding padrão
+.container {
+    max-width: 1192px;
+}
+
+//Definição da cor de fundo do body
+body {
+    background: $neve;
+}
+
+header {
+    .box-logo {
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            background: $white;
+            height: 60px;
+            width: 1px;
+            position: absolute;
+            left: 223px;
+        }
+    }
+}
+
+//Formatações da notícia
+article {
+    .comments {
+        background: url(../../dist/image/icons/comments.svg);
+        width: 32px;
+        height: 25px;
+    }
+
+    //formatação da frase destaque na notícia
+    .destaque-box {
+        background: $neve;
+        border-left: 5px solid #2471B5;
+    }
+
+    p {
+        margin-bottom: 48px;
+    }
+}
+
+//estilizando filtro por categorias da página da notícia
+.filters {
+    background: linear-gradient(90deg, #eff4fc 0%, rgba(249, 250, 252, 0) 106.36%);
+}
+
+//logo do footer
+.box-logo-danger{
+    position: relative;
+    &::after{
+        content: "";
+        display: block;
+        width: 60px;
+        height: 1px;
+        background: $ui-color-danger;
+        position: absolute;
+        bottom:-20px;
+        left:23px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        .box-logo {
+            position: relative;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
 }
