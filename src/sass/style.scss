@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2? família=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 //variáveis das cores
 $ui-color-danger-light: #eb5151;
@@ -23,7 +24,7 @@ $transparent: #00000000;
 
 //Importações de fontes
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2? família=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 //Definição da largura máxima do container e remoção do padding padrão
 .container {
@@ -38,6 +39,7 @@ body {
 header {
     .box-logo {
         position: relative;
+
         &::after {
             content: "";
             display: block;
@@ -75,17 +77,18 @@ article {
 }
 
 //logo do footer
-.box-logo-danger{
+.box-logo-danger {
     position: relative;
-    &::after{
+
+    &::after {
         content: "";
         display: block;
         width: 60px;
         height: 1px;
         background: $ui-color-danger;
         position: absolute;
-        bottom:-20px;
-        left:23px;
+        bottom: -20px;
+        left: 23px;
     }
 }
 
@@ -93,6 +96,7 @@ article {
     header {
         .box-logo {
             position: relative;
+
             &::after {
                 display: none;
             }
@@ -100,6 +104,38 @@ article {
     }
 }
 
-.poppins{
+.poppins {
     font-family: 'Poppins', sans-serif;
+}
+
+.ff-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+table {
+    text-align: center;
+    background: #EFF2F7;
+    width: 80%;
+}
+
+tr:nth-child(even) {
+    background: #DAE3EB;
+}
+
+table thead {
+    background: #2471B5;
+    color: white;
+    font-weight: 600 !important;
 }
