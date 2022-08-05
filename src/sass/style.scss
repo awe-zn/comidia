@@ -31,11 +31,6 @@ $transparent: #00000000;
     max-width: 1192px;
 }
 
-//Definição da cor de fundo do body
-body {
-    background: $neve;
-}
-
 header {
     .box-logo {
         position: relative;
@@ -52,57 +47,22 @@ header {
     }
 }
 
-//Formatações da notícia
-article {
-    .comments {
-        background: url(../../dist/image/icons/comments.svg);
-        width: 32px;
-        height: 25px;
-    }
-
-    //formatação da frase destaque na notícia
-    .destaque-box {
-        background: $neve;
-        border-left: 5px solid #2471B5;
-    }
-
-    p {
-        margin-bottom: 48px;
-    }
+//formatação da frase destaque na notícia
+.destaque-box {
+    background: $neve;
+    border-left: 5px solid #2471B5;
 }
+
+p {
+    margin-bottom: 48px;
+}
+
 
 //estilizando filtro por categorias da página da notícia
 .filters {
     background: linear-gradient(90deg, #eff4fc 0%, rgba(249, 250, 252, 0) 106.36%);
 }
 
-//logo do footer
-.box-logo-danger {
-    position: relative;
-
-    &::after {
-        content: "";
-        display: block;
-        width: 60px;
-        height: 1px;
-        background: $ui-color-danger;
-        position: absolute;
-        bottom: -20px;
-        left: 23px;
-    }
-}
-
-@media (max-width: 576px) {
-    header {
-        .box-logo {
-            position: relative;
-
-            &::after {
-                display: none;
-            }
-        }
-    }
-}
 
 .poppins {
     font-family: 'Poppins', sans-serif;
@@ -139,3 +99,231 @@ table thead {
     color: white;
     font-weight: 600 !important;
 }
+
+.navbar .col-9 {
+    background: #2471B5 !important;
+}
+
+.text-main {
+    bottom: 0%;
+    color: #F2F2F2;
+}
+
+.notice {
+    position: relative;
+}
+
+.edital-card {
+    -webkit-box-sha-webkit-box-shadow: 0px 4px 15px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px -1px rgba(0, 0, 0, 0.1);
+    dow: 0px 4px 15px 6px rgba(0, 0, 0, 0.1);
+    padding: 26px;
+}
+
+main {
+    background: #FAFAFA;
+}
+
+.card{ 
+    border-radius: 8px;
+}
+
+.sobre img {
+    max-height: 268px;
+    background: white;
+}
+
+.sobre .text {
+    max-width: 800px;
+}
+
+.editais {
+    background: #FAFAFA;
+}
+
+nav {
+    background: #F2F2F2 !important;
+}
+
+.card-body{
+    color: #828282;
+}
+
+.editais button{
+    background: #2471B5;
+    color: white;
+    &:hover {
+        color: #2471B5;
+        border-color: #2471B5;
+        background: transparent;
+    }
+    &:active, &.active {
+        color: #2471B5;
+        border-color: #2471B5;
+        background: transparent;
+    }
+}
+
+.card-ppgem{
+    background: #2471B5;
+}
+
+.publicidade .novidades div:first-child img {
+    background-color: #3BA8DC;
+}
+
+.publicidade .publicacoes div:first-child img {
+    background-color: #DC3BC1;
+}
+
+.publicidade .calendario div:first-child img {
+    background-color: #91DC3B;
+}
+
+.publicidade .novidades div:first-child h4,
+.publicidade .publicacoes div:first-child h4,
+.publicidade .calendario div:first-child h4 {
+    position: absolute;
+    top: -2px;
+    margin-left: 15px;
+    font-weight: 600;
+    color: #f2f2f2;
+    padding-right: 100%;
+}
+
+.publicidade .novidades div:first-child a,
+.publicidade .publicacoes div:first-child a,
+.publicidade .calendario div:first-child a {
+    text-decoration: none;
+    color: #f2f2f2;
+    position: absolute;
+    top: 1px;
+    margin-left: 230px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.publicidade .novidades div:first-child span,
+.publicidade .publicacoes div:first-child span,
+.publicidade .calendario div:first-child span {
+    color: #f2f2f2;
+    font-size: small;
+}
+
+.publicidade .novidades,
+.publicidade .publicacoes,
+.publicidade .calendario {
+    float: left;
+    width: 30%;
+}
+
+.publicidade .publicacoes,
+.publicidade .calendario {
+    margin-left: 3%;
+}
+
+.publicidade .novidades div:nth-child(2) a,
+.publicidade .novidades div:nth-child(3) a,
+.publicidade .novidades div:nth-child(4) a {
+    text-decoration: none;
+}
+
+.publicidade .novidades div:nth-child(2) a,
+.publicidade .novidades div:nth-child(2) p,
+.publicidade .novidades div:nth-child(3) p,
+.publicidade .novidades div:nth-child(4) p {
+    color: #333333;
+}
+
+.publicidade .novidades div:nth-child(3) a,
+.publicidade .novidades div:nth-child(4) a {
+    color: #4F4F4F;
+}
+
+.publicidade .novidades div:nth-child(2) h4,
+.publicidade .novidades div:nth-child(3) h4,
+.publicidade .novidades div:nth-child(4) h4,
+.publicidade .novidades div:nth-child(2) span,
+.publicidade .novidades div:nth-child(3) span,
+.publicidade .novidades div:nth-child(4) span {
+    display: block;
+    margin-top: 10px;
+}
+
+.publicidade .novidades div:nth-child(2) span,
+.publicidade .novidades div:nth-child(3) span,
+.publicidade .novidades div:nth-child(4) span {
+    color: #828282;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.publicidade .novidades div:nth-child(2) p,
+.publicidade .novidades div:nth-child(3) p,
+.publicidade .novidades div:nth-child(4) p {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 6px;
+    line-height: 160%;
+}
+
+/* Seção Publicações */
+
+.publicidade .publicacoes div:nth-child(2) a {
+    color: #4F4F4F;
+    text-decoration: none;
+}
+
+.publicidade .publicacoes div:nth-child(2) p:first-child {
+    padding-top: 0%;
+}
+
+.publicidade .publicacoes div:nth-child(2) p {
+    border-bottom: 1px solid #D1D1D1;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.publicidade .publicacoes div:nth-child(2) p:nth-child(5) {
+    border: none;
+}
+
+.publicidade .calendario  div:nth-child(2) {
+    border-bottom: 1px solid #D1D1D1;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 0%;
+}
+
+.publicidade .calendario div:nth-child(2) span,
+.publicidade .calendario div:nth-child(2) h3 {
+    display: block;
+}
+
+.publicidade .calendario div:nth-child(2) span {
+    color: #78C323;
+    line-height: 140%;
+    font-weight: 600;
+    font-size: 34px;
+    margin-bottom: -5px;
+}
+
+.publicidade .calendario div:nth-child(2) h3,
+.publicidade .calendario div:nth-child(2) h4 {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.publicidade .calendario div:nth-child(2) h3 {
+    font-weight: 300;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 60px;
+}
+
+.publicidade .calendario div:nth-child(2) h4 {
+    width: 250px;
+    margin-left: 5px;
+}
+

@@ -23,3 +23,16 @@
         bottom: 0%;
     }
 }
+
+.box-title-nav {
+    &::after {
+        content: "";
+        display: block;
+        background: #2471B5;
+        height: 1px;
+        width: 100%;
+        border-radius: 1px;
+        position: absolute;
+        bottom: 0%;
+    }
+}
