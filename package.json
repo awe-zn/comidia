@@ -1,5 +1,5 @@
 {
-  "name": "site-teachers",
+  "name": "comidia",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,8 @@
   "license": "",
   "homepage": "",
   "dependencies": {
-    "bootstrap": "^5.0.2"
+    "bootstrap": "^5.0.2",
+    "sass": "^1.54.9"
   },
   "devDependencies": {}
 }
