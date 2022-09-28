@@ -91,6 +91,29 @@ $navbar-toggler-border-radius:      none;
 $navbar-toggler-focus-width:        none;
 $navbar-toggler-transition:         none;
 
+// accordion
+
+$accordion-padding-y:                             0;
+$accordion-padding-x:                             0;
+$accordion-color:                         #1F2D3D;
+$accordion-bg:                            #ffffff00;
+$accordion-border-width:                          0;
+$accordion-border-radius:                       8px;
+
+$accordion-button-padding-y:                   35px;
+$accordion-button-padding-x:                   28px;
+$accordion-button-color:                  #1F7FAD;
+$accordion-button-bg:                     #ffffff;
+$accordion-button-active-bg:              #ffffff;
+$accordion-button-active-color:           #222222;
+
+$accordion-button-focus-border-color:          none;
+$accordion-button-focus-box-shadow:           0px 4px 15px rgba(0, 0, 0, 0.05);;
+
+$accordion-icon-width:                         24px;
+$accordion-button-icon:         url("/dist/image/svg/modal-btn.svg");
+$accordion-button-active-icon:  url("/dist/image/svg/modal-btn-active.svg");
+
 // //Removendo a margin bottom padrão dos titulos
 // $headings-margin-bottom:      0;
 
