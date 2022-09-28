@@ -6,7 +6,9 @@ $primary-dark-1:              #3F6E97;
 $primary-dark-2:              #1E5D95;
 $primary-dark-3:              #195080;
 $green:                       #27AE60;
+$green-2:                     #78C323;
 $black-2:                     #4F4F4F;
+$black-3:                     #333333;
 $aco:                         #273644;
 $prata:                       #3C4858;
 $prata-2:                     #77828C;
@@ -29,7 +31,9 @@ $theme-colors: (
   "primary-dark-2":         $primary-dark-2,
   "primary-dark-3":         $primary-dark-3,
   "green":                  $green,
+  "green-2":                $green-2,
   "black-2":                $black-2,
+  "black-3":                $black-3,
   "aco":                    $aco,
   "prata":                  $prata,
   "gray":                   $gray,
@@ -47,7 +51,7 @@ $theme-colors: (
 //Variáveis das fontes
 $font-family-sans-serif: 'Open sans', sans-serif;
 $font-sizes: (12: 12px, 14: 14px ,16: 16px, 18: 18px, 21: 21px, 24: 24px, 26: 26px, 28:28px, 32: 32px, 44: 44px);
-$font-families: (open-sans: 'Open Sans');
+$font-families: (open-sans: 'Open Sans', poppins: 'Poppins');
 
 //Variáveis do font-weight
 $font-weight-thin:          100;
