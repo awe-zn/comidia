@@ -35,6 +35,27 @@ $utilities: (
     state: hover,
     values: none,
   ),
+  'color':
+    map-merge(
+      map-get($utilities, 'color'),
+      (
+        state: hover,
+      )
+    ),
+  'bg':
+    map-merge(
+      map-get($utilities, 'background-color'),
+      (
+        state: hover,
+      )
+    ),
+  'text-decoration':
+    map-merge(
+      map-get($utilities, 'text-decoration'),
+      (
+        state: hover,
+      )
+    ),
 );
 
 $utilities: map-merge(

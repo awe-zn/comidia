@@ -2,8 +2,9 @@
 $ui-color-primary-light:      #2471B5;
 $ui-color-primary:            #2648A1;
 $ui-color-extra-primary:      #3A95E9;
-$primary-dark-1:              #1E5D95;
-$primary-dark-2:              #195080;
+$primary-dark-1:              #3F6E97;
+$primary-dark-2:              #1E5D95;
+$primary-dark-3:              #195080;
 $green:                       #27AE60;
 $black-2:                     #4F4F4F;
 $aco:                         #273644;
@@ -14,30 +15,31 @@ $fumaca-extra-dark:           #C0CCDA;
 $neve-extra-dark:             #E5E9F2;
 $neve-dark:                   #EFF2F7;
 $neve:                        #F9FAFC;
-$light-1:                       #FAFAFA;
+$light-1:                     #FAFAFA;
 $white:                       #FFFFFF;
 $text-link:                   #3A95E9;
 $transparent:               #00000000;
 
 $theme-colors: (
-  "primary-light": $ui-color-primary-light,
-  "primary": $ui-color-primary,
-  "extra-primary": $ui-color-extra-primary,
-  "primary-dark-1": $primary-dark-1,
-  "primary-dark-2": $primary-dark-2,
-  "green": $green,
-  "black-2": $black-2,
-  "aco": $aco,
-  "prata": $prata,
-  "gray": $gray,
-  "fumaca-extra-dark": $fumaca-extra-dark,
-  "neve-extra-dark": $neve-extra-dark,
-  "neve-dark": $neve-dark,
-  "neve": $neve,
-  "light-1": $light-1,
-  "white": $white,
-  "link": $text-link,
-  "transparent": $transparent,
+  "primary-light":          $ui-color-primary-light,
+  "primary":                $ui-color-primary,
+  "extra-primary":          $ui-color-extra-primary,
+  "primary-dark-1":         $primary-dark-1,
+  "primary-dark-2":         $primary-dark-2,
+  "primary-dark-3":         $primary-dark-3,
+  "green":                  $green,
+  "black-2":                $black-2,
+  "aco":                    $aco,
+  "prata":                  $prata,
+  "gray":                   $gray,
+  "fumaca-extra-dark":      $fumaca-extra-dark,
+  "neve-extra-dark":        $neve-extra-dark,
+  "neve-dark":              $neve-dark,
+  "neve":                   $neve,
+  "light-1":                $light-1,
+  "white":                  $white,
+  "link":                   $text-link,
+  "transparent":            $transparent,
 ) !default;
 
 //Variáveis das fontes
@@ -63,6 +65,7 @@ $awe-spacers: (
   'awe-11':   $spacer * 0.6875,
   'awe-14':   $spacer * 0.875,
   'awe-16':   $spacer * 1,
+  'awe-18':   $spacer * 1.125,
   'awe-24':   $spacer * 1.5,
   'awe-32':   $spacer * 2,
   'awe-40':   $spacer * 2.5,  
