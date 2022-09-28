@@ -10,6 +10,12 @@
 
 @import 'utilities';
 
+// init - Merge maps
+
+$spacers: map-merge($awe-spacers, $spacers);
+
+// end - Merge maps
+
 @import '../../node_modules/bootstrap/scss/mixins';
 
 @import '../../node_modules/bootstrap/scss/bootstrap';

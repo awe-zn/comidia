@@ -2,6 +2,8 @@
 $ui-color-primary-light:      #2471B5;
 $ui-color-primary:            #2648A1;
 $ui-color-extra-primary:      #3A95E9;
+$primary-dark-1:              #1E5D95;
+$primary-dark-2:              #195080;
 $green:                       #27AE60;
 $black-2:                     #4F4F4F;
 $aco:                         #273644;
@@ -14,12 +16,14 @@ $neve-dark:                   #EFF2F7;
 $neve:                        #F9FAFC;
 $white:                       #FFFFFF;
 $text-link:                   #3A95E9;
-$transparent:                #00000000;
+$transparent:               #00000000;
 
 $theme-colors: (
   "primary-light": $ui-color-primary-light,
   "primary": $ui-color-primary,
   "extra-primary": $ui-color-extra-primary,
+  "primary-dark-1": $primary-dark-1,
+  "primary-dark-2": $primary-dark-2,
   "green": $green,
   "black-2": $black-2,
   "aco": $aco,
