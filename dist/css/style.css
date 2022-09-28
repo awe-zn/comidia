@@ -17260,4 +17260,8 @@ a:hover {
   background: rgba(36, 115, 183, 0.3);
 }
 
+.background-gradient-1 {
+  background: linear-gradient(180deg, rgba(242, 242, 242, 0) 0%, #f2f2f2 100%);
+}
+
 /*# sourceMappingURL=style.css.map */
