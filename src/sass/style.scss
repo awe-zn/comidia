@@ -2,6 +2,10 @@
 @import 'bootstrap';
 @import 'components';
 
+body {
+  background-color: #fafafa;
+}
+
 a {
   text-decoration: none;
   &:hover {
