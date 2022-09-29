@@ -36,6 +36,7 @@ $theme-colors: (
   "black-3":                $black-3,
   "aco":                    $aco,
   "prata":                  $prata,
+  "prata-2":                $prata-2,
   "gray":                   $gray,
   "gray-1":                 $gray-1,
   "fumaca-extra-dark":      $fumaca-extra-dark,
@@ -118,31 +119,28 @@ $accordion-icon-width:                         24px;
 $accordion-button-icon:         url("/dist/image/svg/modal-btn.svg");
 $accordion-button-active-icon:  url("/dist/image/svg/modal-btn-active.svg");
 
-// //Removendo a margin bottom padrão dos titulos
-// $headings-margin-bottom:      0;
+//Pagination
+$pagination-padding-y:              4px;
+$pagination-padding-x:              12px;
 
-// //removendo o padding padrão da navbar
-// $navbar-padding-y: 0;
+$pagination-font-size:             18px;
 
-// //Pagination
-// $pagination-color:                  $aco;
-// $pagination-bg:                     none;
-// $pagination-border-color:           none;
-// $pagination-focus-color:            $ui-color-danger-light;
-// $pagination-focus-bg:               none;
-// $pagination-focus-box-shadow:       none;
-// $pagination-focus-outline:          0;
-// $pagination-hover-bg:               none;
-// $pagination-hover-border-color:     none;
-// $pagination-active-color:           $ui-color-danger-light;
-// $pagination-active-bg:              none;
-// $pagination-active-border-color:    $ui-color-danger-light;
+$pagination-color:                  #2471B5;
+$pagination-bg:                     #ffffff;
+$pagination-border-radius:             4.30px;
+$pagination-border-width:                 1px;
+$pagination-margin-start:                12px;
+$pagination-border-color:           #2471B5;
 
-// //input
-// $input-box-shadow:                      none;
-// $input-focus-border-color:              none;
-// $input-focus-box-shadow:                none;
-// $input-plaintext-color:                 none;
+$pagination-focus-color:            none;
+$pagination-focus-bg:               none;
+$pagination-focus-box-shadow:       none;
+$pagination-focus-outline:          1px solid #2471B5;
 
-// //button
-// $btn-focus-box-shadow:       none;
+$pagination-hover-color:            #ffffff;
+$pagination-hover-bg:               #2471B5;
+$pagination-hover-border-color:     #2471B5;
+
+$pagination-active-color:           #ffffff;
+$pagination-active-bg:              #2471B5;
+$pagination-active-border-color:    #2471B5;
