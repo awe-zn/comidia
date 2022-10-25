@@ -1,56 +1,57 @@
 .filter {
-    border: 1px solid $prata;
-    color: $prata;
-    display: block;
-    text-decoration: none;
-    border-radius: 6.26px;
-    padding: 4px 17px;
-    &:hover {
-        color: $black-2;
-        border-color: $black-2;
-    }
-    &:active, &.active {
-        color: $ui-color-primary-light;
-        border-color: $ui-color-primary-light;
-    }
+  border: 1px solid $prata;
+  color: $prata;
+  display: block;
+  text-decoration: none;
+  border-radius: 6.26px;
+  padding: 4px 17px;
+  &:hover {
+    color: $black-2;
+    border-color: $black-2;
+  }
+  &:active,
+  &.active {
+    color: $ui-color-primary-light;
+    border-color: $ui-color-primary-light;
+  }
 }
 
 .filter-2 {
-    border: 1px solid $ui-color-primary-light;
-    color: $ui-color-primary-light;
-    padding: 4px 17px;
-    text-decoration: none;
-    position: relative;
+  border: 1px solid $ui-color-primary-light;
+  color: $ui-color-primary-light;
+  padding: 4px 17px;
+  text-decoration: none;
+  position: relative;
+  span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
+    border: 0.78px solid $ui-color-primary-light;
+    border-radius: 50%;
+    right: -11.5px;
+    top: -11.5px;
+  }
+  &:hover {
+    color: $white;
+    background: $ui-color-primary-light;
+    border-color: $ui-color-primary-light;
     span {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 23px;
-        height: 23px;
-        border: 0.78px solid $ui-color-primary-light;
-        border-radius: 50%;
-        right: -11.5px;
-        top: -11.5px;
+      border-color: $ui-color-primary-light;
     }
-    &:hover {
-        color: $white;
-        background: $ui-color-primary-light;
-        border-color: $ui-color-primary-light;
-        span {
-            border-color: $ui-color-primary-light;
-        }
+  }
+  &:active {
+    color: $white;
+    background: $ui-color-primary-light;
+    border-color: $ui-color-primary-light;
+    span {
+      border-color: $ui-color-primary-light;
     }
-    &:active {
-        color: $white;
-        background: $ui-color-primary-light;
-        border-color: $ui-color-primary-light;
-        span {
-            border-color: $ui-color-primary-light;
-        }
-    }
-    &.active {
-        background: $ui-color-primary-light;
-        color: $white;
-    }
+  }
+  &.active {
+    background: $ui-color-primary-light;
+    color: $white;
+  }
 }

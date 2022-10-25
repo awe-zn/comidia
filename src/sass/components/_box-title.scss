@@ -1,38 +1,38 @@
 .box-title {
-    &::after {
-        content: "";
-        display: block;
-        background: #8D9AA6;
-        height: 1px;
-        width: 100%;
-        border-radius: 1px;
-        position: absolute;
-        bottom: 0%;
-    }
+  &::after {
+    content: '';
+    display: block;
+    background: #8d9aa6;
+    height: 1px;
+    width: 100%;
+    border-radius: 1px;
+    position: absolute;
+    bottom: 0%;
+  }
 }
 
 .box-title-noticia {
-    &::after {
-        content: "";
-        display: block;
-        background: #2471B5;
-        height: 1px;
-        width: 100%;
-        border-radius: 1px;
-        position: absolute;
-        bottom: 0%;
-    }
+  &::after {
+    content: '';
+    display: block;
+    background: #2471b5;
+    height: 1px;
+    width: 100%;
+    border-radius: 1px;
+    position: absolute;
+    bottom: 0%;
+  }
 }
 
 .box-title-nav {
-    &::after {
-        content: "";
-        display: block;
-        background: #2471B5;
-        height: 1px;
-        width: 100%;
-        border-radius: 1px;
-        position: absolute;
-        bottom: 0%;
-    }
+  &::after {
+    content: '';
+    display: block;
+    background: #2471b5;
+    height: 1px;
+    width: 100%;
+    border-radius: 1px;
+    position: absolute;
+    bottom: 0%;
+  }
 }
