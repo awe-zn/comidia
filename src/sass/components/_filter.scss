@@ -1,18 +1,35 @@
 .filter {
-  border: 1px solid $prata;
-  color: $prata;
-  display: block;
-  text-decoration: none;
+  border: 1px solid #2471b5;
   border-radius: 6.26px;
   padding: 4px 17px;
-  &:hover {
-    color: $black-2;
-    border-color: $black-2;
+  color: #2471b5;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #3c4b58;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Open sans';
+    border: 1px solid #2471b5;
+    border-radius: 50%;
+    background-color: #f9fafc;
+    width: 23px;
+    height: 23px;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  &:active,
-  &.active {
-    color: $ui-color-primary-light;
-    border-color: $ui-color-primary-light;
+
+  &:hover,
+  &.is-checked {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #2471b5;
   }
 }
 
