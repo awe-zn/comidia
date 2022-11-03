@@ -1,0 +1,6 @@
+- ACF (Advanced custom fields)
+- CMB2
+- Custom Post Type UI
+- Genesis Custom Blocks
+- Post Types Order
+- Widgets Clássicos
