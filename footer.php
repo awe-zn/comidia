@@ -50,18 +50,20 @@
             <h5 class="text-white fz-18 text-uppercase fw-bold">
               PRODUÇÃO
             </h5>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Grupos de Pesquisa
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Pesquisas dos Docentes
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Teses e Dissertações
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Divulgação Científica
-            </a>
+            <?php
+            $args = array(
+              'post_type' => 'producao_post',
+              'posts_per_page' => '10',
+              'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
+            );
+            $the_query = new WP_Query($args);
+            ?>
+            <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                <a href="<?php echo home_url('/producao'); ?>/#<?php the_title(); ?>" class="text-white fz-16 fz-md-14">
+                  <?php the_title(); ?>
+                </a>
+            <?php endwhile;
+            else : endif; ?>
           </div>
         </div>
 
@@ -104,19 +106,13 @@
           </div>
           <div class="d-flex flex-column gap-1">
             <h5 class="text-white fz-18 text-uppercase fw-bold">
-              PRODUÇÃO
+              Processo Seletivo
             </h5>
             <a href="" class="text-white fz-16 fz-md-14">
-              Grupos de Pesquisa
+              Editais passados
             </a>
             <a href="" class="text-white fz-16 fz-md-14">
-              Pesquisas dos Docentes
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Teses e Dissertações
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Divulgação Científica
+              Outros documentos
             </a>
           </div>
         </div>

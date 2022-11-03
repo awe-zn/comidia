@@ -1,5 +1,5 @@
 <?php
-// Template Name: producao
+// Template Name: programa
 ?>
 
 <?php
@@ -39,7 +39,7 @@ wp_head();
         <ul class="list-unstyled pt-awe-40 pe-awe-24">
           <?php
           $args = array(
-            'post_type' => 'programa_post',
+            'post_type' => 'producao_post',
             'posts_per_page' => '10',
             'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
           );
@@ -59,7 +59,7 @@ wp_head();
     <div class="col-12 col-md-9">
       <?php
       $args = array(
-        'post_type' => 'programa_post',
+        'post_type' => 'producao_post',
         'posts_per_page' => '10',
         'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
       );
