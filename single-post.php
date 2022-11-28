@@ -66,63 +66,53 @@ $theme = get_bloginfo('template_url');
           <div class="tags mb-awe-24">
             <?php include(TEMPLATEPATH . "/inc/filtro-tag.php"); ?>
           </div>
+
+
+          <p class="mb-awe-24 fz-16 text-aco">
+            posts relacionados
+          </p>
+
+          <!-- posts relacionados -->
+          <div class="d-flex flex-column gap-awe-18 border-bottom border-fumaca-light">
+
+            <?php
+            $tags = wp_get_post_tags($post->ID);
+
+            $tag_ids = array();
+            foreach ($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+            $args = array(
+              'tag__in' => $tag_ids,
+              'post__not_in' => array($post->ID),
+              'posts_per_page' => 3, // Number of related posts that will be shown.
+              'caller_get_posts' => 1
+            );
+
+            $the_query = new WP_Query($args);
+            ?>
+
+            <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                <a href="" class="d-block text-decoration-none border-bottom border-fumaca-light pb-awe-24">
+                  <p class="text-gray-2 fz-16 mb-awe-8">
+                    por
+                    <span class="text-prata fw-bold">
+                      <?php the_author(); ?>
+                    </span>,
+                    publicado em
+                    <span class="text-prata">
+                      <?php the_date('d.M.y'); ?>
+                    </span>
+                  </p>
+                  <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
+                    <?php the_title(); ?>
+                  </h5>
+                </a>
+            <?php endwhile;
+            else : endif; ?>
+
+          </div>
         <?php
         }
         ?>
-
-      </div>
-
-      <p class="mb-awe-24 fz-16 text-aco">
-        posts relacionados
-      </p>
-
-      <!-- posts relacionados -->
-      <div class="d-flex flex-column gap-awe-18 border-bottom border-fumaca-light">
-        <a href="" class="d-block text-decoration-none border-bottom border-fumaca-light pb-awe-24">
-          <p class="text-gray-2 fz-16 mb-awe-8">
-            por
-            <span class="text-prata fw-bold">
-              Nome Sobrenome
-            </span>,
-            publicado em
-            <span class="text-prata">
-              08.abr.2022
-            </span>
-          </p>
-          <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
-            Simão celerado: do nascimento à morte da democracia (VI) – o caso Alan Gideon
-          </h5>
-        </a>
-        <a href="" class="d-block text-decoration-none border-bottom border-fumaca-light pb-awe-24">
-          <p class="text-gray-2 fz-16 mb-awe-8">
-            por
-            <span class="text-prata fw-bold">
-              Nome Sobrenome
-            </span>,
-            publicado em
-            <span class="text-prata">
-              08.abr.2022
-            </span>
-          </p>
-          <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
-            Simão celerado: do nascimento à morte da democracia (VI) – o caso Alan Gideon
-          </h5>
-        </a>
-        <a href="" class="d-block text-decoration-none border-bottom border-fumaca-light pb-awe-24">
-          <p class="text-gray-2 fz-16 mb-awe-8">
-            por
-            <span class="text-prata fw-bold">
-              Nome Sobrenome
-            </span>,
-            publicado em
-            <span class="text-prata">
-              08.abr.2022
-            </span>
-          </p>
-          <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
-            Simão celerado: do nascimento à morte da democracia (VI) – o caso Alan Gideon
-          </h5>
-        </a>
       </div>
     </div>
   </div>
