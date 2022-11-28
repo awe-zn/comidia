@@ -329,38 +329,40 @@ $theme = get_bloginfo('template_url');
     </h2>
 
     <div class="accordion d-flex flex-column gap-4" id="accordionPerguntasFrequentes">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <span class="fz-21">
-              Eu posso fazer o mestrado ou doutorado no PPgEM mesmo sendo formado em outra área?
-            </span>
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPerguntasFrequentes">
-          <div class="accordion-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in quia nisi laudantium sint sequi nostrum reprehenderit aut commodi, quis perferendis incidunt repellendus enim aperiam dicta eos! Quam, quis fugit?
+
+      <?php
+
+      $perguntas_query = new WP_Query(array(
+        'post_type' => 'perguntas-post',
+        'posts_per_page' => 5,
+      ));
+
+      if ($perguntas_query->have_posts()) {
+        while ($perguntas_query->have_posts()) {
+          $perguntas_query->the_post();
+      ?>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading<?php echo get_the_ID(); ?>">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_the_ID(); ?>" aria-expanded="true" aria-controls="collapse<?php echo get_the_ID(); ?>">
+                <span class="fz-21">
+                  <?php the_title(); ?>
+                </span>
+              </button>
+            </h2>
+            <div id="collapse<?php echo get_the_ID(); ?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo get_the_ID(); ?>" data-bs-parent="#accordionPerguntasFrequentes">
+              <div class="accordion-body">
+                <?php the_content(); ?>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <span class="fz-21">
-              Devo ser graduado em Comunicação Social para poder concorrer às vagas do mestrado?
-            </span>
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPerguntasFrequentes">
-          <div class="accordion-body">
-            Não
-          </div>
-        </div>
-      </div>
+      <?php
+        }
+      }
+      ?>
     </div>
 
     <div class="d-flex justify-content-end">
-      <a href="" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
+      <a href="<?php echo get_permalink(get_page_by_path('perguntas')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
         Ver todas as perguntas
       </a>
     </div>
