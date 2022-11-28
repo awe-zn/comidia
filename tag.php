@@ -12,12 +12,17 @@ include 'constants.php';
       <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item">
-            <a href="<?= home_url(); ?>" class="text-aco text-decoration-underline fz-16">
+            <a href="<?php echo home_url(); ?>" class="text-aco text-decoration-underline fz-16">
               Home
             </a>
           </li>
+          <li class="breadcrumb-item">
+            <a href="<?php echo home_url('/posts'); ?>" class="text-aco text-decoration-underline fz-16">
+              Notícias
+            </a>
+          </li>
           <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
-            Notícias
+            Tags
           </li>
         </ol>
       </nav>
@@ -57,18 +62,11 @@ include 'constants.php';
       </div>
       <div class="col-12 col-md-10 col-lg-8 d-flex flex-column gap-awe-24 mt-awe-32">
         <h3 class="fz-18 fz-md-28 fw-light text-primary">
-          Ultimas notícias
+          Ultimas notícias com a tag <span class="fw-bold">"<?php single_tag_title(); ?>"</span>
         </h3>
 
-        <?php
-        $args = array(
-          'post_type' => 'post',
-          'posts_per_page' => '2',
-          'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
-        );
-        $the_query = new WP_Query($args);
-        ?>
-        <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <a href="<?php echo get_permalink(); ?>" class="d-block text-decoration-none border-bottom border-fumaca-light pb-awe-24">
               <p class="text-gray-2 fz-16 mb-awe-8">
                 por
@@ -87,50 +85,6 @@ include 'constants.php';
         <?php endwhile;
         else : endif; ?>
 
-      </div>
-
-      <div class="col-12 col-lg-11 d-flex justify-content-center mt-awe-80 mt-md-awe-104">
-        <nav aria-label="...">
-          <div class="pagination d-flex gap-awe-8 align-items-end">
-            <style>
-              .pagination .page-numbers {
-                width: 40px;
-                height: 40px;
-                border-radius: 8px;
-                border: 1px solid #2471b5;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-              }
-
-              .pagination .page-numbers.current {
-                background-color: #2471b5;
-                color: #fff;
-              }
-
-              .pagination .page-numbers.dots {
-                border: none;
-                color: #2471b5;
-                padding: 0;
-                margin: 0;
-                width: auto;
-                height: auto;
-              }
-            </style>
-            <?php
-            echo paginate_links(array(
-              'base' => str_replace(999999999, '%#%', get_pagenum_link(999999999)),
-              'format' => '?paged=%#%',
-              'current' => max(1, get_query_var('paged')),
-              'total' => $the_query->max_num_pages,
-              'prev_next' => false,
-              'show_all' => false,
-              'mid_size' => 2,
-              'end_size' => 1
-            )); ?>
-          </div>
-        </nav>
       </div>
     </div>
   </div>

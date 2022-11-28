@@ -57,13 +57,19 @@ $theme = get_bloginfo('template_url');
 
       <!-- filtro por tags -->
       <div>
-        <?php echo get_the_tags()->$tag; ?>
-        <p class="mb-awe-24 fz-16 text-aco">
-          filtre por tags
-        </p>
-        <div class="tags mb-awe-24">
-          <?php include(TEMPLATEPATH . "/inc/filtro-tag.php"); ?>
-        </div>
+        <?php
+        if (has_tag()) {
+        ?>
+          <p class="mb-awe-24 fz-16 text-aco">
+            filtre por tags
+          </p>
+          <div class="tags mb-awe-24">
+            <?php include(TEMPLATEPATH . "/inc/filtro-tag.php"); ?>
+          </div>
+        <?php
+        }
+        ?>
+
       </div>
 
       <p class="mb-awe-24 fz-16 text-aco">

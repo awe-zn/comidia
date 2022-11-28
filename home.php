@@ -7,34 +7,54 @@ $theme = get_bloginfo('template_url');
 <main class="py-awe-40 py-md-awe-80 bg-light-1">
   <div class="container px-awe-24 px-lg-0">
     <div class="row">
-      <div class="col-12 col-lg-9 col-xl-7">
-        <a href="" class="card-noticia__destaque bg-white">
-          <img src="<?= $theme ?>/dist/image/img-notice.png" alt="" class="img-fluid">
-          <div class="background-filter"></div>
-          <div class="card-noticia__content fz-21">
-            <p class="mb-awe-24">
-              PALESTRA: “O especificamente comunicacional nas pesquisas
-              de Mestrado e Doutorado em Estudos da Mídia”
-            </p>
-            <p>
-              Paletrante: Prof. Dr. Luiz Signates (PPGCOM/UFG)
-            </p>
+      <?php
+
+      $post_query = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => 1,
+        'cat' => get_cat_ID('destaque-principal')
+      ));
+
+      if ($post_query->have_posts()) {
+        while ($post_query->have_posts()) {
+          $post_query->the_post();
+      ?>
+          <div class="col-12 col-lg-9 col-xl-7">
+            <a href="<?php echo get_permalink(); ?>" class="card-noticia__destaque bg-white">
+              <img src="<?php the_post_thumbnail(); ?>" alt="" class="img-fluid">
+              <div class="background-filter"></div>
+              <div class="card-noticia__content fz-21">
+                <p>
+                  <?php the_title(); ?>
+                </p>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
+      <?php
+        }
+      }
+      ?>
+
       <div class="col-12 col-xl-5 mt-awe-32 mt-xl-0 d-flex flex-column justify-content-between gap-4 gap-xl-0">
-        <a href="" class="card__info">
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </a>
-        <a href="" class="card__info">
-          EDITAIS Nº 004/2021-PPGEM - PROCESSO SELETIVO PARA O MESTRADO
-        </a>
-        <a href="" class="card__info">
-          COMUNICADO SOBRE O HORÁRIO DE ENCERRAMENTO DAS INSCRIÇÕES – SELEÇÃO DE MESTRADO E DOUTORADO PPGEM 2022
-        </a>
-        <a href="" class="card__info">
-          ATA DE JULGAMENTO DOS PEDIDOS DE INSCRIÇÃO DOS CANDIDATOS DO PROCESSO DE CREDENCIAMENTO DE DOCENTES
-        </a>
+        <?php
+
+        $post_query = new WP_Query(array(
+          'post_type' => 'post',
+          'posts_per_page' => 4,
+          'cat' => get_cat_ID('destaque')
+        ));
+
+        if ($post_query->have_posts()) {
+          while ($post_query->have_posts()) {
+            $post_query->the_post();
+        ?>
+            <a href="<?php echo get_permalink(); ?>" class="card__info">
+              <?php the_title(); ?>
+            </a>
+        <?php
+          }
+        }
+        ?>
       </div>
     </div>
   </div>
