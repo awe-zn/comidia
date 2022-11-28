@@ -1,3 +1,7 @@
+<?php
+$theme = get_bloginfo('template_url');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,7 +18,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- css -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/style.css" />
+  <link rel="stylesheet" href="<?= $theme ?>/dist/css/style.css" />
+
+  <?php wp_head(); ?>
 </head>
 
 <body>
@@ -22,16 +28,16 @@
   <header class="">
     <div class="container-fluid container-lg navbar__container px-0">
       <div class="background">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/mask-group.svg" class="img-fluid h-100" alt="">
+        <img src="<?= $theme ?>/dist/image/svg/mask-group.svg" class="img-fluid h-100" alt="">
       </div>
       <nav class="navbar navbar-expand-lg p-0">
         <div class="container-fluid container-lg">
           <div class="w-100 d-flex justify-content-between">
             <a class="navbar-brand" href="<?php echo home_url(); ?>">
-              <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/nav-logo.svg" alt="">
+              <img class="img-fluid" src="<?= $theme ?>/dist/image/svg/nav-logo.svg" alt="">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <img src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/menu.svg" alt="">
+              <img src="<?= $theme ?>/dist/image/svg/menu.svg" alt="">
             </button>
           </div>
           <div class="px-5 mx-xl-5 d-none d-lg-block"></div>
@@ -49,51 +55,51 @@
                 </a>
                 <div class="ps-4 d-flex gap-4">
                   <a href="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/youtube-light.svg" alt="">
+                    <img src="<?= $theme ?>/dist/image/svg/youtube-light.svg" alt="">
                   </a>
                   <a href="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/instagram-light.svg" alt="">
+                    <img src="<?= $theme ?>/dist/image/svg/instagram-light.svg" alt="">
                   </a>
                 </div>
               </div>
               <hr class="divider">
               <div class="d-flex justify-content-end fz-14 text-uppercase  gap-2">
-                <a href="programa.html" class="text-nowrap">
+                <a href="<?= get_permalink(get_page_by_path('programa')); ?>" class="text-nowrap">
                   O PROGRAMA
                 </a>
                 |
-                <a href="academico.html">
+                <a href="<?= get_permalink(get_page_by_path('academico')); ?>">
                   ACADÊMICO
                 </a>
                 |
-                <a href="selecao.html">
+                <a href="<?= get_permalink(get_page_by_path('selecao')); ?>">
                   SELEÇÃO
                 </a>
                 |
-                <a href="producao.html">
+                <a href="<?= get_permalink(get_page_by_path('producao')); ?>">
                   PRODUÇÃO
                 </a>
                 |
-                <a href="<?php echo home_url('/documentos'); ?>">
+                <a href="<?= get_permalink(get_page_by_path('documentos')); ?>">
                   DOCUMENTOS
                 </a>
               </div>
             </div>
             <div class="w-100 py-5 d-flex flex-column d-lg-none">
               <div class="d-flex flex-column text-center gap-4">
-                <a href="programa.html" class="text-link">
+                <a href="<?= get_permalink(get_page_by_path('programa')); ?>" class="text-link">
                   O PROGRAMA
                 </a>
-                <a href="academico.html" class="text-link">
+                <a href="<?= get_permalink(get_page_by_path('academico')); ?>" class="text-link">
                   ACADÊMICO
                 </a>
-                <a href="selecao.html" class="text-link">
+                <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-link">
                   SELEÇÃO
                 </a>
-                <a href="producao.html" class="text-link">
+                <a href="<?= get_permalink(get_page_by_path('producao')); ?>" class="text-link">
                   PRODUÇÃO
                 </a>
-                <a href="<?php echo home_url('/documentos'); ?>" class="text-link">
+                <a href="<?= get_permalink(get_page_by_path('documentos')); ?>" class="text-link">
                   DOCUMENTOS
                 </a>
               </div>
@@ -109,10 +115,10 @@
                 </a>
                 <div class="d-flex gap-4">
                   <a href="" class="text-link">
-                    <img width="32" src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/youtube.svg" alt="">
+                    <img width="32" src="<?= $theme ?>/dist/image/svg/youtube.svg" alt="">
                   </a>
                   <a href="" class="text-link">
-                    <img width="32" src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/instagram.svg" alt="">
+                    <img width="32" src="<?= $theme ?>/dist/image/svg/instagram.svg" alt="">
                   </a>
                 </div>
               </div>

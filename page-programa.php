@@ -4,7 +4,8 @@
 
 <?php
 get_header();
-wp_head();
+
+$theme = get_bloginfo('template_url');
 ?>
 
 <div class="container px-lg-0 pt-awe-32 pt-md-awe-48 pb-awe-16">
@@ -13,7 +14,7 @@ wp_head();
       <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item">
-            <a href="<?php echo home_url(); ?>" class="text-aco text-decoration-underline fz-16">
+            <a href="<?= home_url(); ?>" class="text-aco text-decoration-underline fz-16">
               Home
             </a>
           </li>
@@ -87,7 +88,4 @@ wp_head();
 
 <div class="py-5"></div>
 
-<?php
-wp_footer();
-get_footer();
-?>
+<?php get_footer(); ?>

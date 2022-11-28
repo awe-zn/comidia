@@ -1,3 +1,7 @@
+<?php
+$theme = get_bloginfo('template_url');
+?>
+
 <footer>
   <div class="pt-awe-80 pb-awe-48 bg-primary-light">
     <div class="container px-awe-24">
@@ -132,14 +136,16 @@
   </div>
   <div class="bg-primary-dark-3 py-awe-14 d-flex justify-content-center">
     <a href="https://agenciaweb.ifrn.edu.br/" target="_blank">
-      <img src="<?php echo get_template_directory_uri(); ?>/dist/image/svg/awe-logo.svg" alt="">
+      <img src="<?= $theme ?>/dist/image/svg/awe-logo.svg" alt="">
     </a>
   </div>
 </footer>
 
+<?php wp_footer(); ?>
+
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/dist/js/index.js"></script>
+<script src="<?= $theme ?>/dist/js/index.js"></script>
 </body>
 
 </html>
