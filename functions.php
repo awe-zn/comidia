@@ -106,3 +106,8 @@ class new_general_setting
 }
 
 $new_general_setting = new new_general_setting();
+
+
+include(TEMPLATEPATH . '/functions/custom-taxonomies.php');
+include(TEMPLATEPATH . '/functions/custom-posts.php');
+include(TEMPLATEPATH . '/functions/custom-fields.php');
