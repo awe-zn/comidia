@@ -1,6 +1,5 @@
 - ACF (Advanced custom fields)
 - CMB2
-- Custom Post Type UI
-- Genesis Custom Blocks
+- Ivory Search
+- Lazy Blocks
 - Post Types Order
-- Widgets Clássicos

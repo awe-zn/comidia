@@ -1,0 +1,1039 @@
+[
+    {
+        "id": 331,
+        "title": "Espaçador 32",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n  <rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n  <rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/espacador-32",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "html",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<div class=\"py-awe-16\"><\/div>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 323,
+        "title": "Cronograma",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n  <rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n  <rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/tabela",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_534b0f49a7": {
+                "type": "repeater",
+                "name": "linhas-da-tabela",
+                "default": "",
+                "label": "Linhas da tabela",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "rows_min": "",
+                "rows_max": "",
+                "rows_label": "",
+                "rows_add_button_label": "",
+                "rows_collapsible": "true",
+                "rows_collapsed": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_810b53491f": {
+                "type": "text",
+                "name": "data",
+                "default": "",
+                "label": "Data",
+                "help": "",
+                "child_of": "control_534b0f49a7",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": "",
+                "date_time_picker": "date"
+            },
+            "control_dbaa4b447e": {
+                "type": "text",
+                "name": "hora",
+                "default": "",
+                "label": "Hora",
+                "help": "",
+                "child_of": "control_534b0f49a7",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": "",
+                "date_time_picker": "date"
+            },
+            "control_37abb741e6": {
+                "type": "text",
+                "name": "atividade",
+                "default": "",
+                "label": "Atividade",
+                "help": "",
+                "child_of": "control_534b0f49a7",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<div class=\"table-responsive\">\n  <table id=\"cronograma\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\" width=\"25%\" class=\"px-awe-64\">Data<\/th>\n        <th scope=\"col\" width=\"25%\" class=\"px-awe-32\">Hora<\/th>\n        <th scope=\"col\" width=\"50%\" class=\"px-awe-32\">Atividade<\/th>\n      <\/tr>\n    <\/thead>\n    <tbody>\n      <?php foreach( $attributes['linhas-da-tabela'] as $item ): ?>\n        <tr>\n          <td><?php echo $item['data']; ?><\/td>\n          <td><?php echo $item['hora']; ?><\/td>\n          <td><?php echo $item['atividade']; ?><\/td>\n        <\/tr>\n      <?php endforeach; ?>\n    <\/tbody>\n  <\/table>\n<\/div>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 307,
+        "title": "Título azul 2",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/titulo-azul-2",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_d0799148f8": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<p class=\"text-extra-primary ff-poppins fw-bold fz-18 mb-awe-24\">\n  {{titulo}}\n<\/p>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 292,
+        "title": "Lista customizada",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/lista-customizada",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_86a84649c2": {
+                "type": "text",
+                "name": "titulo-do-item",
+                "default": "",
+                "label": "Título do item",
+                "help": "",
+                "child_of": "control_30c9154434",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_745ab54bc9": {
+                "type": "repeater",
+                "name": "itens",
+                "default": "",
+                "label": "itens",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "rows_min": "",
+                "rows_max": "",
+                "rows_label": "Item {{#}}",
+                "rows_add_button_label": "+ Adicionar item",
+                "rows_collapsible": "true",
+                "rows_collapsed": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_c44a6f43f6": {
+                "type": "text",
+                "name": "titulo-do-item",
+                "default": "",
+                "label": "Título do item",
+                "help": "",
+                "child_of": "control_745ab54bc9",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<ul class=\"list-unstyled d-flex flex-column gap-awe-11\">\n  <?php foreach( $attributes['itens'] as $item ): ?>\n    <hr class=\"bg-fumaca-light m-0 w-75\">\n    <li class=\"text-prata-2 fz-16 ff-open-sans m-0 ps-awe-11\">\n      <?php echo $item['titulo-do-item']; ?>\n    <\/li>\n  <?php endforeach; ?>\n<\/ul>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "never",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 285,
+        "title": "Titulo dark 2",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/titulo-dark-2",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_e1086043d3": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<h3 class=\"fz-18 fw-semi-bold text-prata ff-poppins mb-awe-24\">\n  {{titulo}}\n<\/h3>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 265,
+        "title": "Título dark",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/titulo-dark",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_b77b5b45da": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<h2 id=\"{{titulo}}\" class=\"fz-21 fw-bold ff-poppins text-prata mb-awe-24 text-uppercase\">\n  {{titulo}}\n<\/h2>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 253,
+        "title": "Lista de links",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/lista-de-links",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_029b364e53": {
+                "type": "repeater",
+                "name": "links",
+                "default": "",
+                "label": "links",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "rows_min": "",
+                "rows_max": "",
+                "rows_label": "Link {{#}}",
+                "rows_add_button_label": "+ Adicionar link",
+                "rows_collapsible": "true",
+                "rows_collapsed": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_4ba8f54e2e": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "control_029b364e53",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_776a314f20": {
+                "type": "url",
+                "name": "url",
+                "default": "",
+                "label": "Url",
+                "help": "",
+                "child_of": "control_029b364e53",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_f8c93042d9": {
+                "type": "textarea",
+                "name": "descricao",
+                "default": "",
+                "label": "Descrição",
+                "help": "",
+                "child_of": "control_029b364e53",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<div class=\"d-flex flex-column gap-awe-24\">\n    <?php foreach( $attributes['links'] as $link ): ?>\n      <p>\n          <a href=\"<?php echo $link['url']; ?>\" class=\"fz-18 ff-open-sans text-extra-primary lh-180\">\n            <?php echo $link['titulo']; ?>\n          <\/a>\n          \n          <?php if ( $link['descricao'] ) : ?>\n              <br>\n              <span class=\"text-prata-2 fz-18 ff-open-sans\">\n                <?= $link['descricao']; ?>\n              <\/span>\n          <?php endif; ?> \n        <\/p>\n    <?php endforeach; ?>\n<\/div>\n",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "never",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 249,
+        "title": "Link com  descrição",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/link-com-descricao",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_e659214e04": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_36eb6f47e6": {
+                "type": "url",
+                "name": "url",
+                "default": "",
+                "label": "Url",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_9ccb7b4057": {
+                "type": "textarea",
+                "name": "descricao",
+                "default": "",
+                "label": "Descrição",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "<p>\n  <a href=\"{{url}}\" class=\"fz-18 ff-open-sans text-extra-primary lh-180\">\n    {{titulo}}\n  <\/a>\n<\/p>",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<p>\n  <a href=\"{{url}}\" class=\"text-extra-primary fz-18 ff-open-sans text-decoration-none fw-bold\">\n    <span class=\"text-decoration-underline\">\n      {{titulo}}\n    <\/span>\n\n    <p class=\"fw-regular text-prata-2 m-0 mt-awe-8\">\n      {{descricao}}\n    <\/p>\n  <\/a>\n<\/p>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "unselected",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 239,
+        "title": "Conteúdo da página",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M14 17H4v2h10v-2zm6-8H4v2h16V9zM4 15h16v-2H4v2zM4 5v2h16V5H4z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/conteudo-da-pagina",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_af8b8147f1": {
+                "type": "inner_blocks",
+                "name": "conteudo",
+                "default": "",
+                "label": "Conteúdo",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "<div class=\"col-12 col-md-9\">\n  {{{conteudo}}}\n<\/div>",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<div class=\"col-12 col-md-9\">\n  {{{conteudo}}}\n<\/div>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": false
+        },
+        "condition": []
+    },
+    {
+        "id": 228,
+        "title": "Tópico",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n  <rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n  <rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/topico",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_55c89f4702": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "<li class=\"border-bottom border-fumaca pb-awe-24 mb-awe-24\">\n  <a href=\"#{{titulo}}\" class=\"text-prata-2 text-prata-hover ps-2 fz-16 pb-awe-24\">\n    {{titulo}}\n  <\/a>\n<\/li>",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<li class=\"border-bottom border-fumaca pb-awe-24 mb-awe-24\">\n  <a href=\"#{{titulo}}\" class=\"text-prata-2 text-prata-hover ps-2 fz-16 pb-awe-24\">\n    {{titulo}}\n  <\/a>\n<\/li>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "never",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 223,
+        "title": "Tópicos",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/topicos",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": false,
+            "anchor": true,
+            "align": [],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_b79b70450b": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "control_c2c8824276",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_c3a82348b8": {
+                "type": "repeater",
+                "name": "lista-de-topicos",
+                "default": "",
+                "label": "Lista de tópicos",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "rows_min": "",
+                "rows_max": "",
+                "rows_label": "Tópico {{#}}",
+                "rows_add_button_label": "+ Adicionar tópico",
+                "rows_collapsible": "true",
+                "rows_collapsed": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_5a291f469b": {
+                "type": "text",
+                "name": "titulo-do-topico",
+                "default": "",
+                "label": "Título do tópico",
+                "help": "",
+                "child_of": "control_c3a82348b8",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "php",
+            "editor_html": "<div class=\"col-12 col-md-3\">\n  <div class=\"position-sticky sticky-top\" style=\"top: 32px;\">\n    <h2 class=\"fz-21 fw-bold ff-poppins text-prata\">\n      Tópicos\n    <\/h2>\n    <ul class=\"list-unstyled pt-awe-40 pe-awe-24\">\n      {{lista-de-topicos}}\n    <\/ul>\n  <\/div>\n<\/div>",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<div class=\"col-12 col-md-3\">\n  <div class=\"position-sticky sticky-top\" style=\"top: 32px;\">\n    <h2 class=\"fz-21 fw-bold ff-poppins text-prata\">\n      Tópicos\n    <\/h2>\n    <ul class=\"list-unstyled pt-awe-40 pe-awe-24\">\n       <?php foreach( $attributes['lista-de-topicos'] as $topico ): ?>\n          <li class=\"border-bottom border-fumaca pb-awe-24 mb-awe-24\">\n              <a href=\"#<?php echo $topico['titulo-do-topico']; ?>\" class=\"text-prata-2 text-prata-hover ps-2 fz-16 pb-awe-24\">\n                <?php echo $topico['titulo-do-topico']; ?>\n              <\/a>\n            <\/li>\n        <?php endforeach; ?>\n    <\/ul>\n  <\/div>\n<\/div>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "never",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 220,
+        "title": "Link sem descrição",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/link-sem-descricao",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_e659214e04": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_36eb6f47e6": {
+                "type": "url",
+                "name": "url",
+                "default": "",
+                "label": "Url",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "<p>\n  <a href=\"{{url}}\" class=\"fz-18 ff-open-sans text-extra-primary lh-180\">\n    {{titulo}}\n  <\/a>\n<\/p>",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<p>\n  <a href=\"{{url}}\" class=\"fz-18 ff-open-sans text-extra-primary lh-180\">\n    {{titulo}}\n  <\/a>\n<\/p>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "unselected",
+            "single_output": false
+        },
+        "condition": []
+    },
+    {
+        "id": 216,
+        "title": "Divisor de blocos",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13H5v-2h14v2z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/divisor-de-blocos",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "html",
+            "editor_html": "<hr class=\"bg-fumaca-light my-awe-40\">",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<hr class=\"bg-fumaca-light my-awe-40\">",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": false
+        },
+        "condition": []
+    },
+    {
+        "id": 209,
+        "title": "Título azul",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/titulo-azul",
+        "description": "",
+        "category": "text",
+        "category_label": "text",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_81f995475f": {
+                "type": "text",
+                "name": "titulo",
+                "default": "",
+                "label": "Título",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "true",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "html",
+            "editor_html": "<h2 class=\"text-uppercase fz-21 text-extra-primary ff-poppins fw-bold mb-awe-24\">\n  {{titulo}}\n<\/h2>",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<h2 id=\"{{titulo}}\" class=\"text-uppercase fz-21 text-extra-primary ff-poppins fw-bold mb-awe-24\">\n  {{titulo}}\n<\/h2>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "unselected",
+            "single_output": true
+        },
+        "condition": []
+    }
+]
