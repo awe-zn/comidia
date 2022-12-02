@@ -1,5 +1,6 @@
 <?php
 $theme = get_bloginfo('template_url');
+include 'constants.php';
 ?>
 
 <footer>
@@ -130,7 +131,7 @@ $theme = get_bloginfo('template_url');
       <p class="mb-1">Programa de Pós-Graduação em Estudos da Mídia</p>
       <p class="mb-1">campus Universitário Lago Nova - CEP 59072-970 - Natal, RN - Brasil</p>
       <p class="mb-1">
-        Telefone: 84 3342-2245 ramal 706 · <a href="mailto:ppgem@cchla.ufrn.br" class="text-white">ppgem@cchla.ufrn.br</a>
+        Telefone: <?= get_field('numero_de_telefone', $home_page_id); ?> ramal 706 · <a href="mailto:<?= get_field('e-mail', $home_page_id); ?>" class="text-white"><?= get_field('e-mail', $home_page_id); ?></a>
       </p>
     </div>
   </div>

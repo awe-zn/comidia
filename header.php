@@ -1,5 +1,6 @@
 <?php
 $theme = get_bloginfo('template_url');
+include 'constants.php';
 ?>
 
 <!DOCTYPE html>
@@ -45,19 +46,19 @@ $theme = get_bloginfo('template_url');
             <div class="w-100 d-none d-lg-block">
               <div class="d-flex justify-content-end fz-14">
                 <a href="mailto:ppgem@cchla.ufrn.br">
-                  ppgem@cchla.ufrn.br
+                  <?= get_field('e-mail', $home_page_id); ?>
                 </a>
                 <span class="px-2">
                   |
                 </span>
-                <a href="tel:8433422245">
-                  +55 84 3342-2245
+                <a href="tel:<?= get_field('numero_de_telefone', $home_page_id); ?>">
+                  <?= get_field('numero_de_telefone', $home_page_id); ?>
                 </a>
                 <div class="ps-4 d-flex gap-4">
-                  <a href="">
+                  <a href="<?= get_field('link_do_youtube', $home_page_id); ?>">
                     <img src="<?= $theme ?>/dist/image/svg/youtube-light.svg" alt="">
                   </a>
-                  <a href="">
+                  <a href="<?= get_field('link_do_instagram', $home_page_id); ?>">
                     <img src="<?= $theme ?>/dist/image/svg/instagram-light.svg" alt="">
                   </a>
                 </div>
@@ -108,16 +109,17 @@ $theme = get_bloginfo('template_url');
 
               <div class="d-flex flex-column gap-4 align-items-center">
                 <a href="mailto:ppgem@cchla.ufrn.br" class="text-link">
-                  ppgem@cchla.ufrn.br
+                  <?= get_field('e-mail', $home_page_id); ?>
                 </a>
-                <a href="tel:8433422245" class="text-link">
-                  +55 84 3342-2245
+                <a href="tel:<?= get_field('numero_de_telefone', $home_page_id); ?>" class="text-link">
+                  <?= get_field('numero_de_telefone', $home_page_id); ?>
+
                 </a>
                 <div class="d-flex gap-4">
-                  <a href="" class="text-link">
+                  <a href="<?= get_field('link_do_youtube', $home_page_id); ?>" class="text-link">
                     <img width="32" src="<?= $theme ?>/dist/image/svg/youtube.svg" alt="">
                   </a>
-                  <a href="" class="text-link">
+                  <a href="<?= get_field('link_do_instagram', $home_page_id); ?>" class="text-link">
                     <img width="32" src="<?= $theme ?>/dist/image/svg/instagram.svg" alt="">
                   </a>
                 </div>
