@@ -46,7 +46,7 @@ include 'constants.php';
         <?php
         $args = array(
           'post_type' => 'edital',
-          'posts_per_page' => '1',
+          'posts_per_page' => '15',
           'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
         );
         $the_query = new WP_Query($args);

@@ -2,6 +2,8 @@
 get_header();
 
 $theme = get_bloginfo('template_url');
+
+include 'constants.php';
 ?>
 
 <main class="py-awe-40 py-md-awe-80 bg-light-1">
@@ -68,12 +70,12 @@ $theme = get_bloginfo('template_url');
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
         <h3 class="text-primary-light fz-21 fz-md-28 fw-bold mb-awe-24">
-          A COMÍDIA tem foco voltado à sociedade
+          <?= get_field('titulo_sobre', $home_page_id); ?>
         </h3>
         <p class="fz-16 fz-md-21 text-black-2 lh-180 mb-awe-64">
-          O Programa de Pós-graduação em Estudo da Mídia formaliza sua intenção em desenvolver atividades acadêmicas de estudos e pesquisas por meio do que propõe a sua área de concentração, a comunicação midiática abordada no contexto de suas práticas sociais e na esfera da sua produção de sentido.
+          <?= get_field('resumo_sobre', $home_page_id); ?>
         </p>
-        <a href="" class="text-primary-light fz-16 fz-md-21 text-decoration-underline">
+        <a href="<?= get_permalink(get_page_by_path('programa')); ?>" class="text-primary-light fz-16 fz-md-21 text-decoration-underline">
           Quer saber mais?
         </a>
       </div>
@@ -116,228 +118,57 @@ $theme = get_bloginfo('template_url');
       EDITAIS
     </h2>
 
-    <div class="edital" data-edital="edital01">
-      <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
-        <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0">
-          <span class="fw-regular">
-            23/08/2021 |
-          </span>
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </h4>
-        <span class="edital__status text-nowrap order-0 order-md-1">
-          em andamento
-        </span>
-      </div>
-      <p class="fz-16 text-gray-1 m-0">
-        O Programa de Pós-Graduação em Estudos da Mídia – PPgEM comunica a abertura do Processo de Seleção para o nível de Doutorado em Estudos da Mídia, com ingresso em 2022.1.
-      </p>
-
-      <div class="edital__detalhes">
-        <div class="ps-md-awe-32 pt-awe-16 pt-md-awe-32">
-          <p class="fz-16 text-gray-1 fst-italic">
-            Arquivos publicados
+    <?php
+    $args = array(
+      'post_type' => 'edital',
+      'posts_per_page' => '3',
+      'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
+    );
+    $the_query = new WP_Query($args);
+    ?>
+    <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+        <div class="edital is-close is-finished" data-edital="edital03">
+          <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
+            <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0">
+              <span class="fw-regular">
+                <?php the_date('d/m/y'); ?> |
+              </span>
+              <?php the_title(); ?>
+            </h4>
+            <span class="edital__status text-nowrap order-0 order-md-1 ">
+              <?php
+              if (get_field('is_finished')) {
+                echo '<span style="color: #4F4F4F;">finalizado</span>';
+              } else {
+                echo '<span style="color: #27AE60;">em andamento</span>';
+              }
+              ?>
+            </span>
+          </div>
+          <p class="fz-16 text-gray-1 m-0">
+            <?php the_excerpt(); ?>
           </p>
 
-          <ul class="edital__arquivos d-flex flex-column gap-awe-8">
-            <li class="edital__arquivo is-finished">
-              01/09/2021 - Lista de aprovados na primeira fase
-            </li>
-            <li class="edital__arquivo">
-              01/09/2021 - Lista de aprovados na primeira fase
-            </li>
-            <li class="edital__arquivo">
-              01/09/2021 - Lista de aprovados na primeira fase
-            </li>
-          </ul>
+          <div class="d-flex justify-content-end mt-awe-8">
+            <a href="<?php echo get_permalink(); ?>" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
+              acessar página deste edital
+              <span>
+                <img src="<?php echo $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
+              </span>
+            </a>
+          </div>
         </div>
+    <?php endwhile;
+    else : endif; ?>
 
-        <a href="" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
-          acessar edital
-          <span>
-            <img src="<?= $theme ?>/dist/image/svg/external-link-2.svg" alt="">
-          </span>
-        </a>
-      </div>
 
-      <div class="d-flex justify-content-end">
-        <button onclick="handleEdital('edital01')">
-          <img src="<?= $theme ?>/dist/image/svg/edital-btn.svg" alt="">
-        </button>
-      </div>
-    </div>
     <div class="d-flex justify-content-end">
-      <a href="<?php echo get_post_type_archive_link('editais'); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
+      <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
         Acessar editais anteriores
       </a>
     </div>
     <div class="card-ppgem text-white fz-16 fz-sm-21 fz-md-24 fw-bold mt-awe-40 mt-md-awe-80">
       Fique pode dentro do que acontece no PPgEM
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<section class="py-awe-80 bg-white">
-  <div class="container px-awe-24 px-lg-0">
-    <div class="row gy-5">
-      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-3">
-        <div class="titulo__coluna-novidades ff-poppins fw-semi-bold fz-16 text-white text-uppercase d-flex justify-content-between px-awe-16 py-awe-18">
-          Novidades
-          <a href="" class="fw-light text-white">
-            Ver todas
-            <span class="fz-12">&#5171;&#5171;</span>
-          </a>
-        </div>
-        <a href="" class="text-black-3">
-          <p class="fz-16 fw-bold mb-2">
-            PPGEM PROMOVE AULA INAUGURAL DO SEMESTRE 2021.2
-          </p>
-          <p class="text-gray-1 fz-14 mb-0">
-            Publicado em: 08.09.2021
-          </p>
-          <p class="fz-16 fz-md-14 lh-140">
-            Coordenação do PPgEM convida a todos para a Aula Inaugural do PPgEM 2021.2, que ocorrerá no dia 09/08/2021 (segunda-feira), às 15h, no Canal do PPgEM no YouTube
-          </p>
-        </a>
-        <a href="" class="text-black-3">
-          <p class="fz-16 fw-bold mb-2">
-            RESULTADO DA SELEÇÃO PARA ALUNO ESPECIAL – PPGEM 2021.2
-          </p>
-          <p class="text-gray-1 fz-14 mb-0">
-            Publicado em: 05.08.2021
-          </p>
-          <p class="fz-16 fz-md-14 lh-140">
-            Os candidatos selecionados receberão um e-mail com o número de matrícula e deverão se matricular nas disciplinas pleiteadas.
-          </p>
-        </a>
-        <a href="" class="text-black-3">
-          <p class="fz-16 fw-bold mb-2">
-            EDITAL Nº 003/2021 – PPGEM – CREDENCIAMENTO DE DOCENTES DO PROGRAMA DE PÓS-GRADUAÇÃO EM ESTUDOS DA MÍDIA, PARA O QUADRIÊNIO 2021-2024 (RETIFICADO)
-          </p>
-          <p class="text-gray-1 fz-14 mb-0">
-            Publicado em: 03.08.2021
-          </p>
-          <p class="fz-16 fz-md-14 lh-140">
-            Edital de Credenciamento de Docentes do PPgEM, com a alteração do CRONOGRAMA e do item IV, constante no tópico “3 – DOS CRITÉRIOS DE CREDENCIAMENTO”, e alínea “e” do mesmo item.
-          </p>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-3">
-        <div class="titulo__coluna-publicacoes ff-poppins fw-semi-bold fz-16 text-white text-uppercase d-flex justify-content-between px-awe-16 py-awe-18">
-          Publicações
-          <a href="" class="fw-light text-white">
-            Ver todas
-            <span class="fz-12">&#5171;&#5171;</span>
-          </a>
-        </div>
-        <a href="" class="text-lowercase text-black-3 border-bottom pb-3">
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </a>
-        <a href="" class="text-lowercase text-black-3 border-bottom pb-3">
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </a>
-        <a href="" class="text-lowercase text-black-3 border-bottom pb-3">
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </a>
-        <a href="" class="text-lowercase text-black-3 border-bottom pb-3">
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </a>
-        <a href="" class="text-lowercase text-black-3">
-          EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O OUTORADO PPGEM 2022
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-3">
-        <div class="titulo__coluna-calendario ff-poppins fw-semi-bold fz-16 text-white text-uppercase d-flex justify-content-between px-awe-16 py-awe-18">
-          Calendário
-          <a href="" class="fw-light text-white">
-            Ver todas
-            <span class="fz-12">&#5171;&#5171;</span>
-          </a>
-        </div>
-        <a href="" class="d-flex border-bottom pb-3 text-decoration-none-hover">
-          <div class="px-4 d-inline-block text-center ">
-            <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0">
-              15
-            </p>
-            <p class="text-black-3 ff-poppins fz-21 fw-light m-0">
-              OUT
-            </p>
-          </div>
-          <div>
-            <p class="text-black-2 fz-16 fw-bold ff-open-sans m-0 text-decoration-underline-hover">
-              PPgEM promove edição 2021 de colóquio sobre histórias midiáticas no RN
-            </p>
-          </div>
-        </a>
-        <a href="" class="d-flex border-bottom pb-3 text-decoration-none-hover">
-          <div class="px-4 d-inline-block text-center ">
-            <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0">
-              17
-            </p>
-            <p class="text-black-3 ff-poppins fz-21 fw-light m-0">
-              NOV
-            </p>
-          </div>
-          <div>
-            <p class="text-black-2 fz-16 fw-bold ff-open-sans m-0 text-decoration-underline-hover">
-              PPgEM promove edição 2021 de colóquio sobre histórias midiáticas no RN
-            </p>
-          </div>
-        </a>
-        <a href="" class="d-flex border-bottom pb-3 text-decoration-none-hover">
-          <div class="px-4 d-inline-block text-center ">
-            <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0">
-              20
-            </p>
-            <p class="text-black-3 ff-poppins fz-21 fw-light m-0">
-              DEZ
-            </p>
-          </div>
-          <div>
-            <p class="text-black-2 fz-16 fw-bold ff-open-sans m-0 text-decoration-underline-hover">
-              PPgEM promove edição 2021 de colóquio sobre histórias midiáticas no RN
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-light-1 py-awe-80">
-  <div class="container px-awe-24 px-lg-0">
-    <div class="row gy-4 justify-content-center">
-      <div class="col row-cols-auto">
-        <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
-          <img src="<?= $theme ?>/dist/image/manual-do-discente.png" alt="">
-          Manual do discente
-        </a>
-      </div>
-      <div class="col">
-        <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
-          <img src="<?= $theme ?>/dist/image/documentos-e-modelos.png" alt="">
-          Documentos e modelos
-        </a>
-      </div>
-      <div class="col">
-        <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
-          <img src="<?= $theme ?>/dist/image/numeros-e-estatisticas.png" alt="">
-          Números e estatísticas
-        </a>
-      </div>
-      <div class="col">
-        <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
-          <img src="<?= $theme ?>/dist/image/repositorio-institucional.png" alt="">
-          Repositorio institucional
-        </a>
-      </div>
-      <div class="col">
-        <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
-          <img src="<?= $theme ?>/dist/image/grupos-de-pesquisa.png" alt="">
-          Grupos de pesquisa
-        </a>
-      </div>
     </div>
   </div>
 </section>
