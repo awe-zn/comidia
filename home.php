@@ -184,7 +184,7 @@ include 'constants.php';
       <?php
 
       $perguntas_query = new WP_Query(array(
-        'post_type' => 'perguntas-post',
+        'post_type' => 'perguntas',
         'posts_per_page' => 5,
       ));
 

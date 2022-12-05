@@ -18,7 +18,7 @@ $theme = get_bloginfo('template_url');
       <?php
 
       $perguntas_query = new WP_Query(array(
-        'post_type' => 'perguntas-post',
+        'post_type' => 'perguntas',
         'posts_per_page' => 9999,
       ));
 
