@@ -18,7 +18,7 @@ include 'constants.php';
           </li>
           <li class="breadcrumb-item">
             <a href="<?php echo home_url('/posts'); ?>" class="text-aco text-decoration-underline fz-16">
-              Notícias
+              Pesquisa
             </a>
           </li>
         </ol>
@@ -33,7 +33,7 @@ include 'constants.php';
     <div class="row justify-content-center">
       <div class="col-12 col-lg-11">
         <h1 class="border-bottom border-primary-light pb-awe-8 text-primary-light text-uppercase fw-bold fz-21 fz-md-28">
-          Notícias
+          Pesquisa
         </h1>
       </div>
       <div class="col-12 col-lg-11 row my-awe-40 p-0 gap-4 gap-md-0 justify-content-end">
@@ -43,7 +43,7 @@ include 'constants.php';
           </p>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-end">
-          <?php echo do_shortcode($noticias_search_form_shortcode); ?>
+          <?php echo do_shortcode($search_form_shortcode); ?>
         </div>
         <div class="col-12 my-awe-14">
           <p class="fz-16 ff-open-sans text-aco">
@@ -52,7 +52,7 @@ include 'constants.php';
         </div>
         <div class="col-12 d-flex align-items-end">
           <div class="d-flex flex-wrap gap-3">
-            <?php include(TEMPLATEPATH . "/inc/filtro-cat.php"); ?>
+            <?php include(TEMPLATEPATH . "/inc/filtro-taxonomies.php"); ?>
           </div>
         </div>
       </div>
