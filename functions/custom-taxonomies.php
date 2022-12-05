@@ -2,9 +2,11 @@
 
 function add_custom_taxonomies()
 {
-  register_taxonomy('categoria-edital', 'edital-post', array(
+  register_taxonomy('categoria-edital', ['editais'], array(
 
     'hierarchical' => true,
+    'show_admin_column' => true,
+    'show_in_rest' => true,
 
     'labels' => array(
       'name' => _x('Categorias', 'taxonomy general name'),
@@ -15,10 +17,12 @@ function add_custom_taxonomies()
     ),
 
     'rewrite' => array(
-      'slug' => 'categorias-edital',
+      'slug' => 'categoria-edital',
       'with_front' => false,
       'hierarchical' => true
     ),
   ));
+
+  register_taxonomy_for_object_type('categoria-edital', 'editais');
 }
 add_action('init', 'add_custom_taxonomies', 0);

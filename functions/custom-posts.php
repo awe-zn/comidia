@@ -1,6 +1,5 @@
 <?php
 
-
 function post_type_perguntas()
 {
   $labels = array(
@@ -47,10 +46,58 @@ function post_type_perguntas()
   register_post_type("perguntas", $args);
 }
 
+function post_type_editais()
+{
+  $labels = array(
+    "name" => "Editais",
+    "singular_name" => "Edital",
+    "add_new" => "Adicionar novo edital",
+    "add_new_item" => "Adicionar novo edital",
+    "edit_item" => "Editar edital",
+    "new_item" => "Nova edital",
+    "view_item" => "Ver edital",
+    "view_items" => "Ver editais",
+    "search_items" => "Buscar edital",
+    "not_found" => "Nenhum edital encontrado",
+    "not_found_in_trash" => "Nenhum edital na lixeira",
+    "all_items" => "Todos editais",
+    "uploaded_to_this_item" => "Carregado para esta pergunta",
+    "items_list" => "Lista de editais",
+    "item_updated" => "Edital atualizado"
+  );
+
+  $args = [
+    "labels" => $labels,
+    "description" => "Post type para gerenciamento de editais",
+    "public" => true,
+    'menu_position'     => 6,
+    "publicly_queryable" => true,
+    "show_ui" => true,
+    "show_in_rest" => true,
+    "rest_base" => "",
+    "rest_controller_class" => "WP_REST_Posts_Controller",
+    "has_archive" => true,
+    "show_in_menu" => true,
+    "show_in_nav_menus" => true,
+    "delete_with_user" => false,
+    "exclude_from_search" => false,
+    "capability_type" => "post",
+    "map_meta_cap" => true,
+    "hierarchical" => false,
+    "rewrite" => ["slug" => "editais", "with_front" => true],
+    "query_var" => true,
+    "supports" => ["title", "editor"],
+    "taxonomies" => ['categoria-edital'],
+  ];
+
+  register_post_type("editais", $args);
+}
+
 
 function create_posttypes()
 {
   post_type_perguntas();
+  post_type_editais();
 };
 
 function add_features()

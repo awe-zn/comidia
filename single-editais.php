@@ -48,41 +48,47 @@ $theme = get_bloginfo('template_url');
           Editais recentes
         </h2>
 
-        <div class="pt-awe-8">
+        <hr class=" border-bottom border-fumaca-light">
+
+        <div class="pt-awe-8 px-awe-8 pb-awe-16">
           <?php
           $args = array(
             'post_type' => 'edital',
             'posts_per_page' => '5',
           );
           $the_query = new WP_Query($args);
+
           ?>
+
           <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-              <a href="<?php echo get_permalink(); ?>" class="d-block text-decoration-none border-bottom border-fumaca-light pb-awe-24">
-                <a href="" class="d-block border-top border-neve-extra-dark py-awe-32 px-md-awe-16">
-                  <p class="fst-italic fz-16 text-prata-2 mb-0">
-                    publicado em
-                    <span class="text-prata">
-                      <?php the_date('d.M.y'); ?>,
-                    </span>
-                    status:
-                    <span>
-                      <?php
-                      if (get_field('is_finished')) {
-                        echo 'finalizado';
-                      } else {
-                        echo 'andamento';
-                      }
-                      ?>
-                    </span>
-                  </p>
-                  <p class="text-uppercase fw-bold text-black-2 fz-18">
-                    <?php the_title(); ?>
-                  </p>
-                </a>
+
+              <a href="<?php the_permalink(); ?>" class="d-block text-decoration-none py-awe-16">
+                <p class="fst-italic fz-16 text-prata-2 mb-0">
+                  publicado em
+                  <span class="text-prata">
+                    <?php the_date('d.M.y'); ?>,
+                  </span>
+                  status:
+                  <span>
+                    <?php
+                    if (get_field('is_finished')) {
+                      echo 'finalizado';
+                    } else {
+                      echo 'andamento';
+                    }
+                    ?>
+                  </span>
+                </p>
+                <p class="text-uppercase fw-bold text-black-2 fz-18 text-decoration-underline-hover">
+                  <?php the_title(); ?>
+                </p>
               </a>
+
+              <?php
+              $index = $index + 1;
+              ?>
           <?php endwhile;
           else : endif; ?>
-
         </div>
         <div class="border-top border-neve-extra-dark pt-awe-24">
           <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-extra-primary text-decoration-none d-inline-flex align-items-center">

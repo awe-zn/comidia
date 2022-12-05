@@ -37,15 +37,26 @@ include 'constants.php';
         </h1>
       </div>
       <div class="col-12 col-lg-11 row my-awe-40 p-0 gap-4 gap-md-0">
-        <div class="col-12 d-flex justify-content-end">
+        <div class="col-12">
+          <p>
+            filtre ou pesquise
+          </p>
+        </div>
+        <div class="col-12 col-md-8 d-flex align-items-end">
+          <div class="d-flex flex-wrap gap-3">
+            <?php include(TEMPLATEPATH . "/inc/filtro-cat-edital.php"); ?>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-end">
           <?php echo do_shortcode($selecao_search_form_shortcode); ?>
         </div>
 
       </div>
       <div class="col-12 col-lg-11 d-flex flex-column gap-awe-24">
+
         <?php
         $args = array(
-          'post_type' => 'edital',
+          'post_type' => 'editais',
           'posts_per_page' => '15',
           'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
         );
@@ -54,7 +65,7 @@ include 'constants.php';
         <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
             <div class="edital is-close is-finished" data-edital="edital03">
               <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
-                <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0">
+                <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 <?php if (get_field('is_finished')) {echo 'text-black-2';} else {echo 'text-primary-light';}?>">
                   <span class="fw-regular">
                     <?php the_date('d/m/y'); ?> |
                   </span>
