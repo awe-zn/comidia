@@ -38,12 +38,12 @@ function post_type_perguntas()
     "capability_type" => "post",
     "map_meta_cap" => true,
     "hierarchical" => false,
-    "rewrite" => ["slug" => "perguntas", "with_front" => true],
+    "rewrite" => ["slug" => "perguntas_post", "with_front" => true],
     "query_var" => true,
     "supports" => ["title", "excerpt", "editor", "thumbnail"],
   ];
 
-  register_post_type("perguntas", $args);
+  register_post_type("perguntas_post", $args);
 }
 
 function post_type_editais()
