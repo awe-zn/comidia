@@ -24,6 +24,12 @@ function the_field_cmb2($key, $page_id)
   echo get_field_cmb2($key, $page_id);
 }
 
+function my_excerpt_length($length)
+{
+  return 25;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+
 
 include(TEMPLATEPATH . '/functions/custom-taxonomies.php');
 include(TEMPLATEPATH . '/functions/custom-posts.php');
