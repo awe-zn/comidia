@@ -31,7 +31,7 @@ include 'constants.php';
       <div class="background">
         <img src="<?= $theme ?>/dist/image/svg/mask-group.svg" class="img-fluid h-100" alt="">
       </div>
-      <nav class="navbar navbar-expand-lg p-0">
+      <nav class="navbar navbar-expand-lg px-awe-24 p-lg-0 ">
         <div class="container-fluid container-lg px-0">
           <div class="w-100 d-flex justify-content-between">
             <a class="navbar-brand py-awe-16" href="<?php echo home_url(); ?>">
