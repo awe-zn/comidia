@@ -1,12 +1,11 @@
 <?php
-add_action('cmb2_admin_init', 'crd_repeater_metaboxes');
 
 function crd_repeater_metaboxes()
 {
   $cmb = new_cmb2_box(array(
     'id' => 'edital_arquivos',
     'title' => 'Arquivos',
-    'object_types' => array('edital',),
+    'object_types' => array('editais',),
     'context' => 'normal',
     'priority' => 'high',
     'show_names' => true,
@@ -18,9 +17,19 @@ function crd_repeater_metaboxes()
     'repeatable' => true,
     'options' => array(
       'group_title' => 'Arquivo {#}',
-      'closed'        => true,
+      'add_button'        => __('Adicionar arquivo', 'cmb2'),
+      'remove_button'     => __('Remover arquivo', 'cmb2'),
       'sortable'      => true,
+      'closed'         => true,
+      'remove_confirm' => esc_html__('Você realmente deseja remover este arquivo?', 'cmb2')
     ),
+  ));
+
+  $cmb->add_group_field($arquivos, array(
+    'name' => 'O arquivo já foi publicado?',
+    'desc' => 'Se o arquivo já foi publicado, marque a caixa.',
+    'id'   => 'foi_publicado',
+    'type' => 'checkbox',
   ));
 
   $cmb->add_group_field($arquivos, array(
@@ -50,3 +59,5 @@ function crd_repeater_metaboxes()
     ),
   ));
 }
+
+add_action('cmb2_admin_init', 'crd_repeater_metaboxes');
