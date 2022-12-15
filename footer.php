@@ -7,7 +7,44 @@ include 'constants.php';
   <div class="pt-awe-80 pb-awe-48 bg-primary-light">
     <div class="container px-awe-24">
       <div class="row">
-        <div class="col-12 col-sm-6 col-lg-3 border-dashed">
+        <style>
+          .menu-footer {
+            display: flex;
+            list-style: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            gap: 32px;
+            flex-wrap: wrap;
+          }
+
+          .menu-footer ul {
+            font-weight: normal;
+            text-transform: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+          }
+
+          .menu-footer a {
+            color: white;
+          }
+        </style>
+        <?php
+        wp_nav_menu(
+          array(
+            'theme_location' => 'menu-footer',
+            'menu_class' => 'menu-footer',
+            'container' => 'div',
+            'container_class' => 'col-12',
+          )
+        );
+
+        ?>
+        <!-- <div class="col-12 col-sm-6 col-lg-3 border-dashed">
           <div class="d-flex flex-column gap-1">
             <h5 class="text-white fz-18 text-uppercase fw-bold">
               INSTITUCIONAL
@@ -33,64 +70,6 @@ include 'constants.php';
             <a href="" class="text-white fz-16 fz-md-14">
               Estatísticas
             </a>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 border-dashed ps-sm-4 mt-awe-32 mt-sm-0">
-          <div class="d-flex flex-column gap-1 mb-4">
-            <h5 class="text-white fz-18 text-uppercase fw-bold">
-              ACADÊMICO
-            </h5>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Estrutura curricular
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Disciplinas
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Cronograma do Semestre
-            </a>
-          </div>
-          <div class="d-flex flex-column gap-1">
-            <h5 class="text-white fz-18 text-uppercase fw-bold">
-              PRODUÇÃO
-            </h5>
-            <?php
-            $args = array(
-              'post_type' => 'producao_post',
-              'posts_per_page' => '10',
-              'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
-            );
-            $the_query = new WP_Query($args);
-            ?>
-            <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                <a href="<?php echo home_url('/producao'); ?>/#<?php the_title(); ?>" class="text-white fz-16 fz-md-14">
-                  <?php the_title(); ?>
-                </a>
-            <?php endwhile;
-            else : endif; ?>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 border-dashed ps-lg-4 mt-awe-32 mt-lg-0">
-          <div class="d-flex flex-column gap-1">
-            <h5 class="text-white fz-18 text-uppercase fw-bold">
-              Documentos
-            </h5>
-            <?php
-            $args = array(
-              'post_type' => 'documento_post',
-              'posts_per_page' => '10',
-              'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
-            );
-            $the_query = new WP_Query($args);
-            ?>
-            <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                <a href="<?php echo home_url('/documentos'); ?>/#<?php the_title(); ?>" class="text-white fz-16 fz-md-14">
-                  <?php the_title(); ?>
-                </a>
-            <?php endwhile;
-            else : endif; ?>
           </div>
         </div>
 
@@ -120,7 +99,7 @@ include 'constants.php';
               Outros documentos
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
