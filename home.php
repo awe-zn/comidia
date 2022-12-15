@@ -112,29 +112,37 @@ include 'constants.php';
   </div>
 </section>
 
-<section class="py-awe-40 py-md-awe-80 bg-light-1">
-  <div class="container px-awe-24 px-lg-0 d-flex flex-column gap-awe-24">
-    <h2 class="text-uppercase fz-21 fz-md-28 text-primary-light fw-bold">
-      EDITAIS
-    </h2>
+<?php
+$edital_args = array(
+  'post_type' => 'editais',
+  'posts_per_page' => '3',
+);
+$editais_query = new WP_Query($edital_args);
 
-    <?php
-    $args = array(
-      'post_type' => 'edital',
-      'posts_per_page' => '3',
-      'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
-    );
-    $the_query = new WP_Query($args);
-    ?>
-    <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-        <div class="edital is-close is-finished" data-edital="edital03">
+$edital_index = 0;
+
+if ($editais_query->have_posts()) { ?>
+
+  <section class="py-awe-40 py-md-awe-80 bg-light-1">
+    <div class="container px-awe-24 px-lg-0 d-flex flex-column gap-awe-24">
+      <h2 class="text-uppercase fz-21 fz-md-28 text-primary-light fw-bold">
+        EDITAIS
+      </h2>
+
+      <?php
+      while ($editais_query->have_posts()) {
+        $editais_query->the_post(); ?>
+
+        <div class="edital <?php echo $edital_index != 0 ? 'is-close' : ''; ?>" data-edital="edital<?= get_the_id(); ?>">
           <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
-            <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0">
-              <span class="fw-regular">
-                <?php the_date('d/m/y'); ?> |
-              </span>
-              <?php the_title(); ?>
-            </h4>
+            <a href="<?= get_permalink(); ?>">
+              <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-uppercase">
+                <span class="fw-regular">
+                  <?= get_the_date('d/m/y'); ?> |
+                </span>
+                <?php the_title(); ?>
+              </h4>
+            </a>
             <span class="edital__status text-nowrap order-0 order-md-1 ">
               <?php
               if (get_field('is_finished')) {
@@ -149,52 +157,99 @@ include 'constants.php';
             <?php the_excerpt(); ?>
           </p>
 
-          <div class="d-flex justify-content-end mt-awe-8">
-            <a href="<?php echo get_permalink(); ?>" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
-              acessar página deste edital
-              <span>
-                <img src="<?php echo $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
-              </span>
-            </a>
+          <?php
+
+          $arquivos = get_post_meta(get_the_ID(), 'arquivos', true);
+
+          if ($arquivos) {
+          ?>
+            <div class="edital__detalhes">
+              <div class="ps-md-awe-32 pt-awe-16 pt-md-awe-32">
+                <p class="fz-16 text-gray-1 fst-italic">
+                  Arquivos publicados
+                </p>
+
+                <ul class="edital__arquivos d-flex flex-column gap-awe-8">
+
+                  <?php
+                  foreach ($arquivos as $key => $arquivo) {
+                  ?>
+                    <li class="edital__arquivo is-finished <?php
+                                                            if (!$arquivo['foi_publicado']) {
+                                                              echo 'fw-regular';
+                                                            }
+                                                            ?>">
+                      <?= $arquivo['titulo']; ?>
+                    </li>
+                  <?php
+                  }
+                  ?>
+
+                </ul>
+
+              </div>
+
+              <a href="" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
+                acessar edital
+                <span>
+                  <img src="<?= $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
+                </span>
+              </a>
+            </div>
+          <?php
+          }
+          ?>
+
+          <div class="d-flex justify-content-end">
+            <button onclick="handleEdital('edital<?= get_the_id(); ?>')">
+              <img src="<?= $theme; ?>/dist/image/svg/edital-btn.svg" alt="">
+            </button>
           </div>
         </div>
-    <?php endwhile;
-    else : endif; ?>
-
-
-    <div class="d-flex justify-content-end">
-      <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
-        Acessar editais anteriores
-      </a>
-    </div>
-    <div class="card-ppgem text-white fz-16 fz-sm-21 fz-md-24 fw-bold mt-awe-40 mt-md-awe-80">
-      Fique pode dentro do que acontece no PPgEM
-    </div>
-  </div>
-</section>
-
-<section class="py-awe-40 py-md-awe-80">
-  <div class="container px-awe-24 px-lg-0 d-flex flex-column gap-awe-24">
-    <h2 class="text-uppercase fz-21 fz-md-28 text-primary-light fw-bold">
-      Perguntas frequentes
-    </h2>
-
-    <div class="accordion d-flex flex-column gap-4" id="accordionPerguntasFrequentes">
-
       <?php
+        $edital_index = $edital_index + 1;
+      } ?>
 
-      $perguntas_query = new WP_Query(array(
-        'post_type' => 'perguntas',
-        'posts_per_page' => 5,
-      ));
 
-      if ($perguntas_query->have_posts()) {
+      <div class="d-flex justify-content-end">
+        <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
+          Acessar editais anteriores
+        </a>
+      </div>
+    </div>
+  </section>
+
+<?php } ?>
+
+<div class="container px-awe-24 px-lg-0">
+  <div class="card-ppgem text-white fz-16 fz-sm-21 fz-md-24 fw-bold mt-awe-40 mt-md-awe-80">
+    Fique pode dentro do que acontece no PPgEM
+  </div>
+</div>
+
+<?php
+
+$perguntas_query = new WP_Query(array(
+  'post_type' => 'perguntas_post',
+  'posts_per_page' => 5,
+));
+
+if ($perguntas_query->have_posts()) { ?>
+
+  <section class="py-awe-40 py-md-awe-80">
+    <div class="container px-awe-24 px-lg-0 d-flex flex-column gap-awe-24">
+      <h2 class="text-uppercase fz-21 fz-md-28 text-primary-light fw-bold">
+        Perguntas frequentes
+      </h2>
+
+      <div class="accordion d-flex flex-column gap-4" id="accordionPerguntasFrequentes">
+        <?php
         while ($perguntas_query->have_posts()) {
-          $perguntas_query->the_post();
-      ?>
+          $perguntas_query->the_post(); ?>
+
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading<?php echo get_the_ID(); ?>">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_the_ID(); ?>" aria-expanded="true" aria-controls="collapse<?php echo get_the_ID(); ?>">
+            <h2 class="accordion-header" id="heading<?= get_the_ID(); ?>">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_the_ID(); ?>" aria-expanded="true" aria-controls="collapse<?php echo get_the_ID(); ?>">
                 <span class="fz-21">
                   <?php the_title(); ?>
                 </span>
@@ -206,18 +261,17 @@ include 'constants.php';
               </div>
             </div>
           </div>
-      <?php
-        }
-      }
-      ?>
-    </div>
+        <?php
+        } ?>
+      </div>
 
-    <div class="d-flex justify-content-end">
-      <a href="<?php echo get_permalink(get_page_by_path('perguntas')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
-        Ver todas as perguntas
-      </a>
+      <div class="d-flex justify-content-end">
+        <a href="<?php echo get_permalink(get_page_by_path('perguntas')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
+          Ver todas as perguntas
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+<?php } ?>
 
 <?php get_footer(); ?>

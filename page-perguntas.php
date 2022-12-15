@@ -18,17 +18,19 @@ $theme = get_bloginfo('template_url');
       <?php
 
       $perguntas_query = new WP_Query(array(
-        'post_type' => 'perguntas',
-        'posts_per_page' => 9999,
+        'post_type' => 'perguntas_post',
+        'posts_per_page' => 5,
       ));
 
-      if ($perguntas_query->have_posts()) {
+      if ($perguntas_query->have_posts()) { ?>
+
+        <?php
         while ($perguntas_query->have_posts()) {
-          $perguntas_query->the_post();
-      ?>
+          $perguntas_query->the_post(); ?>
+
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading<?php echo get_the_ID(); ?>">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_the_ID(); ?>" aria-expanded="false" aria-controls="collapse<?php echo get_the_ID(); ?>">
+            <h2 class="accordion-header" id="heading<?= get_the_ID(); ?>">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_the_ID(); ?>" aria-expanded="true" aria-controls="collapse<?php echo get_the_ID(); ?>">
                 <span class="fz-21">
                   <?php the_title(); ?>
                 </span>
@@ -40,10 +42,10 @@ $theme = get_bloginfo('template_url');
               </div>
             </div>
           </div>
-      <?php
-        }
-      }
-      ?>
+        <?php
+        } ?>
+
+      <?php } ?>
     </div>
   </div>
 </main>
