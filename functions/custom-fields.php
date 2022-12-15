@@ -157,6 +157,47 @@ function crd_repeater_metaboxes()
   }
 
   add_home_atalhos_repeater();
+
+  function add_header_links_repeater()
+  {
+    $cmb = new_cmb2_box(array(
+      'id' => 'header_links',
+      'title' => 'Links do cabeçalho',
+      'object_types' => array('page'),
+      'show_on'      => array('key' => 'id', 'value' => 130),
+      'context' => 'normal',
+      'priority' => 'high',
+      'show_names' => true,
+    ));
+
+    $header_links = $cmb->add_field(array(
+      'id' => 'header_links_repeater',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($header_links, array(
+      'name' => 'Título',
+      'id'   => 'header_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($header_links, array(
+      'name' => 'Url',
+      'id'   => 'header_link_url',
+      'type' => 'text_url',
+    ));
+  }
+
+  add_header_links_repeater();
 }
 
 add_action('cmb2_admin_init', 'crd_repeater_metaboxes');

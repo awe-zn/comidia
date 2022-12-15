@@ -65,44 +65,44 @@ include 'constants.php';
               </div>
               <hr class="divider">
               <div class="d-flex justify-content-end fz-14 text-uppercase  gap-2">
-                <a href="<?= get_permalink(get_page_by_path('programa')); ?>" class="text-nowrap">
-                  O PROGRAMA
-                </a>
-                |
-                <a href="<?= get_permalink(get_page_by_path('academico')); ?>">
-                  ACADÊMICO
-                </a>
-                |
-                <a href="<?= get_permalink(get_page_by_path('selecao')); ?>">
-                  SELEÇÃO
-                </a>
-                |
-                <a href="<?= get_permalink(get_page_by_path('producao')); ?>">
-                  PRODUÇÃO
-                </a>
-                |
-                <a href="<?= get_permalink(get_page_by_path('documentos')); ?>">
-                  DOCUMENTOS
-                </a>
+                <?php
+
+                $header_links = get_post_meta($home_page_id, 'header_links_repeater', true);
+
+                $header_links_length = sizeof($header_links);
+
+                if ($header_links) {
+                  foreach ($header_links as $key => $header_link) {
+                ?>
+                    <a href="<?= $header_link['header_link_url']; ?>" class="text-nowrap">
+                      <?= $header_link['header_link_titulo']; ?>
+                    </a>
+                    <?php echo $key != $header_links_length - 1 ? '|' : ''; ?>
+
+                <?php
+                  }
+                }
+                ?>
               </div>
             </div>
             <div class="w-100 py-5 d-flex flex-column d-lg-none">
               <div class="d-flex flex-column text-center gap-4">
-                <a href="<?= get_permalink(get_page_by_path('programa')); ?>" class="text-link">
-                  O PROGRAMA
-                </a>
-                <a href="<?= get_permalink(get_page_by_path('academico')); ?>" class="text-link">
-                  ACADÊMICO
-                </a>
-                <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-link">
-                  SELEÇÃO
-                </a>
-                <a href="<?= get_permalink(get_page_by_path('producao')); ?>" class="text-link">
-                  PRODUÇÃO
-                </a>
-                <a href="<?= get_permalink(get_page_by_path('documentos')); ?>" class="text-link">
-                  DOCUMENTOS
-                </a>
+                <?php
+
+                $header_links = get_post_meta($home_page_id, 'header_links_repeater', true);
+
+                $header_links_length = sizeof($header_links);
+
+                if ($header_links) {
+                  foreach ($header_links as $key => $header_link) {
+                ?>
+                    <a href="<?= $header_link['header_link_url']; ?>" class="text-nowrap">
+                      <?= $header_link['header_link_titulo']; ?>
+                    </a>
+                <?php
+                  }
+                }
+                ?>
               </div>
 
               <hr>
