@@ -410,7 +410,7 @@ if ($perguntas_query->have_posts()) { ?>
       </div>
 
       <div class="d-flex justify-content-end">
-        <a href="<?php echo get_permalink(get_page_by_path('perguntas')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
+        <a href="<?= get_permalink(get_page_by_path('perguntas-page')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
           Ver todas as perguntas
         </a>
       </div>
