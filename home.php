@@ -23,7 +23,7 @@ include 'constants.php';
       ?>
           <div class="col-12 col-lg-9 col-xl-7">
             <a href="<?php echo get_permalink(); ?>" class="card-noticia__destaque bg-white">
-              <img src="<?php the_post_thumbnail(); ?>" alt="" class="img-fluid">
+              <?php the_post_thumbnail(); ?>
               <div class="background-filter"></div>
               <div class="card-noticia__content fz-21">
                 <p>
@@ -79,35 +79,31 @@ include 'constants.php';
           Quer saber mais?
         </a>
       </div>
-      <div class="col-12 mt-awe-40 mt-md-awe-80">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-5">
-          <div class="col mb-awe-24">
-            <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
-              COORDENAÇÃO
-            </a>
-          </div>
-          <div class="col mb-awe-24">
-            <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
-              SECRETARIA
-            </a>
-          </div>
-          <div class="col mb-awe-24">
-            <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
-              DOCENTES
-            </a>
-          </div>
-          <div class="col mb-awe-24">
-            <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
-              ALUNOS
-            </a>
-          </div>
-          <div class="col mb-awe-24">
-            <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
-              LINHAS DE PESQUISA
-            </a>
+      <?php
+
+      $links_uteis = get_post_meta($home_page_id, 'links_uteis', true);
+
+      if ($links_uteis) {
+      ?>
+        <div class="col-12 mt-awe-40 mt-md-awe-80">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-5">
+            <?php
+            foreach ($links_uteis as $key => $link_util) {
+            ?>
+              <div class="col mb-awe-24">
+                <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
+                  <?= $link_util['link_titulo'] ?>
+                </a>
+              </div>
+            <?php
+            }
+            ?>
           </div>
         </div>
-      </div>
+      <?php
+      }
+      ?>
+
     </div>
   </div>
 </section>
@@ -221,11 +217,45 @@ if ($editais_query->have_posts()) { ?>
 
 <?php } ?>
 
-<div class="container px-awe-24 px-lg-0">
+<div class="container px-awe-24 px-lg-0 pb-awe-48">
   <div class="card-ppgem text-white fz-16 fz-sm-21 fz-md-24 fw-bold mt-awe-40 mt-md-awe-80">
     Fique pode dentro do que acontece no PPgEM
   </div>
 </div>
+
+<hr class="divider">
+
+<div class="bg-white py-awe-64">
+
+</div>
+
+<?php
+
+$atalhos = get_post_meta($home_page_id, 'atalhos_home', true);
+
+if ($atalhos) {
+?>
+  <section class="bg-light-2 py-awe-80">
+    <div class="container px-awe-24 px-lg-0">
+      <div class="row row-cols-auto gy-4 justify-content-center">
+        <?php
+        foreach ($atalhos as $key => $atalho) {
+        ?>
+          <div class="col">
+            <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
+              <img src="<?= $atalho['icon']; ?>" alt="">
+              <?= $atalho['atalho_titulo']; ?>
+            </a>
+          </div>
+        <?php
+        }
+        ?>
+      </div>
+    </div>
+  </section>
+<?php
+}
+?>
 
 <?php
 
