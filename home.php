@@ -91,8 +91,8 @@ include 'constants.php';
             foreach ($links_uteis as $key => $link_util) {
             ?>
               <div class="col mb-awe-24">
-                <a href="" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
-                  <?= $link_util['link_titulo'] ?>
+                <a href="<?= $link_util['link_url']; ?>" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
+                  <?= $link_util['link_titulo']; ?>
                 </a>
               </div>
             <?php
@@ -356,7 +356,7 @@ if ($atalhos) {
         foreach ($atalhos as $key => $atalho) {
         ?>
           <div class="col">
-            <a href="" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
+            <a href="<?= $atalho['atalho_url']; ?>" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
               <img src="<?= $atalho['icon']; ?>" alt="">
               <?= $atalho['atalho_titulo']; ?>
             </a>
