@@ -225,9 +225,123 @@ if ($editais_query->have_posts()) { ?>
 
 <hr class="divider">
 
-<div class="bg-white py-awe-64">
+<style>
+  .titulo__coluna-novidades {
+    background-color: #3ba8dc;
+    position: relative;
+    background-image: url(<?= $theme; ?>/dist/image/svg/mask-group-novidades.svg);
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-size: contain;
+    border-radius: 2.6839px;
+  }
 
-</div>
+  .titulo__coluna-calendario {
+    background-color: #91dc3b;
+    position: relative;
+    background-image: url(<?= $theme; ?>/dist/image/svg/mask-group-calendario.svg);
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-size: contain;
+    border-radius: 2.6839px;
+  }
+</style>
+
+<section class="py-awe-80 bg-white">
+  <div class="container px-awe-24 px-lg-0">
+    <div class="row gy-5">
+      <?php
+      $post_query = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => 6,
+        'cat' => get_cat_ID('novidades'),
+      ));
+
+      if ($post_query->have_posts()) {
+      ?>
+        <div class="col-12 col-lg-8 d-flex flex-column gap-3">
+          <div class="titulo__coluna-novidades ff-poppins fw-semi-bold fz-16 text-white text-uppercase d-flex justify-content-between px-awe-16 py-awe-18">
+            Novidades
+            <a href="<?= get_term_link(get_cat_ID('novidades')); ?>" class="fw-light text-white">
+              Ver todas
+              <span class="fz-12">&#5171;&#5171;</span>
+            </a>
+          </div>
+          <div class="row">
+            <?php
+            while ($post_query->have_posts()) {
+              $post_query->the_post();
+            ?>
+              <div class="col-12 col-md-6 py-awe-8">
+                <a href="" class="text-black-3">
+                  <p class="fz-16 fw-bold mb-2">
+                    <?php the_title(); ?>
+                  </p>
+                  <p class="text-gray-1 fz-14 mb-0">
+                    Publicado em: <?= get_the_date('d.m.y'); ?>
+                  </p>
+                  <p class="fz-16 fz-md-14 lh-140">
+                    <?php the_excerpt(); ?>
+                  </p>
+                </a>
+              </div>
+            <?php
+            }
+
+            ?>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
+      <?php
+      $post_query = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => 6,
+        'cat' => get_cat_ID('calendario'),
+      ));
+
+      if ($post_query->have_posts()) {
+      ?>
+        <div class="col-12 col-md-12 col-lg-4 d-flex flex-column gap-3">
+          <div class="titulo__coluna-calendario ff-poppins fw-semi-bold fz-16 text-white text-uppercase d-flex justify-content-between px-awe-16 py-awe-18">
+            Calendário
+            <a href="<?= get_term_link(get_cat_ID('calendario')); ?>" class="fw-light text-white">
+              Ver todas
+              <span class="fz-12">&#5171;&#5171;</span>
+            </a>
+          </div>
+          <?php
+          while ($post_query->have_posts()) {
+            $post_query->the_post();
+          ?>
+            <a href="" class="d-flex border-bottom pb-3 text-decoration-none-hover">
+              <div class="px-4 d-inline-block text-center ">
+                <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0">
+                  <?= get_the_date('d'); ?>
+                </p>
+                <p class="text-black-3 ff-poppins fz-21 fw-light m-0 text-uppercase">
+                  DEZ
+                </p>
+              </div>
+              <div>
+                <p class="text-black-2 fz-16 fw-bold ff-open-sans m-0 text-decoration-underline-hover">
+                  <?php the_title(); ?>
+                </p>
+              </div>
+            </a>
+          <?php
+          }
+
+          ?>
+        </div>
+      <?php
+      }
+      ?>
+
+    </div>
+  </div>
+</section>
 
 <?php
 
