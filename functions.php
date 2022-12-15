@@ -28,3 +28,4 @@ function the_field_cmb2($key, $page_id)
 include(TEMPLATEPATH . '/functions/custom-taxonomies.php');
 include(TEMPLATEPATH . '/functions/custom-posts.php');
 include(TEMPLATEPATH . '/functions/custom-fields.php');
+include(TEMPLATEPATH . '/functions/custom-menu.php');
