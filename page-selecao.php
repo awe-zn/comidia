@@ -7,6 +7,12 @@ $theme = get_bloginfo('template_url');
 include 'constants.php';
 ?>
 
+<style>
+  body {
+    background: #fafafa;
+  }
+</style>
+
 <!--Navegação breadcrumb-->
 <div class="container px-awe-24 px-lg-0 pt-awe-32 pt-md-awe-48 pb-awe-16">
   <div class="row justify-content-center">
@@ -52,51 +58,140 @@ include 'constants.php';
         </div>
 
       </div>
-      <div class="col-12 col-lg-11 d-flex flex-column gap-awe-24">
+      <div class="col-12 col-lg-11 d-flex flex-column gap-awe-24 mt-awe-40">
 
         <?php
-        $args = array(
+
+        $edital_args = array(
           'post_type' => 'editais',
           'posts_per_page' => '15',
-          'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
+          'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
         );
-        $the_query = new WP_Query($args);
-        ?>
-        <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <div class="edital is-close is-finished" data-edital="edital03">
-              <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
-                <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 <?php if (get_field('is_finished')) {echo 'text-black-2';} else {echo 'text-primary-light';}?>">
-                  <span class="fw-regular">
-                    <?php the_date('d/m/y'); ?> |
-                  </span>
-                  <?php the_title(); ?>
-                </h4>
-                <span class="edital__status text-nowrap order-0 order-md-1 ">
-                  <?php
-                  if (get_field('is_finished')) {
-                    echo '<span style="color: #4F4F4F;">finalizado</span>';
-                  } else {
-                    echo '<span style="color: #27AE60;">em andamento</span>';
-                  }
-                  ?>
-                </span>
-              </div>
-              <p class="fz-16 text-gray-1 m-0">
-                <?php the_excerpt(); ?>
-              </p>
 
-              <div class="d-flex justify-content-end mt-awe-8">
-                <a href="<?php echo get_permalink(); ?>" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
-                  acessar página deste edital
-                  <span>
-                    <img src="<?php echo $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
+        $editais_query = new WP_Query($edital_args);
+        $index = 0;
+
+        if ($editais_query->have_posts()) { ?>
+
+          <?php
+          while ($editais_query->have_posts()) {
+            $editais_query->the_post();
+
+            if (get_field('is_finished')) { ?>
+
+              <div class="edital is-close is-finished" data-edital="edital<?= get_the_ID(); ?>">
+                <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
+                  <a href="<?= get_permalink(); ?>">
+                    <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-uppercase text-black-2">
+                      <span class=" fw-regular">
+                        <?= get_the_date('d/m/y'); ?> |
+                      </span>
+                      <?php the_title(); ?>
+                    </h4>
+                  </a>
+                  <span class="edital__status text-nowrap order-0 order-md-1 ">
+                    <span style="color: #4F4F4F;">finalizado</span>
                   </span>
-                </a>
+                </div>
+                <p class="fz-16 text-gray-1 m-0">
+                  <?php the_excerpt(); ?>
+                </p>
+
+                <div class="d-flex justify-content-end mt-awe-8">
+                  <a href="<?php echo get_permalink(); ?>" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
+                    acessar página deste edital
+                    <span>
+                      <img src="<?php echo $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
-        <?php endwhile;
-        else : endif; ?>
+            <?php
+            } else { ?>
+
+              <div class="edital <?php echo $index != 0 ? 'is-close' : ''; ?>" data-edital="edital<?= get_the_id(); ?>">
+                <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
+                  <a href="<?= get_permalink(); ?>">
+                    <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-uppercase">
+                      <span class="fw-regular">
+                        <?= get_the_date('d/m/y'); ?> |
+                      </span>
+                      <?php the_title(); ?>
+                    </h4>
+                  </a>
+                  <span class="edital__status text-nowrap order-0 order-md-1 ">
+                    <span style="color: #27AE60;">em andamento</span>
+                  </span>
+                </div>
+                <p class="fz-16 text-gray-1 m-0">
+                  <?php the_excerpt(); ?>
+                </p>
+
+                <?php
+
+                $arquivos = get_post_meta(get_the_ID(), 'arquivos', true);
+
+                if ($arquivos) {
+                ?>
+                  <div class="edital__detalhes">
+                    <div class="ps-md-awe-32 pt-awe-16 pt-md-awe-32">
+                      <p class="fz-16 text-gray-1 fst-italic">
+                        Arquivos publicados
+                      </p>
+
+                      <ul class="edital__arquivos d-flex flex-column gap-awe-8">
+                        <?php
+                        foreach ($arquivos as $key => $arquivo) {
+                        ?>
+                          <li class="edital__arquivo is-finished <?php if (!$arquivo['foi_publicado']) {
+                                                                    echo 'fw-regular';
+                                                                  } ?>">
+                            <?= $arquivo['titulo']; ?>
+                          </li>
+                        <?php
+                        }
+                        ?>
+                      </ul>
+                    </div>
+
+                    <a href="" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
+                      acessar edital
+                      <span>
+                        <img src="<?= $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
+                      </span>
+                    </a>
+                  </div>
+                <?php
+                }
+                ?>
+
+                <div class="d-flex justify-content-end">
+                  <button onclick="handleEdital('edital<?= get_the_id(); ?>')">
+                    <img src="<?= $theme; ?>/dist/image/svg/edital-btn.svg" alt="">
+                  </button>
+                </div>
+              </div>
+
+          <?php
+            }
+            $index = $index + 1;
+          } ?>
+
+          <div class="d-flex justify-content-end">
+            <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
+              Acessar editais anteriores
+            </a>
+          </div>
+
+
+
+
+        <?php } else { ?>
+          <h1>Ainda não há editais por aqui</h1>
+        <?php } ?>
+
       </div>
+
       <div class="col-12 col-lg-11 d-flex justify-content-center mt-awe-80 mt-md-awe-104">
         <nav aria-label="...">
           <div class="pagination d-flex gap-awe-8 align-items-end">
@@ -131,7 +226,7 @@ include 'constants.php';
               'base' => str_replace(999999999, '%#%', get_pagenum_link(999999999)),
               'format' => '?paged=%#%',
               'current' => max(1, get_query_var('paged')),
-              'total' => $the_query->max_num_pages,
+              'total' => $editais_query->max_num_pages,
               'prev_next' => false,
               'show_all' => false,
               'mid_size' => 2,

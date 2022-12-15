@@ -43,6 +43,45 @@ $theme = get_bloginfo('template_url');
           </p>
         </div>
       </div>
+
+      <?php
+
+      $arquivos = get_post_meta(get_the_ID(), 'arquivos', true);
+
+      if ($arquivos) {
+      ?>
+        <div class="col-12 col-md-10 col-lg-8 pt-awe-40">
+          <p class="text-extra-primary fz-18">
+            Arquivos publicados
+          </p>
+          <div class="d-flex flex-column gap-3 mt-awe-16">
+            <?php
+            foreach ($arquivos as $key => $arquivo) {
+            ?>
+              <a href="<?= $arquivo['url']; ?>" class="text-black-2 text-decoration-none" target="_blank">
+                <span class="me-2">
+                  <?php
+                  if ($arquivo['tipo'] == 'standard') {
+                    echo '<img src="' . $theme . '/dist/image/svg/download.svg" alt="">';
+                  } else if ($arquivo['tipo'] == 'custom') {
+                    echo '<img src="' . $theme . '/dist/image/svg/link-2.svg" alt="">';
+                  }
+                  ?>
+                </span>
+                <span class="<?php if ($arquivo['foi_publicado']) {
+                                echo 'fw-bold';
+                              } ?>  fz-16 fz-md-18 text-decoration-none text-decoration-underline-hover">
+                  <?= $arquivo['titulo']; ?>
+                </span>
+              </a>
+            <?php
+            }
+            ?>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
       <div class="col-12 col-md-10 col-lg-8 pt-awe-80 pt-md-awe-104">
         <h2 class="text-uppercase fz-18 fz-md-21 fw-bold text-aco">
           Editais recentes
@@ -53,7 +92,7 @@ $theme = get_bloginfo('template_url');
         <div class="pt-awe-8 px-awe-8 pb-awe-16">
           <?php
           $args = array(
-            'post_type' => 'edital',
+            'post_type' => 'editais',
             'posts_per_page' => '5',
           );
           $the_query = new WP_Query($args);
