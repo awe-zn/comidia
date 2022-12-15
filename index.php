@@ -63,7 +63,7 @@ include 'constants.php';
         <?php
         $args = array(
           'post_type' => 'post',
-          'posts_per_page' => '2',
+          'posts_per_page' => '15',
           'paged'    => get_query_var('paged') ? get_query_var('paged') : 1
         );
         $the_query = new WP_Query($args);
@@ -80,7 +80,7 @@ include 'constants.php';
                   <?php echo get_the_date('d.M.y'); ?>
                 </span>
               </p>
-              <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
+              <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0 text-uppercase">
                 <?php the_title(); ?>
               </h5>
             </a>

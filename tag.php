@@ -78,7 +78,7 @@ include 'constants.php';
                   <?php echo get_the_date('d.M.y'); ?>
                 </span>
               </p>
-              <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
+              <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0 text-uppercase">
                 <?php the_title(); ?>
               </h5>
             </a>
