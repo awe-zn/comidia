@@ -27,14 +27,14 @@ include 'constants.php';
 <body>
 
   <header class="">
-    <div class="container-fluid container-lg navbar__container px-0">
+    <div class="container-fluid container-lg navbar__container px-0  px-awe-24 px-lg-0 ">
       <div class="background">
         <img src="<?= $theme ?>/dist/image/svg/mask-group.svg" class="img-fluid h-100" alt="">
       </div>
       <nav class="navbar navbar-expand-lg p-0">
-        <div class="container-fluid container-lg">
+        <div class="container-fluid container-lg px-0">
           <div class="w-100 d-flex justify-content-between">
-            <a class="navbar-brand" href="<?php echo home_url(); ?>">
+            <a class="navbar-brand py-awe-16" href="<?php echo home_url(); ?>">
               <img class="img-fluid" src="<?= $theme ?>/dist/image/svg/nav-logo.svg" alt="">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,14 +51,14 @@ include 'constants.php';
                 <span class="px-2">
                   |
                 </span>
-                <a href="tel:<?= get_field('numero_de_telefone', $home_page_id); ?>">
+                <a href="<?= get_field('link_whatsapp', $home_page_id); ?>" target="_blank" class="">
                   <?= get_field('numero_de_telefone', $home_page_id); ?>
                 </a>
                 <div class="ps-4 d-flex gap-4">
-                  <a href="<?= get_field('link_do_youtube', $home_page_id); ?>">
+                  <a href="<?= get_field('link_do_youtube', $home_page_id); ?>" target="_blank">
                     <img src="<?= $theme ?>/dist/image/svg/youtube-light.svg" alt="">
                   </a>
-                  <a href="<?= get_field('link_do_instagram', $home_page_id); ?>">
+                  <a href="<?= get_field('link_do_instagram', $home_page_id); ?>" target="_blank">
                     <img src="<?= $theme ?>/dist/image/svg/instagram-light.svg" alt="">
                   </a>
                 </div>
@@ -111,15 +111,14 @@ include 'constants.php';
                 <a href="mailto:ppgem@cchla.ufrn.br" class="text-link">
                   <?= get_field('e-mail', $home_page_id); ?>
                 </a>
-                <a href="tel:<?= get_field('numero_de_telefone', $home_page_id); ?>" class="text-link">
+                <a href="<?= get_field('link_whatsapp', $home_page_id); ?>" class="text-link" target="_blank">
                   <?= get_field('numero_de_telefone', $home_page_id); ?>
-
                 </a>
                 <div class="d-flex gap-4">
-                  <a href="<?= get_field('link_do_youtube', $home_page_id); ?>" class="text-link">
+                  <a href="<?= get_field('link_do_youtube', $home_page_id); ?>" class="text-link" target="_blank">
                     <img width="32" src="<?= $theme ?>/dist/image/svg/youtube.svg" alt="">
                   </a>
-                  <a href="<?= get_field('link_do_instagram', $home_page_id); ?>" class="text-link">
+                  <a href="<?= get_field('link_do_instagram', $home_page_id); ?>" class="text-link" target="_blank">
                     <img width="32" src="<?= $theme ?>/dist/image/svg/instagram.svg" alt="">
                   </a>
                 </div>
