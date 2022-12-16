@@ -66,7 +66,7 @@ include 'constants.php';
                 </div>
               </div>
               <hr class="divider">
-              <div class="d-flex justify-content-end fz-14 text-uppercase  gap-2">
+              <div class="d-flex justify-content-end fz-14 gap-2">
                 <?php
 
                 $header_links = get_post_meta($home_page_id, 'header_links_repeater', true);

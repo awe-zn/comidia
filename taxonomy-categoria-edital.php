@@ -17,11 +17,11 @@ include 'constants.php';
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="<?php echo home_url('/posts'); ?>" class="text-aco text-decoration-underline fz-16">
+            <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-aco text-decoration-underline fz-16">
               Seleção
             </a>
           </li>
-          <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
+          <li class="breadcrumb-item text-truncate active fz-16 text-prata-2" aria-current="page">
             Categorias
           </li>
         </ol>

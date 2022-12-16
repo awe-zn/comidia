@@ -21,9 +21,6 @@ include 'constants.php';
               Notícias
             </a>
           </li>
-          <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
-            Tags
-          </li>
         </ol>
       </nav>
     </div>
@@ -78,7 +75,7 @@ include 'constants.php';
                   <?php echo get_the_date('d.M.y'); ?>
                 </span>
               </p>
-              <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0 text-uppercase">
+              <h5 class="fz-18 fz-md-21 text-prata fw-bold text-decoration-underline-hover mb-0">
                 <?php the_title(); ?>
               </h5>
             </a>

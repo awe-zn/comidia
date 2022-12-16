@@ -24,7 +24,7 @@ include 'constants.php';
               Home
             </a>
           </li>
-          <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
+          <li class="breadcrumb-item text-truncate active fz-16 text-prata-2" aria-current="page">
             Seleção
           </li>
         </ol>
@@ -82,7 +82,7 @@ include 'constants.php';
               <div class="edital is-close is-finished" data-edital="edital<?= get_the_ID(); ?>">
                 <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
                   <a href="<?= get_permalink(); ?>">
-                    <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-uppercase text-black-2">
+                    <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-black-2">
                       <span class=" fw-regular">
                         <?= get_the_date('d/m/y'); ?> |
                       </span>
@@ -112,7 +112,7 @@ include 'constants.php';
               <div class="edital <?php echo $index != 0 ? 'is-close' : ''; ?>" data-edital="edital<?= get_the_id(); ?>">
                 <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
                   <a href="<?= get_permalink(); ?>">
-                    <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-uppercase">
+                    <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0">
                       <span class="fw-regular">
                         <?= get_the_date('d/m/y'); ?> |
                       </span>
@@ -182,9 +182,6 @@ include 'constants.php';
               Acessar editais anteriores
             </a>
           </div>
-
-
-
 
         <?php } else { ?>
           <h1>Ainda não há editais por aqui</h1>

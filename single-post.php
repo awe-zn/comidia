@@ -19,7 +19,7 @@ $theme = get_bloginfo('template_url');
               Notícias
             </a>
           </li>
-          <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
+          <li class="breadcrumb-item text-truncate active fz-16 text-prata-2" aria-current="page">
             <?php the_title(); ?>
           </li>
         </ol>
@@ -31,7 +31,7 @@ $theme = get_bloginfo('template_url');
 <main class="container px-awe-24 px-lg-0 mb-awe-64 mb-lg-awe-104">
   <div class="row justify-content-center">
     <div class="col-12">
-      <h1 class="text-uppercase fz-21 fz-md-28 ff-poppins text-prata fw-semi-bold border-bottom border-gray-2 pb-awe-11 mb-0">
+      <h1 class="fz-21 fz-md-28 ff-poppins text-prata fw-semi-bold border-bottom border-gray-2 pb-awe-11 mb-0">
         <?php the_title(); ?>
       </h1>
     </div>

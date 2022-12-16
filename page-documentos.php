@@ -18,7 +18,7 @@ $theme = get_bloginfo('template_url');
               Home
             </a>
           </li>
-          <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
+          <li class="breadcrumb-item text-truncate active fz-16 text-prata-2" aria-current="page">
             <?php the_title(); ?>
           </li>
         </ol>

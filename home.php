@@ -91,7 +91,7 @@ include 'constants.php';
             foreach ($links_uteis as $key => $link_util) {
             ?>
               <div class="col mb-awe-24">
-                <a href="<?= $link_util['link_url']; ?>" class="d-block text-center text-uppercase fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
+                <a href="<?= $link_util['link_url']; ?>" class="d-block text-center fz-16 text-primary-dark-1 fw-semi-bold border border-primary-dark-1 py-awe-16 px-awe-18 rounded bg-primary-dark-1-hover text-white-hover text-decoration-none-hover w-100">
                   <?= $link_util['link_titulo']; ?>
                 </a>
               </div>
@@ -132,7 +132,7 @@ if ($editais_query->have_posts()) { ?>
         <div class="edital <?php echo $edital_index != 0 ? 'is-close' : ''; ?>" data-edital="edital<?= get_the_id(); ?>">
           <div class="d-flex gap-2 gap-md-4 justify-content-between flex-wrap flex-md-nowrap">
             <a href="<?= get_permalink(); ?>">
-              <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0 text-uppercase">
+              <h4 class="edital__titulo fw-bold fz-18 order-1 order-md-0">
                 <span class="fw-regular">
                   <?= get_the_date('d/m/y'); ?> |
                 </span>
@@ -185,7 +185,7 @@ if ($editais_query->have_posts()) { ?>
 
               </div>
 
-              <a href="" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
+              <a href="<?= get_the_permalink(); ?>" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
                 acessar edital
                 <span>
                   <img src="<?= $theme; ?>/dist/image/svg/external-link-2.svg" alt="">

@@ -19,7 +19,7 @@ $theme = get_bloginfo('template_url');
               Editais
             </a>
           </li>
-          <li class="breadcrumb-item text-truncate active text-uppercase fz-16 text-uppercase text-prata-2" aria-current="page">
+          <li class="breadcrumb-item text-truncate active fz-16 text-prata-2" aria-current="page">
             <?php the_title(); ?>
           </li>
         </ol>
@@ -32,7 +32,7 @@ $theme = get_bloginfo('template_url');
   <div class="container px-awe-24 px-lg-0 mb-awe-112">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h1 class="border-bottom border-prata pb-awe-8 text-prata text-uppercase fw-bold fz-21 fz-md-28">
+        <h1 class="border-bottom border-prata pb-awe-8 text-prata fw-bold fz-21 fz-md-28">
           <?php the_title(); ?>
         </h1>
       </div>
@@ -118,7 +118,7 @@ $theme = get_bloginfo('template_url');
                     ?>
                   </span>
                 </p>
-                <p class="text-uppercase fw-bold text-black-2 fz-18 text-decoration-underline-hover">
+                <p class="fw-bold text-black-2 fz-18 text-decoration-underline-hover">
                   <?php the_title(); ?>
                 </p>
               </a>
