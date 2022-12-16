@@ -257,6 +257,8 @@ if ($editais_query->have_posts()) { ?>
         'cat' => get_cat_ID('novidades'),
       ));
 
+      $count = $post_query->found_posts;
+
       if ($post_query->have_posts()) {
       ?>
         <div class="col-12 col-lg-8 d-flex flex-column gap-3">
@@ -268,27 +270,43 @@ if ($editais_query->have_posts()) { ?>
             </a>
           </div>
           <div class="row">
-            <?php
-            while ($post_query->have_posts()) {
-              $post_query->the_post();
-            ?>
-              <div class="col-12 col-md-6 py-awe-8">
-                <a href="<?= get_the_permalink(); ?>" class="text-black-3">
-                  <p class="fz-16 fw-bold mb-2">
-                    <?php the_title(); ?>
-                  </p>
-                  <p class="text-gray-1 fz-14 mb-0">
-                    Publicado em: <?= get_the_date('d.m.y'); ?>
-                  </p>
-                  <p class="fz-16 fz-md-14 lh-140">
-                    <?php the_excerpt(); ?>
-                  </p>
-                </a>
-              </div>
-            <?php
-            }
 
-            ?>
+            <div class="col-12 col-md-6 d-flex flex-column gap-awe-16">
+              <?php while ($post_query->have_posts()) {
+                $post_query->the_post();
+                if ($post_query->current_post <= 2) { ?>
+                  <a href="<?= get_the_permalink(); ?>" class="text-black-3">
+                    <p class="fz-16 fw-bold mb-2">
+                      <?php the_title(); ?>
+                    </p>
+                    <p class="text-gray-1 fz-14 mb-0">
+                      Publicado em: <?= get_the_date('d.m.y'); ?>
+                    </p>
+                    <p class="fz-16 fz-md-14 lh-140">
+                      <?php the_excerpt(); ?>
+                    </p>
+                  </a>
+              <?php }
+              } ?>
+            </div>
+            <div class="col-12 col-md-6 d-flex flex-column gap-awe-16 mt-awe-16 mt-md-0">
+              <?php while ($post_query->have_posts()) {
+                $post_query->the_post();
+                if ($post_query->current_post > 2) { ?>
+                  <a href="<?= get_the_permalink(); ?>" class="text-black-3">
+                    <p class="fz-16 fw-bold mb-2">
+                      <?php the_title(); ?>
+                    </p>
+                    <p class="text-gray-1 fz-14 mb-0">
+                      Publicado em: <?= get_the_date('d.m.y'); ?>
+                    </p>
+                    <p class="fz-16 fz-md-14 lh-140">
+                      <?php the_excerpt(); ?>
+                    </p>
+                  </a>
+              <?php }
+              } ?>
+            </div>
           </div>
         </div>
       <?php
