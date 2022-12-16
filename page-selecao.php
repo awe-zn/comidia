@@ -153,8 +153,7 @@ include 'constants.php';
                         ?>
                       </ul>
                     </div>
-
-                    <a href="" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
+                    <a href="<?= get_the_permalink(); ?>" class="d-flex gap-3 align-items-center text-primary-light text-decoration-underline">
                       acessar edital
                       <span>
                         <img src="<?= $theme; ?>/dist/image/svg/external-link-2.svg" alt="">
