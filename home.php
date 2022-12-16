@@ -273,7 +273,7 @@ if ($editais_query->have_posts()) { ?>
               $post_query->the_post();
             ?>
               <div class="col-12 col-md-6 py-awe-8">
-                <a href="" class="text-black-3">
+                <a href="<?= get_the_permalink(); ?>" class="text-black-3">
                   <p class="fz-16 fw-bold mb-2">
                     <?php the_title(); ?>
                   </p>
@@ -315,7 +315,7 @@ if ($editais_query->have_posts()) { ?>
           while ($post_query->have_posts()) {
             $post_query->the_post();
           ?>
-            <a href="" class="d-flex border-bottom pb-3 text-decoration-none-hover">
+            <a href="<?= get_the_permalink(); ?>" class="d-flex border-bottom pb-3 text-decoration-none-hover">
               <div class="px-4 d-inline-block text-center ">
                 <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0">
                   <?= get_the_date('d'); ?>
@@ -353,12 +353,12 @@ if ($atalhos) {
     <div class="container px-awe-24 px-lg-0">
       <div class="row row-cols-auto gy-4 justify-content-center">
         <?php
-        foreach ($atalhos as $key => $atalho) {
+        foreach ($atalhos as $atalho) {
         ?>
           <div class="col">
-            <a href="<?= $atalho['atalho_url']; ?>" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
-              <img src="<?= $atalho['icon']; ?>" alt="">
-              <?= $atalho['atalho_titulo']; ?>
+            <a href="<?php echo $atalho['atalho_url'] ?>" class="d-flex gap-3 text-black-2 fz-18 align-items-center">
+              <img src="<?php echo  $atalho['icon'] ?>" alt="">
+              <?php echo $atalho['atalho_titulo'] ?>
             </a>
           </div>
         <?php
