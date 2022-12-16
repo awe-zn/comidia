@@ -19,7 +19,7 @@ include 'constants.php';
 
             if ($institucional_links) {
 
-              foreach ($institucional_links as $key => $institucional_link) {
+              foreach ($institucional_links as $institucional_link) {
             ?>
                 <a href="<?= $institucional_link['institucional_link_url']; ?>" class="text-white fz-16 fz-md-14">
                   <?= $institucional_link['institucional_link_titulo']; ?>
@@ -43,7 +43,7 @@ include 'constants.php';
 
             if ($academico_links) {
 
-              foreach ($academico_links as $key => $academico_link) {
+              foreach ($academico_links as $academico_link) {
             ?>
                 <a href="<?= $academico_link['academico_link_url']; ?>" class="text-white fz-16 fz-md-14">
                   <?= $academico_link['academico_link_titulo']; ?>
@@ -64,7 +64,7 @@ include 'constants.php';
 
             if ($producao_links) {
 
-              foreach ($producao_links as $key => $producao_link) {
+              foreach ($producao_links as $producao_link) {
             ?>
                 <a href="<?= $producao_link['producao_link_url']; ?>" class="text-white fz-16 fz-md-14">
                   <?= $producao_link['producao_link_titulo']; ?>
@@ -88,7 +88,7 @@ include 'constants.php';
 
             if ($documentos_links) {
 
-              foreach ($documentos_links as $key => $documento_link) {
+              foreach ($documentos_links as $documento_link) {
             ?>
                 <a href="<?= $documento_link['documento_link_url']; ?>" class="text-white fz-16 fz-md-14">
                   <?= $documento_link['documento_link_titulo']; ?>
@@ -111,7 +111,7 @@ include 'constants.php';
 
             if ($discentes_links) {
 
-              foreach ($discentes_links as $key => $discentes_link) {
+              foreach ($discentes_links as $discentes_link) {
             ?>
                 <a href="<?= $discentes_link['discentes_link_url']; ?>" class="text-white fz-16 fz-md-14">
                   <?= $discentes_link['discentes_link_titulo']; ?>
@@ -128,19 +128,15 @@ include 'constants.php';
 
             <?php
 
-            $processo_seletivo_links = get_post_meta($home_page_id, 'processo_seletivo_links', true);
+            $processo_seletivos = get_post_meta($home_page_id, 'processo_seletivo_links', true);
 
-            if ($processo_seletivo_links) {
-
-              foreach ($processo_seletivo_links as $key => $processo_seletivo_link) {
-            ?>
-                <a href="<?= $processo_seletivo_link['processo_seletivo_link_url']; ?>" class="text-white fz-16 fz-md-14">
-                  <?= $processo_seletivo_link['processo_seletivo_link_titulo']; ?>
+            if ($processo_seletivos) {
+              foreach ($processo_seletivos as $key => $processo_seletivo) { ?>
+                <a href="<?= $processo_seletivo['processo_seletivo_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $processo_seletivo['processo_seletivo_link_titulo']; ?>
                 </a>
-            <?php
-              }
-            }
-            ?>
+            <?php }
+            } ?>
           </div>
         </div>
       </div>
