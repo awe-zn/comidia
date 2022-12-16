@@ -11,7 +11,9 @@ include 'constants.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Comidia</title>
+  <title>
+    <?= is_front_page() ? 'Comídia' : 'Comídia - ' . get_the_title(); ?>
+  </title>
 
   <!-- fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
