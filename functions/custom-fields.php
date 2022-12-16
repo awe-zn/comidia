@@ -1,7 +1,5 @@
 <?php
 
-include '../constants.php';
-
 function crd_repeater_metaboxes()
 {
   function add_arquivos_repeater()
