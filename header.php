@@ -91,8 +91,6 @@ include 'constants.php';
 
                 $header_links = get_post_meta($home_page_id, 'header_links_repeater', true);
 
-                $header_links_length = sizeof($header_links);
-
                 if ($header_links) {
                   foreach ($header_links as $key => $header_link) {
                 ?>
@@ -123,7 +121,6 @@ include 'constants.php';
                   </a>
                 </div>
               </div>
-              </a>
             </div>
           </div>
         </div>
