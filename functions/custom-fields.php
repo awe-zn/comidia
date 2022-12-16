@@ -198,6 +198,189 @@ function crd_repeater_metaboxes()
   }
 
   add_header_links_repeater();
+
+  function add_footer_fields()
+  {
+    $cmb = new_cmb2_box(array(
+      'id' => 'footer_fields',
+      'title' => 'Links do rodapé',
+      'object_types' => array('page'),
+      'show_on'      => array('key' => 'id', 'value' => 130),
+      'context' => 'normal',
+      'priority' => 'high',
+      'show_names' => true,
+    ));
+
+    // institucional
+    $institucional_links = $cmb->add_field(array(
+      'description' => 'Institucional',
+      'id' => 'institucional_links',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Institucional link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($institucional_links, array(
+      'name' => 'Título',
+      'id'   => 'institucional_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($institucional_links, array(
+      'name' => 'Url',
+      'id'   => 'institucional_link_url',
+      'type' => 'text_url',
+    ));
+
+    // acadêmico
+    $academico = $cmb->add_field(array(
+      'description' => 'Acadêmico',
+      'id' => 'academico_links',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Acadêmico link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($academico, array(
+      'name' => 'Título',
+      'id'   => 'academico_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($academico, array(
+      'name' => 'Url',
+      'id'   => 'academico_link_url',
+      'type' => 'text_url',
+    ));
+
+    // produção
+    $producao = $cmb->add_field(array(
+      'description' => 'Produção',
+      'id' => 'producao_links',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Produção link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($producao, array(
+      'name' => 'Título',
+      'id'   => 'producao_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($producao, array(
+      'name' => 'Url',
+      'id'   => 'producao_link_url',
+      'type' => 'text_url',
+    ));
+
+    // documentos
+    $documentos = $cmb->add_field(array(
+      'description' => 'Documentos',
+      'id' => 'documentos_links',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Documento link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($documentos, array(
+      'name' => 'Título',
+      'id'   => 'documento_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($documentos, array(
+      'name' => 'Url',
+      'id'   => 'documento_link_url',
+      'type' => 'text_url',
+    ));
+
+    // discentes
+    $discentes = $cmb->add_field(array(
+      'description' => 'Discentes',
+      'id' => 'discentes_links',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Discentes link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($discentes, array(
+      'name' => 'Título',
+      'id'   => 'discentes_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($discentes, array(
+      'name' => 'Url',
+      'id'   => 'discentes_link_url',
+      'type' => 'text_url',
+    ));
+
+    // processo seletivo
+    $processo_seletivo = $cmb->add_field(array(
+      'description' => 'Processo seletivo',
+      'id' => 'processo_seletivo_links',
+      'type' => 'group',
+      'repeatable' => true,
+      'options' => array(
+        'group_title' => 'Processo seletivo link {#}',
+        'add_button'        => __('Adicionar link', 'cmb2'),
+        'remove_button'     => __('Remover link', 'cmb2'),
+        'sortable'      => true,
+        'closed'         => true,
+        'remove_confirm' => esc_html__('Você realmente deseja remover este link?', 'cmb2')
+      ),
+    ));
+
+    $cmb->add_group_field($processo_seletivo, array(
+      'name' => 'Título',
+      'id'   => 'processo_seletivo_link_titulo',
+      'type' => 'text',
+    ));
+
+    $cmb->add_group_field($processo_seletivo, array(
+      'name' => 'Url',
+      'id'   => 'processo_seletivo_link_url',
+      'type' => 'text_url',
+    ));
+  }
+
+  add_footer_fields();
 }
 
 add_action('cmb2_admin_init', 'crd_repeater_metaboxes');

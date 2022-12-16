@@ -7,99 +7,142 @@ include 'constants.php';
   <div class="pt-awe-80 pb-awe-48 bg-primary-light">
     <div class="container px-awe-24">
       <div class="row">
-        <style>
-          .menu-footer {
-            display: flex;
-            list-style: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            gap: 32px;
-            flex-wrap: wrap;
-          }
-
-          .menu-footer ul {
-            font-weight: normal;
-            text-transform: none;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 14px;
-          }
-
-          .menu-footer a {
-            color: white;
-          }
-        </style>
-        <?php
-        wp_nav_menu(
-          array(
-            'theme_location' => 'menu-footer',
-            'menu_class' => 'menu-footer',
-            'container' => 'div',
-            'container_class' => 'col-12',
-          )
-        );
-
-        ?>
-        <!-- <div class="col-12 col-sm-6 col-lg-3 border-dashed">
+        <div class="col-12 col-sm-6 col-lg-3 border-dashed">
           <div class="d-flex flex-column gap-1">
             <h5 class="text-white fz-18 text-uppercase fw-bold">
               INSTITUCIONAL
             </h5>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Sobre o programa
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Linhas de pesquisa
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Cursos
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Docentes
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Coordenação
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Secretaria
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Estatísticas
-            </a>
+
+            <?php
+
+            $institucional_links = get_post_meta($home_page_id, 'institucional_links', true);
+
+            if ($institucional_links) {
+
+              foreach ($institucional_links as $key => $institucional_link) {
+            ?>
+                <a href="<?= $institucional_link['institucional_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $institucional_link['institucional_link_titulo']; ?>
+                </a>
+            <?php
+              }
+            }
+            ?>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 border-dashed ps-sm-4 mt-awe-32 mt-sm-0">
+          <div class="d-flex flex-column gap-1 mb-4">
+            <h5 class="text-white fz-18 text-uppercase fw-bold">
+              ACADÊMICO
+            </h5>
+
+            <?php
+
+            $academico_links = get_post_meta($home_page_id, 'academico_links', true);
+
+            if ($academico_links) {
+
+              foreach ($academico_links as $key => $academico_link) {
+            ?>
+                <a href="<?= $academico_link['academico_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $academico_link['academico_link_titulo']; ?>
+                </a>
+            <?php
+              }
+            }
+            ?>
+          </div>
+          <div class="d-flex flex-column gap-1">
+            <h5 class="text-white fz-18 text-uppercase fw-bold">
+              PRODUÇÃO
+            </h5>
+
+            <?php
+
+            $producao_links = get_post_meta($home_page_id, 'producao_links', true);
+
+            if ($producao_links) {
+
+              foreach ($producao_links as $key => $producao_link) {
+            ?>
+                <a href="<?= $producao_link['producao_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $producao_link['producao_link_titulo']; ?>
+                </a>
+            <?php
+              }
+            }
+            ?>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 border-dashed ps-lg-4 mt-awe-32 mt-lg-0">
+          <div class="d-flex flex-column gap-1">
+            <h5 class="text-white fz-18 text-uppercase fw-bold">
+              Documentos
+            </h5>
+
+            <?php
+
+            $documentos_links = get_post_meta($home_page_id, 'documentos_links', true);
+
+            if ($documentos_links) {
+
+              foreach ($documentos_links as $key => $documento_link) {
+            ?>
+                <a href="<?= $documento_link['documento_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $documento_link['documento_link_titulo']; ?>
+                </a>
+            <?php
+              }
+            }
+            ?>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3 border-dashed mt-awe-32 mt-lg-0 ps-sm-4">
           <div class="d-flex flex-column gap-1 mb-awe-32">
             <h5 class="text-white fz-18 text-uppercase fw-bold">
-              ACADÊMICO
+              DISCENTES
             </h5>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Estrutura curricular
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Disciplinas
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Cronograma do Semestre
-            </a>
+            <?php
+
+            $discentes_links = get_post_meta($home_page_id, 'discentes_links', true);
+
+            if ($discentes_links) {
+
+              foreach ($discentes_links as $key => $discentes_link) {
+            ?>
+                <a href="<?= $discentes_link['discentes_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $discentes_link['discentes_link_titulo']; ?>
+                </a>
+            <?php
+              }
+            }
+            ?>
           </div>
           <div class="d-flex flex-column gap-1">
             <h5 class="text-white fz-18 text-uppercase fw-bold">
-              Processo Seletivo
+              Processo seletivo
             </h5>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Editais passados
-            </a>
-            <a href="" class="text-white fz-16 fz-md-14">
-              Outros documentos
-            </a>
+
+            <?php
+
+            $processo_seletivo_links = get_post_meta($home_page_id, 'processo_seletivo_links', true);
+
+            if ($processo_seletivo_links) {
+
+              foreach ($processo_seletivo_links as $key => $processo_seletivo_link) {
+            ?>
+                <a href="<?= $processo_seletivo_link['processo_seletivo_link_url']; ?>" class="text-white fz-16 fz-md-14">
+                  <?= $processo_seletivo_link['processo_seletivo_link_titulo']; ?>
+                </a>
+            <?php
+              }
+            }
+            ?>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
