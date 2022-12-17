@@ -64,7 +64,7 @@ include 'constants.php';
 
         $edital_args = array(
           'post_type' => 'editais',
-          'posts_per_page' => '15',
+          'posts_per_page' => '2',
           'paged'    => get_query_var('paged') ? get_query_var('paged') : 1,
         );
 
@@ -175,12 +175,6 @@ include 'constants.php';
             }
             $index = $index + 1;
           } ?>
-
-          <div class="d-flex justify-content-end">
-            <a href="<?= get_permalink(get_page_by_path('selecao')); ?>" class="text-uppercase btn btn-primary-light py-awe-16 px-awe-24 text-decoration-none-hover fw-semi-bold fz-18">
-              Acessar editais anteriores
-            </a>
-          </div>
 
         <?php } else { ?>
           <h1>Ainda não há editais por aqui</h1>
