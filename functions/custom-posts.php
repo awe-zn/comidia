@@ -94,10 +94,58 @@ function post_type_editais()
 }
 
 
+function post_type_eventos()
+{
+  $labels = array(
+    "name" => "Eventos",
+    "singular_name" => "Evento",
+    "add_new" => "Adicionar novo evento",
+    "add_new_item" => "Adicionar novo evento",
+    "edit_item" => "Editar evento",
+    "new_item" => "Novo evento",
+    "view_item" => "Ver edital",
+    "view_items" => "Ver eventos",
+    "search_items" => "Buscar eventos",
+    "not_found" => "Nenhum evento encontrado",
+    "not_found_in_trash" => "Nenhum evento na lixeira",
+    "all_items" => "Todos eventos",
+    "uploaded_to_this_item" => "Carregado para este evento",
+    "items_list" => "Lista de eventos",
+    "item_updated" => "Evento atualizado"
+  );
+
+  $args = [
+    "labels" => $labels,
+    "description" => "Post type para gerenciamento de eventos",
+    "public" => true,
+    'menu_position' => 6,
+    "publicly_queryable" => true,
+    "show_ui" => true,
+    "show_in_rest" => true,
+    "rest_base" => "",
+    "rest_controller_class" => "WP_REST_Posts_Controller",
+    "has_archive" => true,
+    "show_in_menu" => true,
+    "show_in_nav_menus" => true,
+    "delete_with_user" => false,
+    "exclude_from_search" => false,
+    "capability_type" => "post",
+    "map_meta_cap" => true,
+    "hierarchical" => false,
+    "rewrite" => ["slug" => "eventos-post", "with_front" => true],
+    "query_var" => true,
+    "supports" => ["title", "editor"],
+    "taxonomies" => ['categoria-evento'],
+  ];
+
+  register_post_type("eventos-post", $args);
+}
+
 function create_posttypes()
 {
   post_type_perguntas();
   post_type_editais();
+  post_type_eventos();
 };
 
 function add_features()

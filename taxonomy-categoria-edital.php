@@ -8,7 +8,7 @@ include 'constants.php';
 <!--Navegação breadcrumb-->
 <div class="container px-awe-24 px-lg-0 pt-awe-32 pt-md-awe-48 pb-awe-16">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-11">
+    <div class="col-12  ">
       <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item">
@@ -34,12 +34,12 @@ include 'constants.php';
 <main>
   <div class="container px-awe-24 px-lg-0 mb-awe-112">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-11">
+      <div class="col-12  ">
         <h1 class="border-bottom border-primary-light pb-awe-8 text-primary-light text-uppercase fw-bold fz-21 fz-md-28">
           Seleção
         </h1>
       </div>
-      <div class="col-12 col-lg-11 row my-awe-40 p-0 gap-4 gap-md-0 justify-content-end">
+      <div class="col-12   row my-awe-40 p-0 gap-4 gap-md-0 justify-content-end">
         <div class="col-12 col-md-6 d-flex align-items-end">
           <p>
             filtre ou pesquise
@@ -61,7 +61,7 @@ include 'constants.php';
       </div>
       <div class="col-12 col-md-10 col-lg-8 d-flex flex-column gap-awe-24 mt-awe-32">
         <h3 class="fz-18 fz-md-28 fw-light text-primary">
-          Publicações mais recentes da categoria <span class="fw-bold">"<?php single_cat_title(); ?>"</span>
+          Editais mais recentes da categoria <span class="fw-bold">"<?php single_cat_title(); ?>"</span>
         </h3>
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

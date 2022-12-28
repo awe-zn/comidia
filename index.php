@@ -8,7 +8,7 @@ include 'constants.php';
 <!--Navegação breadcrumb-->
 <div class="container px-awe-24 px-lg-0 pt-awe-32 pt-md-awe-48 pb-awe-16">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-11">
+    <div class="col-12  ">
       <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item">
@@ -30,13 +30,13 @@ include 'constants.php';
 <main>
   <div class="container px-awe-24 px-lg-0 mb-awe-112">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-11">
+      <div class="col-12  ">
         <h1 class="border-bottom border-primary-light pb-awe-8 text-primary-light text-uppercase fw-bold fz-21 fz-md-28">
           Notícias
         </h1>
       </div>
-      <div class="col-12 col-lg-11 row my-awe-40 p-0 gap-4 gap-md-0 justify-content-end">
-        <div class="col-12 col-md-6 d-flex align-items-end">
+      <div class="col-12   row my-awe-40 p-0 gap-4 gap-md-0 justify-content-end">
+        <div class="col-12 col-md-6 d-flex align-items-start">
           <p>
             filtre ou pesquise
           </p>
@@ -89,7 +89,7 @@ include 'constants.php';
 
       </div>
 
-      <div class="col-12 col-lg-11 d-flex justify-content-center mt-awe-80 mt-md-awe-104">
+      <div class="col-12   d-flex justify-content-center mt-awe-80 mt-md-awe-104">
         <nav aria-label="...">
           <div class="pagination d-flex gap-awe-8 align-items-end">
             <style>

@@ -10,7 +10,7 @@ $theme = get_bloginfo('template_url');
 
 <div class="container px-lg-0 pt-awe-32 pt-md-awe-48 pb-awe-16">
   <div class="row">
-    <div class="col-12 col-lg-11">
+    <div class="col-12  ">
       <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
           <li class="breadcrumb-item">
