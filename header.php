@@ -23,6 +23,9 @@ include 'constants.php';
   <!-- css -->
   <link rel="stylesheet" href="<?= $theme ?>/dist/css/style.css" />
 
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="<?= $theme; ?>/dist/image/favicon.ico">
+
   <?php wp_head(); ?>
 </head>
 
