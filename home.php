@@ -314,41 +314,50 @@ if ($editais_query->have_posts()) { ?>
       ?>
       <?php
       $post_query = new WP_Query(array(
-        'post_type' => 'post',
+        'post_type' => 'eventos-post',
         'posts_per_page' => 6,
-        'cat' => get_cat_ID('calendario'),
       ));
 
       if ($post_query->have_posts()) {
       ?>
         <div class="col-12 col-md-12 col-lg-4 d-flex flex-column gap-3">
           <div class="titulo__coluna-calendario ff-poppins fw-semi-bold fz-16 text-white text-uppercase d-flex justify-content-between px-awe-16 py-awe-18">
-            Calendário
-            <a href="<?= get_term_link(get_cat_ID('calendario')); ?>" class="fw-light text-white">
-              Ver todas
+            Eventos
+            <a href="<?= get_permalink(get_page_by_path('eventos')); ?>" class="fw-light text-white">
+              Ver todos
               <span class="fz-12">&#5171;&#5171;</span>
             </a>
           </div>
           <?php
           while ($post_query->have_posts()) {
             $post_query->the_post();
+            if (!get_field('evento_encerrado')) {
+              $date_string = get_field('data_do_evento');
+              $data_do_evento = DateTime::createFromFormat('Ymd', $date_string);
           ?>
-            <a href="<?= get_the_permalink(); ?>" class="d-flex border-bottom pb-3 text-decoration-none-hover">
-              <div class="px-4 d-inline-block text-center ">
-                <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0">
-                  <?= get_the_date('d'); ?>
-                </p>
-                <p class="text-black-3 ff-poppins fz-21 fw-light m-0 text-uppercase">
-                  DEZ
-                </p>
-              </div>
-              <div>
-                <p class="text-black-2 fz-16 fw-bold ff-open-sans m-0 text-decoration-underline-hover">
-                  <?php the_title(); ?>
-                </p>
-              </div>
-            </a>
+              <a href="<?= get_the_permalink(); ?>" class="d-flex border-bottom pb-3 text-decoration-none-hover">
+                <div class="px-4 d-inline-block text-center">
+                  <p class="text-green-2 fz-32 fw-semi-bold ff-poppins m-0 event-day">
+                    <?php echo $data_do_evento->format('j'); ?>
+                  </p>
+                  <p class="text-black-3 ff-poppins fz-21 fw-light m-0 text-uppercase">
+                    <?php
+                    foreach ($months as $month) {
+                      if ($month['index'] == $data_do_evento->format('m')) {
+                        echo $month['string'];
+                      };
+                    };
+                    ?>
+                  </p>
+                </div>
+                <div>
+                  <p class="text-black-2 fz-16 fw-bold ff-open-sans m-0 text-decoration-underline-hover">
+                    <?php the_title(); ?>
+                  </p>
+                </div>
+              </a>
           <?php
+            }
           }
 
           ?>
