@@ -185,32 +185,6 @@ include 'constants.php';
       <div class="col-12   d-flex justify-content-center mt-awe-80 mt-md-awe-104">
         <nav aria-label="...">
           <div class="pagination d-flex gap-awe-8 align-items-end">
-            <style>
-              .pagination .page-numbers {
-                width: 40px;
-                height: 40px;
-                border-radius: 8px;
-                border: 1px solid #2471b5;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-              }
-
-              .pagination .page-numbers.current {
-                background-color: #2471b5;
-                color: #fff;
-              }
-
-              .pagination .page-numbers.dots {
-                border: none;
-                color: #2471b5;
-                padding: 0;
-                margin: 0;
-                width: auto;
-                height: auto;
-              }
-            </style>
             <?php
             echo paginate_links(array(
               'base' => str_replace(999999999, '%#%', get_pagenum_link(999999999)),

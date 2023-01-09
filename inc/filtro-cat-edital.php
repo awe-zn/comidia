@@ -17,13 +17,6 @@ foreach ($categorias_edital as $value) { ?>
   }
   ?>
 
-  <style>
-    .filter.active {
-      background-color: #2471b5;
-      color: #fff;
-    }
-  </style>
-
   <a href="<?php echo get_term_link($value); ?>" class="filter <?php echo $active; ?>">
     <?php
     echo $value->name;
