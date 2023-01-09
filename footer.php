@@ -7,7 +7,7 @@ include 'constants.php';
   <div class="pt-awe-80 pb-awe-48 bg-primary-light">
     <div class="container px-awe-24">
       <div class="row">
-        <div class="col-12 col-sm-6 col-lg-3 border-dashed">
+        <div class="col-12 col-sm-6 col-lg-3 border-dashed-start border-dashed">
           <div class="d-flex flex-column gap-1">
             <h5 class="text-white fz-18 text-uppercase fw-bold">
               INSTITUCIONAL
