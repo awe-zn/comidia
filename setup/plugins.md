@@ -1,5 +1,0 @@
-- ACF (Advanced custom fields)
-- CMB2
-- Ivory Search
-- Lazy Blocks
-- Post Types Order
