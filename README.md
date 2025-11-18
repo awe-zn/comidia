@@ -1,16 +1,16 @@
 # Site PPGEM - UFRN
 
-## 📋 Descrição do Projeto
+## Descrição do Projeto
 
 Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) da Universidade Federal do Rio Grande do Norte (UFRN). Desenvolvido com HTML5 semântico e Tailwind CSS, seguindo as melhores práticas de acessibilidade e desenvolvimento frontend moderno.
 
-## 🎯 Características Principais
+## Características Principais
 
 ### Tecnologias Utilizadas
 - **HTML5 Semântico**: Estrutura com tags semânticas adequadas
 - **Tailwind CSS**: Framework CSS utilitário para estilização responsiva
-- **Font Awesome 6**: Biblioteca de ícones
-- **Google Fonts (Roboto)**: Tipografia moderna e legível
+- **Phosphor Icons**: Biblioteca de ícones
+- **Google Fonts (Open Sans e Poppins)**: Tipografias modernas e legíveis
 
 ### Acessibilidade (WCAG 2.1 - Nível AA)
 
@@ -56,7 +56,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
    - Breakpoints do Tailwind: `sm:`, `md:`, `lg:`, `xl:`
    - Touch targets com tamanho mínimo de 44x44px
 
-## 📱 Seções do Site
+## Seções do Site
 
 ### 1. Header
 - Logo do programa
@@ -113,12 +113,13 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 - **Verde Destaque**: `#f8fce9` (green-50), `#eef7d0` (green-100), `#94bf28` (green-500), `#567219` (green-700), `#455a1a` (green-800), `#1e2a09` (green-950) - para cards especiais
 
 ### Tipografia
-- **Família**: Roboto (Google Fonts)
+- **Família**: Open Sans e Poppgins (Google Fonts)
 - **Pesos**: 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold)
 - **Tamanhos Base**: 
   - Body: 16px (base do Tailwind)
   - Headings: 24px-48px (variável por seção)
   - Small: 14px, 12px
+  - Hightligts (customizado com Poppins)
 
 ### Espaçamento
 - Seguindo escala do Tailwind: 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px
@@ -130,7 +131,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 - Acordeões (FAQ)
 - Ícones de serviços
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Pré-requisitos
 - Navegador web moderno (Chrome, Firefox, Safari, Edge)
@@ -233,15 +234,14 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 - DRY (Don't Repeat Yourself) principles
 - Separation of concerns
 
-## 📄 Licença
+## Licença
 
 Projeto acadêmico desenvolvido no IFRN, junto com o projeto Agência Web escolar.
 
-## 👨‍💻 Desenvolvedor
+## Equipe
 
 **Cesimar**  
 Desenvolvedor Web - UFRN  
-Disciplina: Prof. Jean Mário
 
 ---
 
