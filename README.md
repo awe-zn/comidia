@@ -14,7 +14,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 
 ### Acessibilidade (WCAG 2.1 - Nível AA)
 
-#### ✅ Implementações de Acessibilidade
+#### Implementações de Acessibilidade
 
 1. **Navegação por Teclado**
    - Todos os elementos interativos são acessíveis via teclado
@@ -103,14 +103,14 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 - Links para redes sociais
 - Copyright
 
-## 🎨 Sistema de Design
+## Sistema de Design
 
 ### Paleta de Cores
-- **Azul Principal**: `#1e5a8e`, `#2b7ac4`, `#3b82f6` (blue-600)
-- **Azul Escuro**: `#1e40af` (blue-800), `#1e3a8a` (blue-900)
-- **Cinza**: `#f9fafb` (gray-50), `#f3f4f6` (gray-100), `#6b7280` (gray-500)
-- **Branco**: `#ffffff`
-- **Verde Destaque**: `#10b981` (green-500) - para cards especiais
+- **Azul Principal**: `#d9f2ff`, `#58c7ff`, `#1a8df6` (blue-600)
+- **Azul Escuro**: `#165eb7` (blue-800), `#143157` (blue-900)
+- **Cinza**: `#f5f6f6` (gray-50), `#e5e7e8` (gray-100), `#656c75` (gray-500), `#4a4e54` (gray-700), `#414449` (gray-800), `#18191b` (gray-950)
+- **Branco**: `#fafafa`
+- **Verde Destaque**: `#f8fce9` (green-50), `#eef7d0` (green-100), `#94bf28` (green-500), `#567219` (green-700), `#455a1a` (green-800), `#1e2a09` (green-950) - para cards especiais
 
 ### Tipografia
 - **Família**: Roboto (Google Fonts)
@@ -137,26 +137,30 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 - Conexão com internet (para CDNs)
 
 ### Instalação
-1. Clone ou baixe o arquivo `ppgem-home.html`
+1. Clone ou baixe o arquivo `index.html` e os arquivos da pasta /assets
 2. Abra o arquivo em qualquer navegador web
 3. Não requer compilação ou build
 
 ### CDNs Utilizadas
+
 ```html
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Icons Phosphor -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
 ```
 
-## 📦 Estrutura de Código
+## Estrutura de Código
 
 ### HTML Semântico
+
 ```html
+
 <header> → Cabeçalho do site
   <nav> → Navegação principal
 <main> → Conteúdo principal
@@ -164,6 +168,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
     <article> → Conteúdo independente (notícias, editais)
     <aside> → Conteúdo complementar
 <footer> → Rodapé
+
 ```
 
 ### Classes Tailwind Principais
@@ -191,7 +196,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 - [x] Links descritivos
 - [x] Elementos interativos com tamanho adequado (44x44px)
 
-## 🔧 Melhorias Futuras Sugeridas
+## Atualizações Futuras a serem aplicadas
 
 1. **Performance**
    - Implementar lazy loading para imagens
@@ -201,8 +206,6 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 2. **Funcionalidades**
    - Sistema de busca funcional
    - Filtros para notícias e editais
-   - Newsletter/Inscrição
-   - Modo escuro (dark mode)
 
 3. **SEO**
    - Meta tags Open Graph
@@ -211,7 +214,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
    - Robots.txt
 
 4. **Backend**
-   - CMS para gerenciamento de conteúdo
+   - CMS para gerenciamento de conteúdo em Wordpress
    - Sistema de notícias dinâmico
    - Banco de dados para editais e publicações
 
@@ -232,7 +235,7 @@ Site institucional do Programa de Pós-Graduação em Estudos da Mídia (PPGEM) 
 
 ## 📄 Licença
 
-Projeto acadêmico desenvolvido para a disciplina de Desenvolvimento Web - UFRN.
+Projeto acadêmico desenvolvido no IFRN, junto com o projeto Agência Web escolar.
 
 ## 👨‍💻 Desenvolvedor
 
