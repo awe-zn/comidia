@@ -81,13 +81,22 @@
                             <span class="ml-1">ALTO CONTRASTE</span>
                         </a>
                     </div>
+
                     <div class="flex items-center space-x-3">
-                        <a href="#" class="hover:text-blue-200 transition" aria-label="Facebook do PPGEM">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition flex items-center">
+                            ppgem@cchla.ufrn.br
                         </a>
-                        <a href="#" class="hover:text-blue-200 transition" aria-label="Instagram do PPGEM">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <a href="tel:+558433422245" class="hover:text-white/80 transition flex items-center mt-0.5">
+                            +55 84 3342-2245
                         </a>
+                        <div class="flex items-center space-x-2 mt-1">
+                            <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
+                                <i class="fab fa-youtube text-base" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="hover:text-white/80 transition" aria-label="Instagram do PPGEM">
+                                <i class="fab fa-instagram text-base" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +109,7 @@
 
                     <!-- Logo - Esquerda -->
                     <div class="flex items-center space-x-3 flex-shrink-0">
-                        <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-16 w-auto">
+                        <!-- <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-16 w-auto d-none"> -->
                         <div class="hidden md:flex flex-col">
                             <span class="text-lg font-bold text-white leading-tight">PPGEM</span>
                             <span class="text-xs text-white/90 leading-tight">PROGRAMA DE PÓS-GRADUAÇÃO</span>
@@ -109,7 +118,7 @@
                     </div>
 
                     <!-- Desktop Menu - Centro -->
-                    <ul class="hidden lg:flex items-center space-x-1 text-xs font-medium flex-grow justify-center mx-8">
+                    <ul class="hidden lg:flex items-center space-x-1 text-xs font-medium flex-grow justify-end">
                         <li><a href="#"
                                 class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">O
                                 PROGRAMA</a></li>
@@ -131,23 +140,6 @@
                         </li>
                     </ul>
 
-                    <!-- Contact Info - Direita -->
-                    <div class="hidden lg:flex flex-col items-end text-white text-xs flex-shrink-0">
-                        <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition flex items-center">
-                            ppgem@cchla.ufrn.br
-                        </a>
-                        <a href="tel:+558433422245" class="hover:text-white/80 transition flex items-center mt-0.5">
-                            +55 84 3342-2245
-                        </a>
-                        <div class="flex items-center space-x-2 mt-1">
-                            <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
-                                <i class="fab fa-youtube text-base" aria-hidden="true"></i>
-                            </a>
-                            <a href="#" class="hover:text-white/80 transition" aria-label="Instagram do PPGEM">
-                                <i class="fab fa-instagram text-base" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
 
                     <!-- Mobile menu button -->
                     <button class="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-2"
@@ -205,10 +197,10 @@
         <!-- Hero Section -->
         <section class="bg-gray-100" aria-labelledby="hero-title">
             <div class="container mx-auto  max-w-screen-xl px-4 py-12">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8 items-start">
 
                     <!-- Featured Palestra Card -->
-                    <article class="lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <article class="col-span-2 lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden">
                         <div class="relative">
                             <!-- Imagem da Palestra -->
                             <img src="assets/img/ppgem.png"
@@ -216,7 +208,7 @@
                                 class="w-full h-auto object-cover">
 
                             <!-- Overlay gradiente sutil -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent">
                             </div>
 
                             <!-- Informações da Palestra -->
@@ -237,7 +229,7 @@
                     </article>
 
                     <!-- News/Editais Links -->
-                    <aside class="space-y-4 lg:col-span-2" aria-label="Editais e notícias recentes">
+                    <aside class="space-y-4 lg:col-span-2 md:col-span-1" aria-label="Editais e notícias recentes">
 
                         <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
                             <a href="#" class="block group">
