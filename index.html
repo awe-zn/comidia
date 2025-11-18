@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Programa de Pós-Graduação em Estudos da Mídia - PPGEM/UFRN. Mestrado e Doutorado em Estudos da Mídia.">
+    <meta name="keywords" content="PPGEM, UFRN, Estudos da Mídia, Pós-Graduação, Mestrado, Doutorado">
+    <title>PPGEM - Programa de Pós-Graduação em Estudos da Mídia | UFRN</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        }
+
+        .news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .accordion-button.active {
+            background-color: #f3f4f6;
+        }
+
+        .edital-item {
+            transition: background-color 0.2s ease;
+        }
+
+        .edital-item:hover {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <!-- Top bar -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Acessibilidade">
+                            <i class="fas fa-universal-access" aria-hidden="true"></i>
+                            <span class="ml-1">ACESSIBILIDADE</span>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Alto contraste">
+                            <i class="fas fa-adjust" aria-hidden="true"></i>
+                            <span class="ml-1">ALTO CONTRASTE</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Facebook do PPGEM">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Instagram do PPGEM">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main navigation - REFATORADO para layout pixel perfect -->
+        <nav class="bg-gradient-to-r from-blue-500 to-blue-600" aria-label="Navegação principal">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-3">
+
+                    <!-- Logo - Esquerda -->
+                    <div class="flex items-center space-x-3 flex-shrink-0">
+                        <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-16 w-auto">
+                        <div class="hidden md:flex flex-col">
+                            <span class="text-lg font-bold text-white leading-tight">PPGEM</span>
+                            <span class="text-xs text-white/90 leading-tight">PROGRAMA DE PÓS-GRADUAÇÃO</span>
+                            <span class="text-xs text-white/90 leading-tight">EM ESTUDOS DA MÍDIA</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Menu - Centro -->
+                    <ul class="hidden lg:flex items-center space-x-1 text-xs font-medium flex-grow justify-center mx-8">
+                        <li><a href="#"
+                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">O
+                                PROGRAMA</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">ACADÊMICO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">SELEÇÃO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">PRODUÇÃO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">DOCUMENTOS</a>
+                        </li>
+                    </ul>
+
+                    <!-- Contact Info - Direita -->
+                    <div class="hidden lg:flex flex-col items-end text-white text-xs flex-shrink-0">
+                        <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition flex items-center">
+                            ppgem@cchla.ufrn.br
+                        </a>
+                        <a href="tel:+558433422245" class="hover:text-white/80 transition flex items-center mt-0.5">
+                            +55 84 3342-2245
+                        </a>
+                        <div class="flex items-center space-x-2 mt-1">
+                            <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
+                                <i class="fab fa-youtube text-base" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="hover:text-white/80 transition" aria-label="Instagram do PPGEM">
+                                <i class="fab fa-instagram text-base" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <button class="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-2"
+                        aria-label="Abrir menu de navegação" aria-expanded="false" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="hidden lg:hidden border-t border-white/20" id="mobile-menu">
+                <div class="container mx-auto px-4 py-4">
+                    <ul class="space-y-2">
+                        <li><a href="#" class="block text-white hover:bg-white/10 px-4 py-3 rounded transition">O
+                                PROGRAMA</a></li>
+                        <li><a href="#"
+                                class="block text-white hover:bg-white/10 px-4 py-3 rounded transition">ACADÊMICO</a>
+                        </li>
+                        <li><a href="#"
+                                class="block text-white hover:bg-white/10 px-4 py-3 rounded transition">SELEÇÃO</a></li>
+                        <li><a href="#"
+                                class="block text-white hover:bg-white/10 px-4 py-3 rounded transition">PRODUÇÃO</a>
+                        </li>
+                        <li><a href="#"
+                                class="block text-white hover:bg-white/10 px-4 py-3 rounded transition">DOCUMENTOS</a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-4 pt-4 border-t border-white/20 text-white text-sm">
+                        <a href="mailto:ppgem@cchla.ufrn.br" class="block hover:text-white/80 transition py-2">
+                            <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
+                            ppgem@cchla.ufrn.br
+                        </a>
+                        <a href="tel:+558433422245" class="block hover:text-white/80 transition py-2">
+                            <i class="fas fa-phone mr-2" aria-hidden="true"></i>
+                            +55 84 3342-2245
+                        </a>
+                        <div class="flex items-center space-x-4 mt-3">
+                            <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
+                                <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="hover:text-white/80 transition" aria-label="Instagram do PPGEM">
+                                <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="bg-gray-100" aria-labelledby="hero-title">
+            <div class="container mx-auto  max-w-screen-xl px-4 py-12">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+
+                    <!-- Featured Palestra Card -->
+                    <article class="lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative">
+                            <!-- Imagem da Palestra -->
+                            <img src="assets/img/ppgem.png"
+                                alt="Palestra sobre capacitamento comunicacional nas pesquisas de Doutorado em Estudos da Mídia"
+                                class="w-full h-auto object-cover">
+
+                            <!-- Overlay gradiente sutil -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+
+                            <!-- Informações da Palestra -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-6">
+                                <p class="text-white text-sm font-semibold mb-2 uppercase tracking-wide">Palestra</p>
+                                <h2 id="hero-title" class="text-white text-xl lg:text-2xl font-bold mb-3 leading-tight">
+                                    PPgEM divulga resultado da avaliação dos projetos de pesquisa do processo seletivo
+                                    2026.1
+                                </h2>
+                                <p class="text-white/90 text-sm">
+                                    O Programa de Pós-graduação em Estudos da Mídia (PPgEM) divulgou nesta
+                                    segunda-feira, 20, o resultado da avaliação dos projetos de pesquisa do processo
+                                    seletivo dos cursos de Mestrado e Doutorado 2026.1. Os resultados estão disponíveis
+                                    na área do candidato na plataforma SIGAA.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- News/Editais Links -->
+                    <aside class="space-y-4 lg:col-span-2" aria-label="Editais e notícias recentes">
+
+                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                            <a href="#" class="block group">
+                                <h3
+                                    class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
+                                    EDITAL Nº 005/2021-PPGEM - PROCESSO SELETIVO PARA O DOUTORADO PPGEM 2022
+                                </h3>
+                            </a>
+                        </article>
+
+                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                            <a href="#" class="block group">
+                                <h3
+                                    class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
+                                    EDITAIS Nº 004/2021-PPGEM - PROCESSO SELETIVO PARA O MESTRADO
+                                </h3>
+                            </a>
+                        </article>
+
+                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                            <a href="#" class="block group">
+                                <h3
+                                    class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
+                                    COMUNICADO SOBRE O HORÁRIO DE ENCERRAMENTO DAS INSCRIÇÕES - SELEÇÃO DE MESTRADO E
+                                    DOUTORADO PPGEM 2022
+                                </h3>
+                            </a>
+                        </article>
+
+                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                            <a href="#" class="block group">
+                                <h3
+                                    class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
+                                    ATA DE JULGAMENTO DOS PEDIDOS DE INSCRIÇÃO DOS CANDIDATOS DO PROCESSO DE
+                                    CREDENCIAMENTO DE DOCENTES
+                                </h3>
+                            </a>
+                        </article>
+
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Introduction -->
+        <section class="bg-white py-16 lg:py-20" aria-labelledby="program-title">
+            <div class="container mx-auto px-4 max-w-6xl">
+
+                <!-- Logo PPGEM -->
+                <div class="text-center mb-10 lg:mb-12">
+                    <img src="assets/img/logo-lg.png" alt="Logo PPGEM - Programa de Pós-Graduação em Estudos da Mídia"
+                        class="mx-auto h-24 lg:h-28 w-auto">
+                </div>
+
+                <!-- Título -->
+                <div class="text-center mb-8 lg:mb-10">
+                    <h2 id="program-title" class="text-2xl lg:text-3xl font-bold text-blue-600 mb-4">
+                        A COMÉDIA tem o foco voltado à sociedade
+                    </h2>
+                    <div class="w-16 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+
+                <!-- Texto Descritivo -->
+                <div class="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
+                    <p class="text-gray-600 text-base lg:text-lg leading-relaxed px-4">
+                        O Programa de Pós-graduação em Estudo da Mídia formaliza sua intenção em desenvolver atividades
+                        acadêmicas de estudos e pesquisas por meio do que propõe a sua área de concentração, a
+                        comunicação midiática abordada no contexto de suas práticas sociais e na esfera da sua produção
+                        de sentido.
+                    </p>
+                </div>
+
+                <!-- Link Quer saber mais -->
+                <div class="text-center mb-12 lg:mb-16">
+                    <a href="#"
+                        class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-base lg:text-lg transition-colors group">
+                        <span class="hover:underline">Quer saber mais?</span>
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"
+                            aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <!-- Quick Links - Cards Modernos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+
+                    <!-- Card 1: Coordenação -->
+                    <a href="#"
+                        class="group block bg-white border border-gray-200 rounded-lg p-5 lg:p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <div
+                                class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-user-tie text-blue-600 text-xl lg:text-2xl" aria-hidden="true"></i>
+                            </div>
+                            <h3
+                                class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors uppercase tracking-wide">
+                                Coordenação
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Secretaria -->
+                    <a href="#"
+                        class="group block bg-white border border-gray-200 rounded-lg p-5 lg:p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <div
+                                class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-building text-blue-600 text-xl lg:text-2xl" aria-hidden="true"></i>
+                            </div>
+                            <h3
+                                class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors uppercase tracking-wide">
+                                Secretaria
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Docentes -->
+                    <a href="#"
+                        class="group block bg-white border border-gray-200 rounded-lg p-5 lg:p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <div
+                                class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-chalkboard-teacher text-blue-600 text-xl lg:text-2xl"
+                                    aria-hidden="true"></i>
+                            </div>
+                            <h3
+                                class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors uppercase tracking-wide">
+                                Docentes
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 4: Alunos -->
+                    <a href="#"
+                        class="group block bg-white border border-gray-200 rounded-lg p-5 lg:p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <div
+                                class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-user-graduate text-blue-600 text-xl lg:text-2xl"
+                                    aria-hidden="true"></i>
+                            </div>
+                            <h3
+                                class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors uppercase tracking-wide">
+                                Alunos
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Card 5: Linhas de Pesquisa -->
+                    <a href="#"
+                        class="group block bg-white border border-gray-200 rounded-lg p-5 lg:p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <div
+                                class="w-12 h-12 lg:w-14 lg:h-14 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-search text-blue-600 text-xl lg:text-2xl" aria-hidden="true"></i>
+                            </div>
+                            <h3
+                                class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors uppercase tracking-wide">
+                                Linhas de Pesquisa
+                            </h3>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Editais Section -->
+        <section class="bg-gray-50 py-16 lg:py-20" aria-labelledby="editais-title">
+            <div class="container mx-auto px-4 max-w-6xl">
+
+                <!-- Título da Seção -->
+                <div class="mb-10 lg:mb-12">
+                    <h2 id="editais-title" class="text-2xl lg:text-3xl font-bold text-blue-600 mb-2">
+                        EDITAIS
+                    </h2>
+                    <div class="w-16 h-1 bg-blue-600"></div>
+                </div>
+
+                <!-- Lista de Editais -->
+                <div class="space-y-4">
+
+                    <!-- Edital Item 1 -->
+                    <article class="group">
+                        <a href="#"
+                            class="block bg-white border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                                        <time datetime="2021-09-07" class="text-base font-medium text-gray-500">
+                                            07/09/2021
+                                        </time>
+                                        <span class="text-gray-300">|</span>
+                                        <h3
+                                            class="text-xl font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            Edital de abertura
+                                        </h3>
+                                    </div>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
+                                        mídia. Inscrições vão até dia 23.09.2021.
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0 self-start sm:self-center">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Edital Item 2 -->
+                    <article class="group">
+                        <a href="#"
+                            class="block bg-white border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                            07/09/2021
+                                        </time>
+                                        <span class="text-gray-300">|</span>
+                                        <h3
+                                            class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            Edital de abertura
+                                        </h3>
+                                    </div>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
+                                        mídia. Inscrições vão até dia 23.09.2021.
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0 self-start sm:self-center">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Edital Item 3 -->
+                    <article class="group">
+                        <a href="#"
+                            class="block bg-white border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                            07/09/2021
+                                        </time>
+                                        <span class="text-gray-300">|</span>
+                                        <h3
+                                            class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            Edital de abertura
+                                        </h3>
+                                    </div>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
+                                        mídia. Inscrições vão até dia 23.09.2021.
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0 self-start sm:self-center">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Edital Item 4 -->
+                    <article class="group">
+                        <a href="#"
+                            class="block bg-white border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                            07/09/2021
+                                        </time>
+                                        <span class="text-gray-300">|</span>
+                                        <h3
+                                            class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            Edital de abertura
+                                        </h3>
+                                    </div>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
+                                        mídia. Inscrições vão até dia 23.09.2021.
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0 self-start sm:self-center">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Edital Item 5 -->
+                    <article class="group">
+                        <a href="#"
+                            class="block bg-white border border-gray-200 rounded-lg p-6 lg:p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                            07/09/2021
+                                        </time>
+                                        <span class="text-gray-300">|</span>
+                                        <h3
+                                            class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            Edital de abertura
+                                        </h3>
+                                    </div>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
+                                        mídia. Inscrições vão até dia 23.09.2021.
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0 self-start sm:self-center">
+                                    <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+
+                <!-- Botão Acessar Editais Anteriores -->
+                <div class="text-center mt-12 lg:mt-16">
+                    <a href="#"
+                        class="inline-block bg-blue-600 text-white px-8 lg:px-10 py-3.5 lg:py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-sm lg:text-base shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
+                        ACESSAR EDITAIS ANTERIORES
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- News Feed -->
+        <section class="bg-white py-16 lg:py-20" aria-labelledby="news-title">
+            <div class="container mx-auto px-4 max-w-7xl">
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 gap-8 lg:gap-12">
+
+                    <!-- Novidades (Esquerda - 2 colunas) -->
+                    <div class="lg:col-span-3">
+
+                        <!-- Header Novidades com Ondas Azul -->
+                        <div
+                            class="relative bg-gradient-to-r from-blue-500 to-blue-400 rounded-md overflow-hidden mb-8">
+                            <!-- Ondas decorativas -->
+                            <div class="absolute inset-0 opacity-20">
+                                <svg class="absolute right-0 top-0 h-full" width="300" viewBox="0 0 300 100"
+                                    preserveAspectRatio="none">
+                                    <path d="M0,50 Q75,20 150,50 T300,50 L300,100 L0,100 Z"
+                                        fill="rgba(255,255,255,0.4)" />
+                                </svg>
+                                <svg class="absolute right-0 top-0 h-full transform translate-x-12" width="300"
+                                    viewBox="0 0 300 100" preserveAspectRatio="none">
+                                    <path d="M0,50 Q75,20 150,50 T300,50 L300,100 L0,100 Z"
+                                        fill="rgba(255,255,255,0.3)" />
+                                </svg>
+                            </div>
+                            <div class="relative flex items-center justify-between px-6 lg:px-8 py-4">
+                                <h2 id="news-title"
+                                    class="text-xl lg:text-2xl font-bold text-white uppercase tracking-wider">
+                                    Novidades
+                                </h2>
+                                <a href="#"
+                                    class="text-white text-sm font-semibold hover:text-blue-900 transition-colors flex items-center gap-2 uppercase tracking-wide">
+                                    <span>Ver Todas</span>
+                                    <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Grid de Notícias (2 colunas, 6 items - SEM BORDAS) -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+
+                            <!-- Notícia 1 -->
+                            <article>
+                                <a href="#" class="block group">
+                                    <h3
+                                        class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
+                                        PPGEM PROMOVE AULA INAUGURAL DO SEMESTRE 2021.2
+                                    </h3>
+                                    <time datetime="2021-09-08" class="text-sm text-gray-500 block mb-3">
+                                        Publicado em: 08.09.2021
+                                    </time>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        A Coordenação do PPgEM convida a todos para a Aula Inaugural do PPgEM 2021.2,
+                                        que ocorrerá no dia 09/08/2021 (segunda-feira), às 15h, no Canal do PPgEM no
+                                        YouTube
+                                    </p>
+                                </a>
+                            </article>
+
+                            <!-- Notícia 2 -->
+                            <article>
+                                <a href="#" class="block group">
+                                    <h3
+                                        class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
+                                        PPGEM PROMOVE AULA INAUGURAL DO SEMESTRE 2021.2
+                                    </h3>
+                                    <time datetime="2021-09-08" class="text-sm text-gray-500 block mb-3">
+                                        Publicado em: 08.09.2021
+                                    </time>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        A Coordenação do PPgEM convida a todos para a Aula Inaugural do PPgEM 2021.2,
+                                        que ocorrerá no dia 09/08/2021 (segunda-feira), às 15h, no Canal do PPgEM no
+                                        YouTube
+                                    </p>
+                                </a>
+                            </article>
+
+                            <!-- Notícia 3 -->
+                            <article>
+                                <a href="#" class="block group">
+                                    <h3
+                                        class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
+                                        RESULTADO DA SELEÇÃO PARA ALUNO ESPECIAL - PPGEM 2021.2
+                                    </h3>
+                                    <time datetime="2021-08-05" class="text-sm text-gray-500 block mb-3">
+                                        Publicado em: 05.08.2021
+                                    </time>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        Os candidatos selecionados receberão um e-mail com o número de matrícula e
+                                        deverão se matricular nas disciplinas pleiteadas.
+                                    </p>
+                                </a>
+                            </article>
+
+                            <!-- Notícia 4 -->
+                            <article>
+                                <a href="#" class="block group">
+                                    <h3
+                                        class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
+                                        RESULTADO DA SELEÇÃO PARA ALUNO ESPECIAL - PPGEM 2021.2
+                                    </h3>
+                                    <time datetime="2021-08-05" class="text-sm text-gray-500 block mb-3">
+                                        Publicado em: 05.08.2021
+                                    </time>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        Os candidatos selecionados receberão um e-mail com o número de matrícula e
+                                        deverão se matricular nas disciplinas pleiteadas.
+                                    </p>
+                                </a>
+                            </article>
+
+                            <!-- Notícia 5 -->
+                            <article>
+                                <a href="#" class="block group">
+                                    <h3
+                                        class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
+                                        EDITAL Nº 003/2021 - PPGEM - CREDENCIAMENTO DE DOCENTES DO PROGRAMA DE
+                                        PÓS-GRADUAÇÃO EM ESTUDOS DA MÍDIA, PARA O QUADRIÊNIO 2021-2024 (RETIFICADO)
+                                    </h3>
+                                    <time datetime="2021-08-03" class="text-sm text-gray-500 block mb-3">
+                                        Publicado em: 03.08.2021
+                                    </time>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        Edital de Credenciamento de Docentes do PPgEM, com a alteração do CRONOGRAMA e
+                                        do item IV, constante no tópico "3 - DOS CRITÉRIOS DE CREDENCIAMENTO", e alínea
+                                        "e" do mesmo item.
+                                    </p>
+                                </a>
+                            </article>
+
+                            <!-- Notícia 6 -->
+                            <article>
+                                <a href="#" class="block group">
+                                    <h3
+                                        class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
+                                        EDITAL Nº 003/2021 - PPGEM - CREDENCIAMENTO DE DOCENTES DO PROGRAMA DE
+                                        PÓS-GRADUAÇÃO EM ESTUDOS DA MÍDIA, PARA O QUADRIÊNIO 2021-2024 (RETIFICADO)
+                                    </h3>
+                                    <time datetime="2021-08-03" class="text-sm text-gray-500 block mb-3">
+                                        Publicado em: 03.08.2021
+                                    </time>
+                                    <p class="text-sm text-gray-600 leading-relaxed">
+                                        Edital de Credenciamento de Docentes do PPgEM, com a alteração do CRONOGRAMA e
+                                        do item IV, constante no tópico "3 - DOS CRITÉRIOS DE CREDENCIAMENTO", e alínea
+                                        "e" do mesmo item.
+                                    </p>
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <!-- Calendário/Eventos (Direita - 1 coluna) -->
+                    <div class="lg:col-span-2">
+
+                        <!-- Header Calendário com Ondas Verde -->
+                        <div
+                            class="relative bg-gradient-to-r from-green-500 to-green-400 rounded-md overflow-hidden mb-8">
+                            <!-- Ondas decorativas -->
+                            <div class="absolute inset-0 opacity-20">
+                                <svg class="absolute right-0 top-0 h-full" width="300" viewBox="0 0 300 100"
+                                    preserveAspectRatio="none">
+                                    <path d="M0,50 Q75,20 150,50 T300,50 L300,100 L0,100 Z"
+                                        fill="rgba(255,255,255,0.4)" />
+                                </svg>
+                                <svg class="absolute right-0 top-0 h-full transform translate-x-12" width="300"
+                                    viewBox="0 0 300 100" preserveAspectRatio="none">
+                                    <path d="M0,50 Q75,20 150,50 T300,50 L300,100 L0,100 Z"
+                                        fill="rgba(255,255,255,0.3)" />
+                                </svg>
+                            </div>
+                            <div class="relative flex items-center justify-between px-6 py-4">
+                                <h2 class="text-xl lg:text-2xl font-bold text-white uppercase tracking-wider">
+                                    Calendário
+                                </h2>
+                                <a href="#"
+                                    class="text-white text-sm font-semibold hover:text-green-900 transition-colors flex items-center gap-2 uppercase tracking-wide">
+                                    <span>Ver Todos</span>
+                                    <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Eventos (4 items COM BORDA INFERIOR) -->
+                        <div>
+
+                            <!-- Evento 1 -->
+                            <article class="pb-6 mb-6 border-b border-gray-200">
+                                <a href="#" class="block group">
+                                    <div class="flex items-start gap-4">
+                                        <!-- Data badge -->
+                                        <div class="flex-shrink-0 text-center highlight">
+                                            <div
+                                                class="text-5xl lg:text-5xl font-bold text-green-500 leading-none highlight">
+                                                15
+                                            </div>
+                                            <div class="text-2xl text-gray-600 uppercase mt-1 ">OUT</div>
+                                        </div>
+                                        <!-- Conteúdo -->
+                                        <div class="flex-1 pt-1">
+                                            <h3
+                                                class="text-base font-bold text-gray-800 leading-tight group-hover:text-green-600 transition-colors">
+                                                PPgEM promove edição 2021 de colóquio sobre histórias midiáticas no RN
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!-- Evento 2 -->
+                            <article class="pb-6 mb-6 border-b border-gray-200">
+                                <a href="#" class="block group">
+                                    <div class="flex items-start gap-4">
+                                        <!-- Data badge -->
+                                        <div class="flex-shrink-0 text-center highlight">
+                                            <div class="text-5xl lg:text-5xl font-bold text-green-500 leading-none">
+                                                20
+                                            </div>
+                                            <div class="text-2xl text-gray-600 uppercase mt-1">OUT</div>
+                                        </div>
+                                        <!-- Conteúdo -->
+                                        <div class="flex-1 pt-1">
+                                            <h3
+                                                class="text-base font-bold text-gray-800 leading-tight group-hover:text-green-600 transition-colors">
+                                                Defesa de Dissertação - Mestrado em Estudos da Mídia
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!-- Evento 3 -->
+                            <article class="pb-6 mb-6 border-b border-gray-200">
+                                <a href="#" class="block group">
+                                    <div class="flex items-start gap-4">
+                                        <!-- Data badge -->
+                                        <div class="flex-shrink-0 text-center highlight">
+                                            <div class="text-5xl lg:text-5xl font-bold text-green-500 leading-none">25
+                                            </div>
+                                            <div class="text-2xl text-gray-600 uppercase mt-1">OUT</div>
+                                        </div>
+                                        <!-- Conteúdo -->
+                                        <div class="flex-1 pt-1">
+                                            <h3
+                                                class="text-base font-bold text-gray-800 leading-tight group-hover:text-green-600 transition-colors">
+                                                Palestra: Comunicação e Mídia na Era Digital
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!-- Evento 4 (sem borda inferior) -->
+                            <article class="pb-6">
+                                <a href="#" class="block group">
+                                    <div class="flex items-start gap-4">
+                                        <!-- Data badge -->
+                                        <div class="flex-shrink-0 text-center highlight">
+                                            <div class="text-5xl lg:text-5xl font-bold text-green-500 leading-none">30
+                                            </div>
+                                            <div class="text-2xl text-gray-600 uppercase mt-1">OUT</div>
+                                        </div>
+                                        <!-- Conteúdo -->
+                                        <div class="flex-1 pt-1">
+                                            <h3
+                                                class="text-base font-bold text-gray-800 leading-tight group-hover:text-green-600 transition-colors">
+                                                Seminário de Pesquisa - Apresentação de Projetos
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Icons -->
+        <section class="bg-gray-50 py-16 lg:py-20">
+            <div class="container mx-auto px-4 max-w-6xl">
+
+                <!-- Grid de Cards com Ícones Phosphor -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+
+                    <!-- Card 1: Manual do Discente -->
+                    <a href="#"
+                        class="group flex flex-col items-center text-center p-6 lg:p-8 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <i
+                                class="ph ph-book-open text-5xl lg:text-6xl text-gray-700 group-hover:text-blue-600 transition-colors"></i>
+                        </div>
+                        <h3
+                            class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
+                            Manual do<br>Discente
+                        </h3>
+                    </a>
+
+                    <!-- Card 2: Documentos e modelos -->
+                    <a href="#"
+                        class="group flex flex-col items-center text-center p-6 lg:p-8 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <i
+                                class="ph ph-file-text text-5xl lg:text-6xl text-gray-700 group-hover:text-blue-600 transition-colors"></i>
+                        </div>
+                        <h3
+                            class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
+                            Documentos e<br>modelos
+                        </h3>
+                    </a>
+
+                    <!-- Card 3: Números e estatísticas -->
+                    <a href="#"
+                        class="group flex flex-col items-center text-center p-6 lg:p-8 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <i
+                                class="ph ph-chart-line text-5xl lg:text-6xl text-gray-700 group-hover:text-blue-600 transition-colors"></i>
+                        </div>
+                        <h3
+                            class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
+                            Números e<br>estatísticas
+                        </h3>
+                    </a>
+
+                    <!-- Card 4: Repositório institucional -->
+                    <a href="#"
+                        class="group flex flex-col items-center text-center p-6 lg:p-8 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+                        <div class="mb-4">
+                            <i
+                                class="ph ph-database text-5xl lg:text-6xl text-gray-700 group-hover:text-blue-600 transition-colors"></i>
+                        </div>
+                        <h3
+                            class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
+                            Repositório<br>institucional
+                        </h3>
+                    </a>
+
+                    <!-- Card 5: Grupos de pesquisa -->
+                    <a href="#"
+                        class="group flex flex-col items-center text-center p-6 lg:p-8 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 col-span-2 md:col-span-1">
+                        <div class="mb-4">
+                            <i
+                                class="ph ph-users-three text-5xl lg:text-6xl text-gray-700 group-hover:text-blue-600 transition-colors"></i>
+                        </div>
+                        <h3
+                            class="text-sm lg:text-base font-semibold text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
+                            Grupos de<br>pesquisa
+                        </h3>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white py-12" aria-labelledby="faq-title">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 id="faq-title" class="text-2xl font-bold text-gray-800 mb-8">PERGUNTAS FREQUENTES</h2>
+
+                <div class="space-y-4" role="list">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
+                        <button
+                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-expanded="false" aria-controls="faq-1">
+                            <span class="font-medium text-gray-800">
+                                Eu posso fazer a matrícula do estudante no PPgEM Presentes sendo formado em outro curso
+                                (2016)?
+                            </span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq-1" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
+                            <p>Sim, é possível fazer a matrícula desde que você atenda aos requisitos estabelecidos no
+                                edital do processo seletivo.</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
+                        <button
+                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-expanded="false" aria-controls="faq-2">
+                            <span class="font-medium text-gray-800">
+                                Quantas vagas são disponibilizadas nos processos seletivos do PPgEM?
+                            </span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq-2" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
+                            <p>O número de vagas disponibilizadas é informado em cada edital de processo seletivo.</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
+                        <button
+                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-expanded="false" aria-controls="faq-3">
+                            <span class="font-medium text-gray-800">
+                                Quais prazos teremos o mestres para concluir os cursos?
+                            </span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq-3" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
+                            <p>Os prazos para conclusão do mestrado são estabelecidos de acordo com as normas do
+                                programa e da CAPES.</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
+                        <button
+                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-expanded="false" aria-controls="faq-4">
+                            <span class="font-medium text-gray-800">
+                                Como funciona a internacionalização no PPgEM?
+                            </span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq-4" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
+                            <p>O programa possui convênios com instituições internacionais e incentiva a participação em
+                                eventos e publicações internacionais.</p>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
+                        <button
+                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-expanded="false" aria-controls="faq-5">
+                            <span class="font-medium text-gray-800">
+                                Onde ser graduado em Comunicação Social para poder cursar as vagas do mestrado?
+                            </span>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq-5" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
+                            <p>Não é necessário ser graduado em Comunicação Social. O programa aceita candidatos de
+                                diversas áreas do conhecimento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="#"
+                        class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition font-medium shadow-md">
+                        VER TODAS AS PERGUNTAS
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Institutional -->
+                <nav aria-labelledby="footer-institutional">
+                    <h3 id="footer-institutional" class="font-bold text-lg mb-4 uppercase">Institucional</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Sobre o Programa</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Histórico</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Estrutura</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Corpo Docente</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Coordenação</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Academic -->
+                <nav aria-labelledby="footer-academic">
+                    <h3 id="footer-academic" class="font-bold text-lg mb-4 uppercase">Acadêmico</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Linhas de Pesquisa</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Disciplinas</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Projetos</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Grupos de Pesquisa</a></li>
+                    </ul>
+
+                    <h4 class="font-bold text-sm mt-6 mb-3 uppercase">Produção</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Dissertações</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Teses</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Publicações Científicas</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Documents -->
+                <nav aria-labelledby="footer-documents">
+                    <h3 id="footer-documents" class="font-bold text-lg mb-4 uppercase">Documentos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Regimento</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Normas</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Formulários</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Modelos</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Calendário</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Selection Process -->
+                <nav aria-labelledby="footer-selection">
+                    <h3 id="footer-selection" class="font-bold text-lg mb-4 uppercase">Processos Seletivos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Editais</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Mestrado</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Doutorado</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Aluno Especial</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Resultados</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-blue-700 pt-8 mt-8">
+                <div class="text-center text-sm">
+                    <address class="not-italic mb-4">
+                        <p class="mb-2">
+                            <strong>Universidade Federal do Rio Grande do Norte</strong>
+                        </p>
+                        <p class="mb-2">
+                            Centro de Ciências Humanas, Letras e Artes (CCHLA)<br>
+                            Programa de Pós-Graduação em Estudos da Mídia
+                        </p>
+                        <p>
+                            Campus Universitário - Lagoa Nova - Natal/RN - CEP: 59078-970<br>
+                            Telefone: +55 (84) 3342-2231 | E-mail: ppgem@cchla.ufrn.br
+                        </p>
+                    </address>
+
+                    <div class="flex justify-center items-center space-x-4 mt-6">
+                        <a href="#" aria-label="Facebook" class="hover:text-blue-300 transition">
+                            <i class="fab fa-facebook-f text-xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="hover:text-blue-300 transition">
+                            <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="hover:text-blue-300 transition">
+                            <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <p class="mt-6 text-xs opacity-75">
+                        © 2025 PPGEM/UFRN. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                // Close all other accordions
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherButton.nextElementSibling.classList.add('hidden');
+                        otherButton.querySelector('i').classList.remove('rotate-180');
+                        otherButton.classList.remove('active');
+                    }
+                });
+
+                // Toggle current accordion
+                button.setAttribute('aria-expanded', !isExpanded);
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                button.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
