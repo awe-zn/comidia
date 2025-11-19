@@ -924,91 +924,170 @@
         </section>
 
         <!-- FAQ Section -->
-        <section class="bg-white py-12" aria-labelledby="faq-title">
+        <section class="bg-gray-50 py-20 lg:py-24" aria-labelledby="faq-title">
             <div class="container mx-auto px-4 max-w-4xl">
-                <h2 id="faq-title" class="text-2xl font-bold text-gray-800 mb-8">PERGUNTAS FREQUENTES</h2>
 
-                <div class="space-y-4" role="list">
-                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
-                        <button
-                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            aria-expanded="false" aria-controls="faq-1">
-                            <span class="font-medium text-gray-800">
-                                Eu posso fazer a matrícula do estudante no PPgEM Presentes sendo formado em outro curso
-                                (2016)?
-                            </span>
-                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
-                        </button>
-                        <div id="faq-1" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
-                            <p>Sim, é possível fazer a matrícula desde que você atenda aos requisitos estabelecidos no
-                                edital do processo seletivo.</p>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
-                        <button
-                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            aria-expanded="false" aria-controls="faq-2">
-                            <span class="font-medium text-gray-800">
-                                Quantas vagas são disponibilizadas nos processos seletivos do PPgEM?
-                            </span>
-                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
-                        </button>
-                        <div id="faq-2" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
-                            <p>O número de vagas disponibilizadas é informado em cada edital de processo seletivo.</p>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
-                        <button
-                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            aria-expanded="false" aria-controls="faq-3">
-                            <span class="font-medium text-gray-800">
-                                Quais prazos teremos o mestres para concluir os cursos?
-                            </span>
-                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
-                        </button>
-                        <div id="faq-3" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
-                            <p>Os prazos para conclusão do mestrado são estabelecidos de acordo com as normas do
-                                programa e da CAPES.</p>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
-                        <button
-                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            aria-expanded="false" aria-controls="faq-4">
-                            <span class="font-medium text-gray-800">
-                                Como funciona a internacionalização no PPgEM?
-                            </span>
-                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
-                        </button>
-                        <div id="faq-4" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
-                            <p>O programa possui convênios com instituições internacionais e incentiva a participação em
-                                eventos e publicações internacionais.</p>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 rounded-lg overflow-hidden" role="listitem">
-                        <button
-                            class="accordion-button w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            aria-expanded="false" aria-controls="faq-5">
-                            <span class="font-medium text-gray-800">
-                                Onde ser graduado em Comunicação Social para poder cursar as vagas do mestrado?
-                            </span>
-                            <i class="fas fa-chevron-down text-gray-500 transition-transform" aria-hidden="true"></i>
-                        </button>
-                        <div id="faq-5" class="hidden p-4 bg-gray-50 text-gray-700" role="region">
-                            <p>Não é necessário ser graduado em Comunicação Social. O programa aceita candidatos de
-                                diversas áreas do conhecimento.</p>
-                        </div>
-                    </div>
+                <!-- Título e Introdução -->
+                <div class="text-center mb-12 lg:mb-16">
+                    <h2 id="faq-title" class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                        Perguntas Frequentes
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Encontre respostas para as dúvidas mais comuns sobre o PPgEM
+                    </p>
                 </div>
 
-                <div class="text-center mt-8">
+                <!-- Lista de Perguntas -->
+                <div class="space-y-4" role="list">
+
+                    <!-- FAQ Item 1 -->
+                    <article
+                        class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+                        role="listitem">
+                        <h3>
+                            <button
+                                class="accordion-button w-full text-left p-6 lg:p-8 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                aria-expanded="false" aria-controls="faq-1">
+                                <span class="font-semibold text-gray-900 text-base lg:text-lg leading-relaxed pr-4">
+                                    Posso fazer matrícula no PPgEM sendo formado em outro curso?
+                                </span>
+                                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                    <i class="ph ph-plus text-2xl text-gray-500 transition-transform duration-200"
+                                        aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="faq-1" class="hidden" role="region" aria-labelledby="faq-1-title">
+                            <div class="px-6 lg:px-8 pb-6 lg:pb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Sim, é possível fazer a matrícula desde que você atenda aos requisitos estabelecidos
+                                    no edital do processo seletivo. O programa aceita candidatos de diversas áreas do
+                                    conhecimento.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 2 -->
+                    <article
+                        class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+                        role="listitem">
+                        <h3>
+                            <button
+                                class="accordion-button w-full text-left p-6 lg:p-8 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                aria-expanded="false" aria-controls="faq-2">
+                                <span class="font-semibold text-gray-900 text-base lg:text-lg leading-relaxed pr-4">
+                                    Quantas vagas são disponibilizadas nos processos seletivos?
+                                </span>
+                                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                    <i class="ph ph-plus text-2xl text-gray-500 transition-transform duration-200"
+                                        aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="faq-2" class="hidden" role="region" aria-labelledby="faq-2-title">
+                            <div class="px-6 lg:px-8 pb-6 lg:pb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    O número de vagas disponibilizadas é informado em cada edital de processo seletivo,
+                                    que é publicado anualmente no site do programa e nas plataformas oficiais da UFRN.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 3 -->
+                    <article
+                        class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+                        role="listitem">
+                        <h3>
+                            <button
+                                class="accordion-button w-full text-left p-6 lg:p-8 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                aria-expanded="false" aria-controls="faq-3">
+                                <span class="font-semibold text-gray-900 text-base lg:text-lg leading-relaxed pr-4">
+                                    Quais são os prazos para conclusão dos cursos?
+                                </span>
+                                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                    <i class="ph ph-plus text-2xl text-gray-500 transition-transform duration-200"
+                                        aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="faq-3" class="hidden" role="region" aria-labelledby="faq-3-title">
+                            <div class="px-6 lg:px-8 pb-6 lg:pb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Os prazos para conclusão são estabelecidos de acordo com as normas do programa e da
+                                    CAPES. O mestrado tem prazo máximo de 24 meses e o doutorado de 48 meses, podendo
+                                    haver prorrogação em casos excepcionais.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 4 -->
+                    <article
+                        class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+                        role="listitem">
+                        <h3>
+                            <button
+                                class="accordion-button w-full text-left p-6 lg:p-8 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                aria-expanded="false" aria-controls="faq-4">
+                                <span class="font-semibold text-gray-900 text-base lg:text-lg leading-relaxed pr-4">
+                                    Como funciona a internacionalização no PPgEM?
+                                </span>
+                                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                    <i class="ph ph-plus text-2xl text-gray-500 transition-transform duration-200"
+                                        aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="faq-4" class="hidden" role="region" aria-labelledby="faq-4-title">
+                            <div class="px-6 lg:px-8 pb-6 lg:pb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    O programa possui convênios com instituições internacionais e incentiva a
+                                    participação em eventos, publicações e intercâmbios internacionais. Também oferece
+                                    suporte para candidatura a bolsas de mobilidade acadêmica.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 5 -->
+                    <article
+                        class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+                        role="listitem">
+                        <h3>
+                            <button
+                                class="accordion-button w-full text-left p-6 lg:p-8 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                aria-expanded="false" aria-controls="faq-5">
+                                <span class="font-semibold text-gray-900 text-base lg:text-lg leading-relaxed pr-4">
+                                    É necessário ser graduado em Comunicação Social?
+                                </span>
+                                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                    <i class="ph ph-plus text-2xl text-gray-500 transition-transform duration-200"
+                                        aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </h3>
+                        <div id="faq-5" class="hidden" role="region" aria-labelledby="faq-5-title">
+                            <div class="px-6 lg:px-8 pb-6 lg:pb-8">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Não é necessário ser graduado em Comunicação Social. O programa é interdisciplinar e
+                                    aceita candidatos de diversas áreas do conhecimento que tenham interesse nos Estudos
+                                    da Mídia.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center mt-12 lg:mt-16">
                     <a href="#"
-                        class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition font-medium shadow-md">
-                        VER TODAS AS PERGUNTAS
+                        class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-base shadow-sm hover:shadow-md group">
+                        <span>Ver Todas as Perguntas</span>
+                        <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"
+                            aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -1016,99 +1095,239 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12">
+    <!-- Footer - Blueprintt Style -->
+    <footer class="bg-gray-900 text-gray-300">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <!-- Institutional -->
-                <nav aria-labelledby="footer-institutional">
-                    <h3 id="footer-institutional" class="font-bold text-lg mb-4 uppercase">Institucional</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Sobre o Programa</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Histórico</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Estrutura</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Corpo Docente</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Coordenação</a></li>
-                    </ul>
-                </nav>
 
-                <!-- Academic -->
-                <nav aria-labelledby="footer-academic">
-                    <h3 id="footer-academic" class="font-bold text-lg mb-4 uppercase">Acadêmico</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Linhas de Pesquisa</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Disciplinas</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Projetos</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Grupos de Pesquisa</a></li>
-                    </ul>
+            <!-- Main Footer Content -->
+            <div class="py-16 lg:py-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
 
-                    <h4 class="font-bold text-sm mt-6 mb-3 uppercase">Produção</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Dissertações</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Teses</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Publicações Científicas</a></li>
-                    </ul>
-                </nav>
+                    <!-- Brand Column (Larger) -->
+                    <div class="lg:col-span-4">
+                        <div class="mb-6">
+                            <img src="https://via.placeholder.com/200x60?text=PPGEM+Logo+White" alt="PPGEM"
+                                class="h-12 w-auto mb-6">
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                Programa de Pós-Graduação em Estudos da Mídia da Universidade Federal do Rio Grande do
+                                Norte.
+                            </p>
+                        </div>
 
-                <!-- Documents -->
-                <nav aria-labelledby="footer-documents">
-                    <h3 id="footer-documents" class="font-bold text-lg mb-4 uppercase">Documentos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Regimento</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Normas</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Formulários</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Modelos</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Calendário</a></li>
-                    </ul>
-                </nav>
+                        <!-- Social Media -->
+                        <div class="flex items-center gap-4">
+                            <a href="#" aria-label="YouTube PPGEM"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-200">
+                                <i class="fab fa-youtube text-lg" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram PPGEM"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-200">
+                                <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook PPGEM"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-200">
+                                <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
 
-                <!-- Selection Process -->
-                <nav aria-labelledby="footer-selection">
-                    <h3 id="footer-selection" class="font-bold text-lg mb-4 uppercase">Processos Seletivos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Editais</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Mestrado</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Doutorado</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Aluno Especial</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition text-sm">Resultados</a></li>
-                    </ul>
-                </nav>
+                    <!-- Links Columns -->
+                    <div class="lg:col-span-8">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-6">
+
+                            <!-- Column 1: Institucional -->
+                            <nav aria-labelledby="footer-institutional">
+                                <h3 id="footer-institutional"
+                                    class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                                    Institucional
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Sobre o Programa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Histórico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Estrutura
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Corpo Docente
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Coordenação
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <!-- Column 2: Acadêmico -->
+                            <nav aria-labelledby="footer-academic">
+                                <h3 id="footer-academic"
+                                    class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                                    Acadêmico
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Linhas de Pesquisa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Disciplinas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Projetos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Grupos de Pesquisa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Publicações
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <!-- Column 3: Seleção -->
+                            <nav aria-labelledby="footer-selection">
+                                <h3 id="footer-selection"
+                                    class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                                    Seleção
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Editais
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Mestrado
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Doutorado
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Aluno Especial
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Resultados
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <!-- Column 4: Documentos -->
+                            <nav aria-labelledby="footer-documents">
+                                <h3 id="footer-documents"
+                                    class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                                    Documentos
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Regimento
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Normas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Formulários
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Modelos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                                            Calendário
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <!-- Footer Bottom -->
-            <div class="border-t border-blue-700 pt-8 mt-8">
-                <div class="text-center text-sm">
-                    <address class="not-italic mb-4">
-                        <p class="mb-2">
-                            <strong>Universidade Federal do Rio Grande do Norte</strong>
-                        </p>
-                        <p class="mb-2">
-                            Centro de Ciências Humanas, Letras e Artes (CCHLA)<br>
-                            Programa de Pós-Graduação em Estudos da Mídia
-                        </p>
-                        <p>
-                            Campus Universitário - Lagoa Nova - Natal/RN - CEP: 59078-970<br>
-                            Telefone: +55 (84) 3342-2231 | E-mail: ppgem@cchla.ufrn.br
+            <div class="border-t border-gray-800 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                    <!-- Address & Contact -->
+                    <address class="not-italic text-center md:text-left">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            <strong class="text-white">UFRN - CCHLA</strong><br>
+                            Campus Universitário, Lagoa Nova<br>
+                            Natal/RN - CEP: 59078-970<br>
+                            <a href="mailto:ppgem@cchla.ufrn.br"
+                                class="hover:text-white transition-colors">ppgem@cchla.ufrn.br</a> |
+                            <a href="tel:+558433422245" class="hover:text-white transition-colors">+55 84 3342-2245</a>
                         </p>
                     </address>
 
-                    <div class="flex justify-center items-center space-x-4 mt-6">
-                        <a href="#" aria-label="Facebook" class="hover:text-blue-300 transition">
-                            <i class="fab fa-facebook-f text-xl" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" aria-label="Instagram" class="hover:text-blue-300 transition">
-                            <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" aria-label="YouTube" class="hover:text-blue-300 transition">
-                            <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
-                        </a>
+                    <!-- Copyright -->
+                    <div class="text-center md:text-right">
+                        <p class="text-gray-500 text-sm">
+                            © 2025 PPGEM/UFRN<br class="md:hidden">
+                            <span class="hidden md:inline">·</span> Todos os direitos reservados
+                        </p>
                     </div>
 
-                    <p class="mt-6 text-xs opacity-75">
-                        © 2025 PPGEM/UFRN. Todos os direitos reservados.
-                    </p>
                 </div>
             </div>
+
         </div>
     </footer>
 
