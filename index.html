@@ -287,7 +287,7 @@
                 <!-- Título -->
                 <div class="text-center mb-8 lg:mb-10">
                     <h2 id="program-title" class="text-2xl lg:text-3xl font-bold text-blue-600 mb-4">
-                        A COMÉDIA tem o foco voltado à sociedade
+                        A Comídia tem o foco voltado à sociedade
                     </h2>
                     <div class="w-16 h-1 bg-blue-600 mx-auto"></div>
                 </div>
@@ -307,8 +307,6 @@
                     <a href="#"
                         class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-base lg:text-lg transition-colors group">
                         <span class="hover:underline">Quer saber mais?</span>
-                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"
-                            aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -1345,47 +1343,40 @@
             });
         }
 
-        // Accordion functionality
-        const accordionButtons = document.querySelectorAll('.accordion-button');
+        // Accordion functionality with Phosphor Icons
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
 
-        accordionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('i');
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-                // Close all other accordions
-                accordionButtons.forEach(otherButton => {
-                    if (otherButton !== button) {
-                        otherButton.setAttribute('aria-expanded', 'false');
-                        otherButton.nextElementSibling.classList.add('hidden');
-                        otherButton.querySelector('i').classList.remove('rotate-180');
-                        otherButton.classList.remove('active');
+                    // Fecha outros
+                    accordionButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.setAttribute('aria-expanded', 'false');
+                            otherButton.nextElementSibling.classList.add('hidden');
+                            const otherIcon = otherButton.querySelector('i');
+                            otherIcon.classList.remove('ph-minus', 'rotate-180');
+                            otherIcon.classList.add('ph-plus');
+                        }
+                    });
+
+                    // Toggle atual
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    content.classList.toggle('hidden');
+
+                    // Muda ícone
+                    if (isExpanded) {
+                        icon.classList.remove('ph-minus', 'rotate-180');
+                        icon.classList.add('ph-plus');
+                    } else {
+                        icon.classList.remove('ph-plus');
+                        icon.classList.add('ph-minus', 'rotate-180');
                     }
                 });
-
-                // Toggle current accordion
-                button.setAttribute('aria-expanded', !isExpanded);
-                content.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
-                button.classList.toggle('active');
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href !== '') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
             });
         });
     </script>
