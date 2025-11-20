@@ -11,7 +11,68 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind.config.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    screens: {
+                        sm: '640px',
+                        md: '768px',
+                        lg: '1024px',
+                        xl: '1280px',
+                        '2xl': '1280px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'system-ui', 'sans-serif'],
+                        highlight: ['Poppins', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            50: '#f2f8fd',
+                            100: '#e5eef9',
+                            200: '#c5ddf2',
+                            300: '#91c1e8',
+                            400: '#57a0d9',
+                            500: '#3185c6', // cor principal
+                            600: '#2471b5',
+                            700: '#1c5488',
+                            800: '#1b4871',
+                            900: '#1c3d5e',
+                            950: '#12273f',
+                        },
+                        green: {
+                            50: '#f8fce9',
+                            100: '#eef7d0',
+                            200: '#def0a6',
+                            300: '#c7e571',
+                            400: '#afd546',
+                            500: '#94bf28',
+                            600: '#71951b',
+                            700: '#567219',
+                            800: '#455a1a',
+                            900: '#3c4d1a',
+                            950: '#1e2a09',
+                        },
+                        neutral: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2933',
+                            900: '#111827',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -82,38 +143,38 @@
     </a>
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-40">
+    <header class="shadow-md sticky top-0 z-40">
         <!-- Top bar -->
         <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white">
-            <div class="container mx-auto px-4 py-2">
+            <div class="container mx-auto px-4 py-4 lg:py-3">
                 <div class="flex justify-between items-center text-sm">
 
-                    <!-- Acessibilidade (Esquerda) -->
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-8 lg:space-x-4">
                         <a href="#" class="hover:text-blue-200 transition" aria-label="Acessibilidade">
-                            <i class="fas fa-universal-access text-xl" aria-hidden="true"></i>
+                            <i class="fas fa-universal-access text-2xl lg:text-xl" aria-hidden="true"></i>
                             <span class="ml-1 hidden md:inline">ACESSIBILIDADE</span>
                         </a>
                         <a href="#" class="hover:text-blue-200 transition" aria-label="Alto contraste">
-                            <i class="fas fa-adjust text-xl" aria-hidden="true"></i>
+                            <i class="fas fa-adjust text-2xl lg:text-xl" aria-hidden="true"></i>
                             <span class="ml-1 hidden md:inline">ALTO CONTRASTE</span>
                         </a>
                     </div>
 
-                    <!-- Contatos + Redes (Direita) - Oculto em mobile -->
-                    <div class="hidden lg:flex items-center space-x-4">
-                        <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition flex items-center">
-                            ppgem@cchla.ufrn.br
-                        </a>
-                        <a href="tel:+558433422245" class="hover:text-white/80 transition flex items-center">
-                            +55 84 3342-2245
-                        </a>
-                        <div class="flex items-center space-x-4">
+                    <div class="items-center flex space-x-4">
+                        <div class=" hidden lg:flex items-center space-x-8 lg:space-x-4">
+                            <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition items-center">
+                                ppgem@cchla.ufrn.br
+                            </a>
+                            <a href="tel:+558433422245" class="hover:text-white/80 transition items-center">
+                                +55 84 3342-2245
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-8 lg:space-x-4">
                             <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
-                                <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
+                                <i class="fab fa-youtube text-2xl lg:text-xl" aria-hidden="true"></i>
                             </a>
                             <a href="#" class="hover:text-white/80 transition" aria-label="Instagram do PPGEM">
-                                <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
+                                <i class="fab fa-instagram text-2xl lg:text-xl" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -122,7 +183,7 @@
             </div>
         </div>
 
-        <nav class="bg-gradient-to-r from-blue-500 to-blue-600" aria-label="Navegação principal">
+        <nav class="xs:bg-gradient-to-r from-blue-500 to-blue-600 bg-blue-50" aria-label="Navegação principal">
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between py-3">
 
@@ -132,31 +193,38 @@
                     </div>
 
                     <!-- Desktop Menu - Centro -->
-                    <ul class="hidden lg:flex items-center space-x-1 text-xs font-medium flex-grow justify-end">
-                        <li><a href="#"
-                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">O
-                                PROGRAMA</a></li>
-                        <li><span class="text-white/50">|</span></li>
-                        <li><a href="#"
-                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">ACADÊMICO</a>
+                    <ul class="hidden lg:flex items-center space-x-1 flex-grow justify-end">
+                        <li>
+                            <a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition whitespace-nowrap">O
+                                PROGRAMA</a>
                         </li>
                         <li><span class="text-white/50">|</span></li>
-                        <li><a href="#"
-                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">SELEÇÃO</a>
+                        <li>
+                            <a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition whitespace-nowrap">ACADÊMICO</a>
                         </li>
                         <li><span class="text-white/50">|</span></li>
-                        <li><a href="#"
-                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">PRODUÇÃO</a>
+                        <li>
+                            <a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition whitespace-nowrap">SELEÇÃO</a>
                         </li>
                         <li><span class="text-white/50">|</span></li>
-                        <li><a href="#"
-                                class="text-white hover:bg-white/10 px-4 py-2 rounded transition whitespace-nowrap">DOCUMENTOS</a>
+                        <li>
+                            <a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition whitespace-nowrap">PRODUÇÃO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li>
+                            <a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition whitespace-nowrap">DOCUMENTOS</a>
                         </li>
                     </ul>
 
 
                     <!-- Mobile menu button -->
-                    <button class="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-2"
+                    <button
+                        class="lg:hidden lg:text-white text-blue-800 focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-2"
                         aria-label="Abrir menu de navegação" aria-expanded="false" id="mobile-menu-button">
                         <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                     </button>
@@ -206,18 +274,17 @@
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8 items-start">
 
                     <!-- Featured Palestra Card -->
-                    <article class="col-span-2 lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden group">
+                    <article class="col-span-2 lg:col-span-2 rounded-lg shadow-lg overflow-hidden group">
                         <div class="relative">
                             <!-- Imagem -->
                             <img src="assets/img/ppgem.png" alt="..." class="w-full h-auto object-cover">
 
-                            <!-- TODO 1: Gradient (oculto mobile) ✅ -->
                             <div
                                 class="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent">
                             </div>
 
                             <div
-                                class="static lg:absolute bottom-0 left-0 right-0  sm:bg-blue-800 lg:bg-blue-800/60 backdrop-blur-sm p-6">
+                                class="static lg:absolute bottom-0 left-0 right-0  bg-blue-800 lg:bg-blue-800/60 backdrop-blur-sm p-6">
                                 <p class="text-white text-sm font-semibold mb-2 uppercase tracking-wide">Palestra</p>
                                 <h2 class="text-white text-xl lg:text-2xl font-bold mb-3 leading-tight">
                                     PPgEM divulga resultado da avaliação dos projetos
@@ -303,7 +370,7 @@
 
                 <!-- Texto Descritivo -->
                 <div class="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
-                    <p class="text-gray-600 text-base lg:text-lg leading-relaxed px-4">
+                    <p class="text-gray-600 text-xl lg:text-xl leading-relaxed px-4">
                         O Programa de Pós-graduação em Estudo da Mídia formaliza sua intenção em desenvolver atividades
                         acadêmicas de estudos e pesquisas por meio do que propõe a sua área de concentração, a
                         comunicação midiática abordada no contexto de suas práticas sociais e na esfera da sua produção
@@ -314,13 +381,13 @@
                 <!-- Link Quer saber mais -->
                 <div class="text-center mb-12 lg:mb-16">
                     <a href="#"
-                        class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-base lg:text-lg transition-colors group">
+                        class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-xl lg:text-xl transition-colors group">
                         <span class="hover:underline">Quer saber mais?</span>
                     </a>
                 </div>
 
                 <!-- Quick Links - Cards Modernos -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
 
                     <!-- Card 1: Coordenação -->
                     <a href="#"
@@ -428,18 +495,24 @@
                                         <time datetime="2021-09-07" class="text-base font-medium text-gray-500">
                                             07/09/2021
                                         </time>
-                                        <span class="text-gray-300">|</span>
                                         <h3
-                                            class="text-xl font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
-                                            Edital de abertura
+                                            class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            Programa de Pós-graduação em Estudos da Mídia lança
+                                            edital de credenciamento para novos docentes que tem interesse em fazer
+                                            parte do corpo docente deste programa.
                                         </h3>
                                     </div>
                                     <p class="text-gray-600 leading-relaxed">
-                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
-                                        mídia. Inscrições vão até dia 23.09.2021.
+                                        O Programa de Pós-graduação em Estudos da Mídia (PPgEM), da Universidade Federal
+                                        do Rio Grande do norte (UFRN), lançou o edital 005/2025 de credenciamento de
+                                        novos docentes para o programa no interstício do quadriênio 2025-2028. As
+                                        inscrições foramabertas no dia 14 de novembro e vão até o dia 19 de janeiro de
+                                        2026.
                                     </p>
                                 </div>
                                 <div class="flex-shrink-0 self-start sm:self-center">
+                                    <span
+                                        class="flex-item lg:hidden mr-4 text-blue-600 text-xl group-hover:translate-x-1 transition-transform">Acessar</span>
                                     <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
                                         aria-hidden="true"></i>
                                 </div>
@@ -454,21 +527,23 @@
                             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                                 <div class="flex-1">
                                     <div class="flex flex-wrap items-center gap-3 mb-3">
-                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                        <time datetime="2021-09-07" class="text-base font-medium text-gray-500">
                                             07/09/2021
                                         </time>
-                                        <span class="text-gray-300">|</span>
                                         <h3
                                             class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
-                                            Edital de abertura
+                                            SELEÇÃO DE DOUTORADO 2026: RESULTADO PARCIAL
                                         </h3>
                                     </div>
                                     <p class="text-gray-600 leading-relaxed">
-                                        Foram disponibilizadas 20 vagas para doutorado e 10 para mestrado em estudos da
-                                        mídia. Inscrições vão até dia 23.09.2021.
+                                        Comunicamos que o resultado parcial foi publicado na área do candidato, no
+                                        sigaa. Para Acessar as notícias e os resultados do processo seletivo, conforme o
+                                        art. 24, do edital de seleção 003/2025.
                                     </p>
                                 </div>
                                 <div class="flex-shrink-0 self-start sm:self-center">
+                                    <span
+                                        class="flex-item lg:hidden mr-4 text-blue-600 text-xl group-hover:translate-x-1 transition-transform">Acessar</span>
                                     <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
                                         aria-hidden="true"></i>
                                 </div>
@@ -483,10 +558,9 @@
                             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                                 <div class="flex-1">
                                     <div class="flex flex-wrap items-center gap-3 mb-3">
-                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                        <time datetime="2021-09-07" class="text-base font-medium text-gray-500">
                                             07/09/2021
                                         </time>
-                                        <span class="text-gray-300">|</span>
                                         <h3
                                             class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
                                             Edital de abertura
@@ -498,6 +572,8 @@
                                     </p>
                                 </div>
                                 <div class="flex-shrink-0 self-start sm:self-center">
+                                    <span
+                                        class="flex-item lg:hidden mr-4 text-blue-600 text-xl group-hover:translate-x-1 transition-transform">Acessar</span>
                                     <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
                                         aria-hidden="true"></i>
                                 </div>
@@ -512,10 +588,9 @@
                             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                                 <div class="flex-1">
                                     <div class="flex flex-wrap items-center gap-3 mb-3">
-                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                        <time datetime="2021-09-07" class="text-base font-medium text-gray-500">
                                             07/09/2021
                                         </time>
-                                        <span class="text-gray-300">|</span>
                                         <h3
                                             class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
                                             Edital de abertura
@@ -527,6 +602,8 @@
                                     </p>
                                 </div>
                                 <div class="flex-shrink-0 self-start sm:self-center">
+                                    <span
+                                        class="flex-item lg:hidden mr-4 text-blue-600 text-xl group-hover:translate-x-1 transition-transform">Acessar</span>
                                     <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
                                         aria-hidden="true"></i>
                                 </div>
@@ -541,10 +618,9 @@
                             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                                 <div class="flex-1">
                                     <div class="flex flex-wrap items-center gap-3 mb-3">
-                                        <time datetime="2021-09-07" class="text-sm font-medium text-gray-500">
+                                        <time datetime="2021-09-07" class="text-base font-medium text-gray-500">
                                             07/09/2021
                                         </time>
-                                        <span class="text-gray-300">|</span>
                                         <h3
                                             class="text-lg font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
                                             Edital de abertura
@@ -556,6 +632,8 @@
                                     </p>
                                 </div>
                                 <div class="flex-shrink-0 self-start sm:self-center">
+                                    <span
+                                        class="flex-item lg:hidden mr-4 text-blue-600 text-xl group-hover:translate-x-1 transition-transform">Acessar</span>
                                     <i class="fas fa-arrow-right text-blue-600 text-xl group-hover:translate-x-1 transition-transform"
                                         aria-hidden="true"></i>
                                 </div>
@@ -568,8 +646,10 @@
                 <!-- Botão Acessar Editais Anteriores -->
                 <div class="text-center mt-12 lg:mt-16">
                     <a href="#"
-                        class="inline-block bg-blue-600 text-white px-8 lg:px-10 py-3.5 lg:py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-sm lg:text-base shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
-                        ACESSAR EDITAIS ANTERIORES
+                        class="inline-flex items-center w-full lg:w-auto justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold shadow-sm hover:shadow-md group">
+                        <span>ACESSAR EDITAIS ANTERIORES</span>
+                        <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"
+                            aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -620,15 +700,16 @@
                                 <a href="#" class="block group">
                                     <h3
                                         class="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight hover:text-blue-600 transition-colors">
-                                        PPGEM PROMOVE AULA INAUGURAL DO SEMESTRE 2021.2
+                                        Censo da Pós-graduação: professores e estudantes devem atualizar plataformas de
+                                        produção acadêmica até sexta-feira
                                     </h3>
                                     <time datetime="2021-09-08" class="text-sm text-gray-500 block mb-3">
                                         Publicado em: 08.09.2021
                                     </time>
                                     <p class="text-sm text-gray-600 leading-relaxed">
-                                        A Coordenação do PPgEM convida a todos para a Aula Inaugural do PPgEM 2021.2,
-                                        que ocorrerá no dia 09/08/2021 (segunda-feira), às 15h, no Canal do PPgEM no
-                                        YouTube
+                                        A Capes vai realizar o Censo da Pós-graduação. Com isso, os docentes e discentes
+                                        dos programas de pós-graduação devem atualizar as suas plataformas de produção
+                                        acadêmica até a próxima sexta-feira, 14 de novembro.
                                     </p>
                                 </a>
                             </article>
@@ -1091,8 +1172,8 @@
                 <!-- CTA Button -->
                 <div class="text-center mt-12 lg:mt-16 justify-end">
                     <a href="#"
-                        class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold shadow-sm hover:shadow-md group sm:w-full">
-                        <span>Ver todas as perguntas</span>
+                        class="inline-flex items-center w-full lg:w-auto justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold shadow-sm hover:shadow-md group">
+                        <span>VER MAIS PERGUNTAS</span>
                         <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"
                             aria-hidden="true"></i>
                     </a>
