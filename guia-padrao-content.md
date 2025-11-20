@@ -970,10 +970,780 @@ Crie page-documentos.php com código fornecido
 
 ---
 
-## 📞 SUPORTE
+# 🎨 Sidebar Refatorado - Estilo Amigotech
 
-Para dúvidas ou ajustes:
-1. Consulte esta documentação
-2. Veja exemplos no HTML
-3. Teste no navegador antes de implementar
-4. Use DevTools para debugar CSS
+## 📋 VISÃO GERAL
+
+Sidebar moderno e interativo inspirado no design da Amigotech, com animações suaves, ícones grandes, descrições em cada item e hierarquia visual clara.
+
+---
+
+## ✨ PRINCIPAIS MELHORIAS
+
+### Antes vs Depois
+
+#### ❌ **ANTES** (Simples)
+```
+┌──────────────────┐
+│ Tópicos          │
+├──────────────────┤
+│ 📖 Manuais       │
+│ 📄 Requerimentos │
+│ ✈️  Solicitações │
+└──────────────────┘
+```
+
+#### ✅ **DEPOIS** (Profissional)
+```
+┌─────────────────────────────┐
+│ 📋 Navegação Rápida         │
+│ ESCOLHA UMA SEÇÃO           │
+├─────────────────────────────┤
+│ [📖]  Manuais          →    │
+│       Guias e orientações   │
+│                             │
+│ [📄]  Requerimentos    →    │
+│       Formulários oficiais  │
+│                             │
+│ [✈️]  Solicitações     →    │
+│       Pedidos diversos      │
+├─────────────────────────────┤
+│ 💬 Precisa de Ajuda?        │
+│ [Falar com Secretaria]      │
+└─────────────────────────────┘
+```
+
+---
+
+## 🎯 RECURSOS IMPLEMENTADOS
+
+### 1. ✅ **Visual Moderno**
+- Gradientes sutis em backgrounds
+- Sombras suaves e camadas
+- Border radius generoso (12px)
+- Ícones grandes e coloridos
+
+### 2. ✅ **Interatividade Avançada**
+- Hover effects com transformações
+- Active state com borda lateral
+- Animações de entrada escalonadas
+- Smooth scroll com offset
+
+### 3. ✅ **Hierarquia Visual**
+- Título + Subtítulo no header
+- Nome + Descrição em cada item
+- Ícones em círculos coloridos
+- Seta de navegação no hover
+
+### 4. ✅ **Mobile Friendly**
+- Collapse/expand no mobile
+- Botão toggle animado
+- Menu empilhável
+- Touch-friendly (44px min)
+
+### 5. ✅ **JavaScript Inteligente**
+- Active state automático no scroll (Scroll Spy)
+- Smooth scroll para seções
+- Mobile menu toggle
+- Fecha menu ao clicar (mobile)
+
+### 6. ✅ **Footer com CTA**
+- Box de ajuda destacado
+- Botão de ação verde
+- Ícone + Texto
+- Hover effect elegante
+
+---
+
+## 🏗️ ESTRUTURA HTML
+
+### Anatomia do Sidebar
+
+```html
+<aside class="lg:col-span-3">
+    <div class="sidebar-container">
+        
+        <!-- HEADER -->
+        <div class="sidebar-header">
+            <h2>Título</h2>
+            <p>Subtítulo</p>
+            <button>Toggle Mobile</button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="sidebar-nav">
+            <a class="sidebar-item">
+                <div class="sidebar-item-icon">
+                    <i>Ícone</i>
+                </div>
+                <div class="sidebar-item-content">
+                    <span class="sidebar-item-title">Nome</span>
+                    <span class="sidebar-item-description">Descrição</span>
+                </div>
+                <div class="sidebar-item-arrow">
+                    <i>→</i>
+                </div>
+            </a>
+        </nav>
+
+        <!-- FOOTER -->
+        <div class="sidebar-footer">
+            <div class="sidebar-cta">
+                <i>Ícone</i>
+                <h3>Título CTA</h3>
+                <p>Descrição</p>
+                <a>Botão</a>
+            </div>
+        </div>
+
+    </div>
+</aside>
+```
+
+---
+
+## 🎨 COMPONENTES DETALHADOS
+
+### 1. SIDEBAR CONTAINER
+
+```css
+.sidebar-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 6rem;
+    border: 1px solid #e5e7eb;
+}
+```
+
+**Características:**
+- ✅ Border radius grande (12px)
+- ✅ Sombra sutil
+- ✅ Sticky positioning
+- ✅ Border delicado
+
+---
+
+### 2. SIDEBAR HEADER
+
+```html
+<div class="sidebar-header">
+    <div class="flex items-center justify-between">
+        <h2 class="sidebar-title">
+            <i class="ph ph-list-dashes text-blue-600"></i>
+            Navegação Rápida
+        </h2>
+        <button class="sidebar-collapse-btn lg:hidden">
+            <i class="ph ph-caret-down"></i>
+        </button>
+    </div>
+    <p class="sidebar-subtitle">Escolha uma seção</p>
+</div>
+```
+
+**CSS:**
+```css
+.sidebar-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar-subtitle {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+```
+
+**Resultado:**
+```
+┌─────────────────────────────┐
+│ 📋 Navegação Rápida     [▼] │
+│ ESCOLHA UMA SEÇÃO           │
+└─────────────────────────────┘
+```
+
+---
+
+### 3. SIDEBAR ITEM (Menu Link)
+
+#### HTML Completo
+```html
+<a href="#manuais" class="sidebar-item active" data-section="manuais">
+    
+    <!-- Ícone -->
+    <div class="sidebar-item-icon">
+        <i class="ph ph-book-open"></i>
+    </div>
+    
+    <!-- Conteúdo -->
+    <div class="sidebar-item-content">
+        <span class="sidebar-item-title">Manuais</span>
+        <span class="sidebar-item-description">Guias e orientações</span>
+    </div>
+    
+    <!-- Seta -->
+    <div class="sidebar-item-arrow">
+        <i class="ph ph-caret-right"></i>
+    </div>
+    
+</a>
+```
+
+#### CSS do Item
+```css
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State */
+.sidebar-item:hover {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+    border-color: #bfdbfe;
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+/* Active State */
+.sidebar-item.active {
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
+}
+
+.sidebar-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
+    border-radius: 0 4px 4px 0;
+}
+```
+
+**Estados Visuais:**
+
+1. **Normal:**
+```
+[📖]  Manuais
+      Guias e orientações
+```
+
+2. **Hover:**
+```
+[📖]  Manuais              →
+      Guias e orientações
+      ↑ Move 4px para direita
+      ↑ Background azul claro
+```
+
+3. **Active:**
+```
+┃ [📖]  Manuais            →
+┃       Guias e orientações
+↑ Borda azul lateral
+```
+
+---
+
+### 4. SIDEBAR ITEM ICON
+
+```css
+.sidebar-item-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    color: #4b5563;
+    transition: all 0.25s;
+}
+
+/* Hover */
+.sidebar-item:hover .sidebar-item-icon {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #2563eb;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Active */
+.sidebar-item.active .sidebar-item-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+```
+
+**Transformações:**
+1. **Normal:** Cinza, estático
+2. **Hover:** Azul claro, escala 110%, rotação 5°
+3. **Active:** Azul sólido, sombra forte, branco
+
+---
+
+### 5. SIDEBAR ITEM CONTENT
+
+```css
+.sidebar-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar-item-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.125rem;
+}
+
+.sidebar-item-description {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+    line-height: 1.2;
+}
+```
+
+**Hierarquia:**
+```
+Manuais              ← 14px, bold, cinza escuro
+Guias e orientações  ← 12px, normal, cinza médio
+```
+
+---
+
+### 6. SIDEBAR ITEM ARROW
+
+```css
+.sidebar-item-arrow {
+    flex-shrink: 0;
+    color: #9ca3af;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.sidebar-item:hover .sidebar-item-arrow {
+    color: #2563eb;
+    transform: translateX(4px);
+    opacity: 1;
+}
+```
+
+**Comportamento:**
+- Normal: Invisível (opacity: 0)
+- Hover: Aparece + move 4px → direita + fica azul
+
+---
+
+### 7. SIDEBAR FOOTER (CTA)
+
+```html
+<div class="sidebar-footer">
+    <div class="sidebar-cta">
+        <i class="ph ph-question text-blue-600 text-2xl mb-2"></i>
+        <h3 class="text-sm font-semibold text-gray-900 mb-1">
+            Precisa de Ajuda?
+        </h3>
+        <p class="text-xs text-gray-600 mb-3">
+            Entre em contato com a secretaria
+        </p>
+        <a href="#contato" class="sidebar-cta-button">
+            <i class="ph ph-phone mr-1"></i>
+            Falar com a Secretaria
+        </a>
+    </div>
+</div>
+```
+
+```css
+.sidebar-cta {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 0.5rem;
+    border: 1px solid #bbf7d0;
+}
+
+.sidebar-cta-button {
+    display: inline-flex;
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.sidebar-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+```
+
+**Resultado Visual:**
+```
+┌─────────────────────────────┐
+│        💬                   │
+│   Precisa de Ajuda?         │
+│   Entre em contato...       │
+│                             │
+│ [📞 Falar com Secretaria]   │
+└─────────────────────────────┘
+↑ Background verde claro
+↑ Botão verde com hover
+```
+
+---
+
+## 🎬 ANIMAÇÕES
+
+### 1. Entrada Escalonada
+
+```css
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sidebar-item {
+    animation: slideInRight 0.3s ease forwards;
+}
+
+.sidebar-item:nth-child(1) { animation-delay: 0.05s; }
+.sidebar-item:nth-child(2) { animation-delay: 0.1s; }
+.sidebar-item:nth-child(3) { animation-delay: 0.15s; }
+/* ... */
+```
+
+**Efeito:**
+```
+Item 1: ← aparece (0.05s)
+Item 2:   ← aparece (0.1s)
+Item 3:     ← aparece (0.15s)
+Item 4:       ← aparece (0.2s)
+```
+
+---
+
+### 2. Hover Transform
+
+```css
+.sidebar-item:hover {
+    transform: translateX(4px);  /* Move 4px → */
+}
+
+.sidebar-item:hover .sidebar-item-icon {
+    transform: scale(1.1) rotate(5deg);  /* Escala + Rotação */
+}
+
+.sidebar-item:hover .sidebar-item-arrow {
+    transform: translateX(4px);  /* Seta move mais 4px */
+}
+```
+
+---
+
+## 📱 RESPONSIVIDADE
+
+### Desktop (> 1024px)
+```css
+.sidebar-container {
+    position: sticky;
+    top: 6rem;
+}
+
+.sidebar-collapse-btn {
+    display: none;
+}
+```
+
+### Mobile (< 1024px)
+```css
+.sidebar-container {
+    position: relative;
+    top: 0;
+}
+
+.sidebar-nav {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.sidebar-nav.show {
+    max-height: 600px;
+}
+
+.sidebar-collapse-btn {
+    display: block;
+}
+```
+
+**Comportamento Mobile:**
+```
+[📋 Navegação Rápida      ▼]  ← Fechado (default)
+
+↓ Clica no botão
+
+[📋 Navegação Rápida      ▲]  ← Aberto
+├─────────────────────────┤
+│ [📖] Manuais         →  │
+│ [📄] Requerimentos   →  │
+│ ...                     │
+└─────────────────────────┘
+```
+
+---
+
+## ⚙️ JAVASCRIPT
+
+### 1. Active State no Click
+
+```javascript
+sidebarItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+        // Remove active de todos
+        sidebarItems.forEach(i => i.classList.remove('active'));
+        
+        // Adiciona active no clicado
+        this.classList.add('active');
+    });
+});
+```
+
+---
+
+### 2. Mobile Toggle
+
+```javascript
+sidebarToggle.addEventListener('click', function() {
+    sidebarMenu.classList.toggle('show');
+    this.classList.toggle('active');
+});
+```
+
+---
+
+### 3. Scroll Spy (Active Automático)
+
+```javascript
+function updateActiveSection() {
+    const scrollPosition = window.scrollY + 150;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && 
+            scrollPosition < sectionTop + sectionHeight) {
+            
+            sidebarItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === sectionId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveSection);
+```
+
+**Como funciona:**
+1. Detecta posição do scroll
+2. Identifica qual seção está visível
+3. Atualiza active state automaticamente
+4. ✅ Sincronizado com scroll
+
+---
+
+### 4. Smooth Scroll com Offset
+
+```javascript
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        if (target) {
+            const headerOffset = 120;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+```
+
+**Offset de 120px** para não ficar colado no header fixo.
+
+---
+
+## 🎨 PALETA DE CORES
+
+### Estados Normais
+```css
+Background Card:     #ffffff
+Border:              #e5e7eb
+Ícone BG:           linear-gradient(135deg, #f3f4f6, #e5e7eb)
+Ícone Color:        #4b5563
+Título:             #1f2937
+Descrição:          #6b7280
+```
+
+### Estados Hover
+```css
+Background:         linear-gradient(135deg, #eff6ff, #f0f9ff)
+Border:             #bfdbfe
+Ícone BG:          linear-gradient(135deg, #dbeafe, #bfdbfe)
+Ícone Color:       #2563eb
+Título:            #1e40af
+Seta:              #2563eb
+```
+
+### Estados Active
+```css
+Background:         linear-gradient(135deg, #dbeafe, #eff6ff)
+Border:             #93c5fd
+Borda Lateral:     linear-gradient(180deg, #2563eb, #3b82f6)
+Ícone BG:          linear-gradient(135deg, #3b82f6, #2563eb)
+Ícone Color:       #ffffff
+Título:            #1e3a8a
+```
+
+### CTA (Footer)
+```css
+CTA BG:            linear-gradient(135deg, #f0fdf4, #dcfce7)
+CTA Border:        #bbf7d0
+Button BG:         linear-gradient(135deg, #10b981, #059669)
+Button Hover:      linear-gradient(135deg, #059669, #047857)
+```
+
+---
+
+## ✅ CHECKLIST DE IMPLEMENTAÇÃO
+
+### HTML
+- [x] Estrutura semântica
+- [x] Data attributes para JS
+- [x] Ícones Phosphor
+- [x] Descrições em todos os itens
+- [x] Footer com CTA
+- [x] Botão mobile toggle
+
+### CSS
+- [x] Gradientes sutis
+- [x] Sombras em camadas
+- [x] Border radius generoso
+- [x] Hover effects
+- [x] Active state com borda lateral
+- [x] Animações de entrada
+- [x] Transform no hover
+- [x] Responsividade completa
+- [x] Scrollbar customizado
+
+### JavaScript
+- [x] Active state no click
+- [x] Mobile toggle
+- [x] Scroll spy
+- [x] Smooth scroll
+- [x] Fecha menu no mobile ao clicar
+
+---
+
+## 🚀 COMO USAR
+
+### 1. Copie o HTML
+```html
+Substitua o <aside> antigo pelo novo código
+```
+
+### 2. Adicione o CSS
+```html
+Cole o <style> no <head> ou arquivo CSS separado
+```
+
+### 3. Adicione o JavaScript
+```html
+Cole o <script> antes do </body>
+```
+
+### 4. Configure as Seções
+```html
+Certifique-se que cada seção tem:
+- id="nome-secao"
+- Correspondente no sidebar: data-section="nome-secao"
+```
+
+**Exemplo:**
+```html
+<!-- Sidebar -->
+<a href="#manuais" data-section="manuais">...</a>
+
+<!-- Conteúdo -->
+<section id="manuais">
+    <h2>Manuais</h2>
+    ...
+</section>
+```
+
+---
+
+## 📊 COMPARAÇÃO FINAL
+
+| Característica    | Antes           | Depois                   |
+| ----------------- | --------------- | ------------------------ |
+| **Visual**        | Simples         | Profissional             |
+| **Ícones**        | Pequenos inline | Grandes em círculos      |
+| **Descrições**    | ❌ Não           | ✅ Sim                    |
+| **Animações**     | ❌ Básico        | ✅ Avançadas              |
+| **Hover**         | Apenas cor      | Transform + cor + sombra |
+| **Active**        | Background      | Borda lateral + gradient |
+| **Mobile**        | Sempre visível  | Collapsible              |
+| **Scroll Spy**    | ❌ Não           | ✅ Sim                    |
+| **CTA Footer**    | ❌ Não           | ✅ Sim                    |
+| **Smooth Scroll** | Básico          | Com offset               |
+
+---
+
+**Status:** ✅ Completo e Pronto para Produção  
+**Desenvolvedor:** Cesimar  
+**Data:** 19 de Novembro de 2025  
+**Versão:** 2.0 - Sidebar Refatorado Amigotech Style
