@@ -54,6 +54,22 @@
         .edital-item:hover {
             background-color: #f9fafb;
         }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slideUp {
+            animation: slideUp 0.4s ease-out;
+        }
     </style>
 </head>
 
@@ -71,6 +87,8 @@
         <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white">
             <div class="container mx-auto px-4 py-2">
                 <div class="flex justify-between items-center text-sm">
+
+                    <!-- Acessibilidade (Esquerda) -->
                     <div class="flex items-center space-x-4">
                         <a href="#" class="hover:text-blue-200 transition" aria-label="Acessibilidade">
                             <i class="fas fa-universal-access text-xl" aria-hidden="true"></i>
@@ -82,14 +100,15 @@
                         </a>
                     </div>
 
-                    <div class=" hidden lg:flex items-center space-x-4">
+                    <!-- Contatos + Redes (Direita) - Oculto em mobile -->
+                    <div class="hidden lg:flex items-center space-x-4">
                         <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition flex items-center">
                             ppgem@cchla.ufrn.br
                         </a>
-                        <a href="tel:+558433422245" class="hover:text-white/80 transition flex items-center mt-0.5">
+                        <a href="tel:+558433422245" class="hover:text-white/80 transition flex items-center">
                             +55 84 3342-2245
                         </a>
-                        <div class="flex items-center space-x-4 mt-1">
+                        <div class="flex items-center space-x-4">
                             <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
                                 <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
                             </a>
@@ -98,23 +117,18 @@
                             </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
 
-        <!-- Main navigation - REFATORADO para layout pixel perfect -->
         <nav class="bg-gradient-to-r from-blue-500 to-blue-600" aria-label="Navegação principal">
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between py-3">
 
-                    <!-- Logo - Esquerda -->
+                    <!-- to do: deve ficar responsivo com a altura para mobile -->
                     <div class="flex items-center space-x-3 flex-shrink-0">
-                        <!-- <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-16 w-auto d-none"> -->
-                        <div class="hidden md:flex flex-col">
-                            <span class="text-lg font-bold text-white leading-tight">PPGEM</span>
-                            <span class="text-xs text-white/90 leading-tight">PROGRAMA DE PÓS-GRADUAÇÃO</span>
-                            <span class="text-xs text-white/90 leading-tight">EM ESTUDOS DA MÍDIA</span>
-                        </div>
+                        <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-16 w-auto">
                     </div>
 
                     <!-- Desktop Menu - Centro -->
@@ -177,14 +191,6 @@
                             <i class="fas fa-phone mr-2" aria-hidden="true"></i>
                             +55 84 3342-2245
                         </a>
-                        <div class="flex items-center space-x-4 mt-3">
-                            <a href="#" class="hover:text-white/80 transition" aria-label="YouTube do PPGEM">
-                                <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
-                            </a>
-                            <a href="#" class="hover:text-white/80 transition" aria-label="Instagram do PPGEM">
-                                <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -200,38 +206,41 @@
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8 items-start">
 
                     <!-- Featured Palestra Card -->
-                    <article class="col-span-2 lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <article class="col-span-2 lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden group">
                         <div class="relative">
-                            <!-- Imagem da Palestra -->
-                            <img src="assets/img/ppgem.png"
-                                alt="Palestra sobre capacitamento comunicacional nas pesquisas de Doutorado em Estudos da Mídia"
-                                class="w-full h-auto object-cover">
+                            <!-- Imagem -->
+                            <img src="assets/img/ppgem.png" alt="..." class="w-full h-auto object-cover">
 
-                            <!-- Overlay gradiente sutil -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent">
+                            <!-- TODO 1: Gradient (oculto mobile) ✅ -->
+                            <div
+                                class="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent">
                             </div>
 
-                            <!-- Informações da Palestra -->
-                            <div class="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-6">
+                            <div
+                                class="static lg:absolute bottom-0 left-0 right-0  sm:bg-blue-800 lg:bg-blue-800/60 backdrop-blur-sm p-6">
                                 <p class="text-white text-sm font-semibold mb-2 uppercase tracking-wide">Palestra</p>
-                                <h2 id="hero-title" class="text-white text-xl lg:text-2xl font-bold mb-3 leading-tight">
-                                    PPgEM divulga resultado da avaliação dos projetos de pesquisa do processo seletivo
-                                    2026.1
+                                <h2 class="text-white text-xl lg:text-2xl font-bold mb-3 leading-tight">
+                                    PPgEM divulga resultado da avaliação dos projetos
                                 </h2>
-                                <p class="text-white/90 text-sm">
-                                    O Programa de Pós-graduação em Estudos da Mídia (PPgEM) divulgou nesta
-                                    segunda-feira, 20, o resultado da avaliação dos projetos de pesquisa do processo
-                                    seletivo dos cursos de Mestrado e Doutorado 2026.1. Os resultados estão disponíveis
-                                    na área do candidato na plataforma SIGAA.
-                                </p>
+
+                                <div
+                                    class="lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-96 lg:transition-all lg:duration-500 lg:ease-in-out">
+                                    <p class="text-white/90 text-base lg:animate-slideUp">
+                                        O Programa de Pós-graduação em Estudos da Mídia (PPgEM) divulgou nesta
+                                        segunda-feira, 20, o resultado da avaliação dos projetos de pesquisa do processo
+                                        seletivo dos cursos de Mestrado e Doutorado 2026.1. Os resultados estão
+                                        disponíveis
+                                        na área do candidato na plataforma SIGAA.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- News/Editais Links -->
-                    <aside class="space-y-4 lg:col-span-2 md:col-span-1" aria-label="Editais e notícias recentes">
+                    <aside class="space-y-4 col-span-2 lg:col-span-2" aria-label="Editais e notícias recentes">
 
-                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                        <article class="bg-white rounded shadow-md p-5 hover:shadow-lg transition-shadow">
                             <a href="#" class="block group">
                                 <h3
                                     class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
@@ -240,7 +249,7 @@
                             </a>
                         </article>
 
-                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                        <article class="bg-white rounded shadow-md p-5 hover:shadow-lg transition-shadow">
                             <a href="#" class="block group">
                                 <h3
                                     class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
@@ -249,7 +258,7 @@
                             </a>
                         </article>
 
-                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                        <article class="bg-white rounded shadow-md p-5 hover:shadow-lg transition-shadow">
                             <a href="#" class="block group">
                                 <h3
                                     class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
@@ -259,7 +268,7 @@
                             </a>
                         </article>
 
-                        <article class="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow">
+                        <article class="bg-white rounded shadow-md p-5 hover:shadow-lg transition-shadow">
                             <a href="#" class="block group">
                                 <h3
                                     class="text-blue-600 font-bold text-sm lg:text-base mb-2 group-hover:text-blue-800 transition-colors uppercase">
@@ -1080,10 +1089,10 @@
                 </div>
 
                 <!-- CTA Button -->
-                <div class="text-center mt-12 lg:mt-16">
+                <div class="text-center mt-12 lg:mt-16 justify-end">
                     <a href="#"
-                        class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-base shadow-sm hover:shadow-md group">
-                        <span>Ver Todas as Perguntas</span>
+                        class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold shadow-sm hover:shadow-md group sm:w-full">
+                        <span>Ver todas as perguntas</span>
                         <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"
                             aria-hidden="true"></i>
                     </a>
@@ -1131,7 +1140,7 @@
 
                     <!-- Links Columns -->
                     <div class="lg:col-span-8">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-6">
+                        <div class="grid grid-cols-2 md:grid-cols-2 gap-8 lg:gap-6">
 
                             <!-- Column 1: Institucional -->
                             <nav aria-labelledby="footer-institutional">
@@ -1331,21 +1340,25 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Accordion functionality with Phosphor Icons
+        // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function () {
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Accordion functionality with Phosphor Icons
             const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            console.log('Accordion buttons found:', accordionButtons.length); // Debug
 
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -1353,7 +1366,9 @@
                     const icon = button.querySelector('i');
                     const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-                    // Fecha outros
+                    console.log('Accordion clicked, isExpanded:', isExpanded); // Debug
+
+                    // Close all other accordions
                     accordionButtons.forEach(otherButton => {
                         if (otherButton !== button) {
                             otherButton.setAttribute('aria-expanded', 'false');
@@ -1361,14 +1376,15 @@
                             const otherIcon = otherButton.querySelector('i');
                             otherIcon.classList.remove('ph-minus', 'rotate-180');
                             otherIcon.classList.add('ph-plus');
+                            otherButton.classList.remove('active');
                         }
                     });
 
-                    // Toggle atual
+                    // Toggle current accordion
                     button.setAttribute('aria-expanded', !isExpanded);
                     content.classList.toggle('hidden');
 
-                    // Muda ícone
+                    // Toggle between plus and minus icons
                     if (isExpanded) {
                         icon.classList.remove('ph-minus', 'rotate-180');
                         icon.classList.add('ph-plus');
@@ -1376,8 +1392,11 @@
                         icon.classList.remove('ph-plus');
                         icon.classList.add('ph-minus', 'rotate-180');
                     }
+
+                    button.classList.toggle('active');
                 });
             });
+
         });
     </script>
 </body>
