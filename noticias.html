@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notícias do PPGEM - Programa de Pós-Graduação em Estudos da Mídia">
+    <meta name="keywords" content="PPGEM, UFRN, Notícias, Estudos da Mídia">
+    <title>Notícias | PPGEM - UFRN</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    screens: {
+                        sm: '640px',
+                        md: '768px',
+                        lg: '1024px',
+                        xl: '1280px',
+                        '2xl': '1280px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'system-ui', 'sans-serif'],
+                        highlight: ['Poppins', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            500: '#3185c6',
+                            600: '#2471b5',
+                            700: '#1c5488',
+                            800: '#1b4871',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Skip to main content -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Header -->
+    <header class="shadow-md sticky top-0 z-40">
+        <!-- Top bar -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white">
+            <div class="container mx-auto px-4 py-4 lg:py-3">
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-8 lg:space-x-4">
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Acessibilidade">
+                            <i class="fas fa-universal-access text-2xl lg:text-xl" aria-hidden="true"></i>
+                            <span class="ml-1 hidden md:inline">ACESSIBILIDADE</span>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Alto contraste">
+                            <i class="fas fa-adjust text-2xl lg:text-xl" aria-hidden="true"></i>
+                            <span class="ml-1 hidden md:inline">ALTO CONTRASTE</span>
+                        </a>
+                    </div>
+
+                    <div class="items-center flex space-x-4">
+                        <div class="hidden lg:flex items-center space-x-8 lg:space-x-4">
+                            <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white/80 transition">
+                                ppgem@cchla.ufrn.br
+                            </a>
+                            <a href="tel:+558433422245" class="hover:text-white/80 transition">
+                                +55 84 3342-2245
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-8 lg:space-x-4">
+                            <a href="#" class="hover:text-white/80 transition" aria-label="YouTube">
+                                <i class="fab fa-youtube text-2xl lg:text-xl"></i>
+                            </a>
+                            <a href="#" class="hover:text-white/80 transition" aria-label="Instagram">
+                                <i class="fab fa-instagram text-2xl lg:text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bg-blue-50" aria-label="Navegação principal">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-3">
+                    <div class="flex items-center space-x-3 flex-shrink-0">
+                        <a href="index.html">
+                            <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-12 md:h-14 lg:h-16 w-auto">
+                        </a>
+                    </div>
+
+                    <ul class="hidden lg:flex items-center space-x-1 flex-grow justify-end">
+                        <li><a href="#" class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">O
+                                PROGRAMA</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">ACADÊMICO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">SELEÇÃO</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">PRODUÇÃO</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">DOCUMENTOS</a>
+                        </li>
+                    </ul>
+
+                    <button class="lg:hidden text-blue-800 p-2" aria-label="Menu" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="bg-white border-b border-gray-200 py-4">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <nav aria-label="Breadcrumb">
+                    <ol class="flex items-center gap-2 text-sm">
+                        <li><a href="index.html" class="text-blue-600 hover:text-blue-700 transition">Início</a></li>
+                        <li><i class="ph ph-caret-right text-gray-400"></i></li>
+                        <li class="text-gray-600">Notícias</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-blue-800 to-blue-600 py-12 lg:py-16">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center">
+                    <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                        Notícias
+                    </h1>
+                    <p class="text-blue-100 text-lg max-w-2xl mx-auto">
+                        Fique por dentro das últimas novidades, eventos e atividades do PPgEM
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="bg-white py-8 border-b border-gray-200">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <!-- Search -->
+                    <div class="flex-1 max-w-xl">
+                        <div class="relative">
+                            <input type="search" placeholder="Buscar notícias..."
+                                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <i
+                                class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="flex items-center gap-4">
+                        <select
+                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option>Todas as categorias</option>
+                            <option>Eventos</option>
+                            <option>Editais</option>
+                            <option>Defesas</option>
+                            <option>Publicações</option>
+                        </select>
+
+                        <select
+                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option>Mais recentes</option>
+                            <option>Mais antigas</option>
+                            <option>Mais lidas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News List -->
+        <section class="py-16 lg:py-20">
+            <div class="container mx-auto px-4 max-w-7xl">
+
+                <!-- Featured News (First Item) -->
+                <article class="mb-12 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                        <div class="relative h-64 lg:h-auto">
+                            <img src="assets/img/ppgem.png" alt="Notícia destaque" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                DESTAQUE
+                            </span>
+                        </div>
+                        <div class="p-8 lg:p-10 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                    Eventos
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    <i class="ph ph-calendar-blank mr-1"></i>
+                                    15 de Novembro de 2025
+                                </time>
+                            </div>
+                            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                                PPgEM divulga resultado da avaliação dos projetos de pesquisa
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                O Programa de Pós-graduação em Estudos da Mídia divulgou o resultado da avaliação dos
+                                projetos de pesquisa do processo seletivo dos cursos de Mestrado e Doutorado 2026.1.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold group">
+                                <span>Ler matéria completa</span>
+                                <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- News Card 1 -->
+                    <article
+                        class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Defesas
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    10 Nov 2025
+                                </time>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Defesa de dissertação de mestrado sobre narrativas digitais
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Mestrando apresenta pesquisa sobre transformações das narrativas jornalísticas no
+                                ambiente digital.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Leia mais</span>
+                                <i
+                                    class="ph ph-arrow-right text-lg group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 2 -->
+                    <article
+                        class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Publicações
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    08 Nov 2025
+                                </time>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Docentes do PPgEM lançam livro sobre mídia e democracia
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Nova publicação discute o papel da mídia nos processos democráticos contemporâneos.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Leia mais</span>
+                                <i
+                                    class="ph ph-arrow-right text-lg group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 3 -->
+                    <article
+                        class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Eventos
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    05 Nov 2025
+                                </time>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Seminário sobre ética jornalística reunirá especialistas
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Evento debate desafios éticos do jornalismo na era da informação digital.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Leia mais</span>
+                                <i
+                                    class="ph ph-arrow-right text-lg group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 4 -->
+                    <article
+                        class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Editais
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    03 Nov 2025
+                                </time>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Aberto edital para seleção de mestrado 2026
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Inscrições abertas para o processo seletivo de mestrado. Confira o edital completo.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Leia mais</span>
+                                <i
+                                    class="ph ph-arrow-right text-lg group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 5 -->
+                    <article
+                        class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Eventos
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    01 Nov 2025
+                                </time>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Aula inaugural do semestre 2025.2
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Programação marca início das atividades acadêmicas com palestras e apresentações.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Leia mais</span>
+                                <i
+                                    class="ph ph-arrow-right text-lg group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 6 -->
+                    <article
+                        class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Defesas
+                                </span>
+                                <time class="text-gray-500 text-sm">
+                                    30 Out 2025
+                                </time>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Defesa de tese sobre fake news e desinformação
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Pesquisa analisa estratégias de combate à desinformação nas redes sociais.
+                            </p>
+                            <a href="noticia-single.html"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Leia mais</span>
+                                <i
+                                    class="ph ph-arrow-right text-lg group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-16 flex justify-center">
+                    <nav aria-label="Paginação" class="flex items-center gap-2">
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition"
+                            disabled>
+                            <i class="ph ph-caret-left"></i>
+                        </button>
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold">1</button>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition">2</button>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition">3</button>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition">4</button>
+                        <span class="px-2 text-gray-500">...</span>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition">10</button>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                            <i class="ph ph-caret-right"></i>
+                        </button>
+                    </nav>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4">
+            <div class="py-16 lg:py-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+                    <div class="lg:col-span-4">
+                        <div class="mb-6">
+                            <img src="assets/img/logo-white.png" alt="PPGEM" class="h-12 w-auto mb-6">
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                Programa de Pós-Graduação em Estudos da Mídia da Universidade Federal do Rio Grande do
+                                Norte.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <div class="grid grid-cols-2 md:grid-cols-2 gap-8 lg:gap-6">
+                            <nav>
+                                <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Institucional
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Sobre o
+                                            Programa</a></li>
+                                    <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Corpo
+                                            Docente</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-400 hover:text-white transition text-sm">Coordenação</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav>
+                                <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Acadêmico
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Linhas de
+                                            Pesquisa</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-400 hover:text-white transition text-sm">Disciplinas</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-400 hover:text-white transition text-sm">Publicações</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-gray-400 text-sm text-center md:text-left">
+                        <strong class="text-white">UFRN - CCHLA</strong><br>
+                        Campus Universitário, Lagoa Nova<br>
+                        Natal/RN - CEP: 59078-970<br>
+                        <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white transition">ppgem@cchla.ufrn.br</a>
+                        |
+                        <a href="tel:+558433422245" class="hover:text-white transition">+55 84 3342-2245</a>
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        © 2025 PPGEM/UFRN · Todos os direitos reservados
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
