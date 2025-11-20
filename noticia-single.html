@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PPgEM divulga resultado da avaliação dos projetos de pesquisa">
+    <meta name="keywords" content="PPGEM, UFRN, Estudos da Mídia">
+    <title>PPgEM divulga resultado da avaliação | PPGEM - UFRN</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    screens: {
+                        sm: '640px',
+                        md: '768px',
+                        lg: '1024px',
+                        xl: '1280px',
+                        '2xl': '1280px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'system-ui', 'sans-serif'],
+                        highlight: ['Poppins', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            500: '#3185c6',
+                            600: '#2471b5',
+                            700: '#1c5488',
+                            800: '#1b4871',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .article-content h2 {
+            @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
+        }
+
+        .article-content h3 {
+            @apply text-xl font-bold text-gray-800 mt-6 mb-3;
+        }
+
+        .article-content p {
+            @apply text-gray-700 leading-relaxed mb-6;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            @apply ml-6 mb-6 space-y-2;
+        }
+
+        .article-content ul li {
+            @apply list-disc text-gray-700;
+        }
+
+        .article-content ol li {
+            @apply list-decimal text-gray-700;
+        }
+
+        .article-content a {
+            @apply text-blue-600 hover:text-blue-700 underline;
+        }
+
+        .article-content blockquote {
+            @apply border-l-4 border-blue-500 pl-6 py-4 my-6 italic text-gray-700 bg-gray-50;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Skip to main content -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Header (Same as noticias.html) -->
+    <header class="shadow-md sticky top-0 z-40">
+        <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white">
+            <div class="container mx-auto px-4 py-4 lg:py-3">
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-8 lg:space-x-4">
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Acessibilidade">
+                            <i class="fas fa-universal-access text-2xl lg:text-xl"></i>
+                            <span class="ml-1 hidden md:inline">ACESSIBILIDADE</span>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Alto contraste">
+                            <i class="fas fa-adjust text-2xl lg:text-xl"></i>
+                            <span class="ml-1 hidden md:inline">ALTO CONTRASTE</span>
+                        </a>
+                    </div>
+                    <div class="items-center flex space-x-4">
+                        <div class="hidden lg:flex items-center space-x-8 lg:space-x-4">
+                            <a href="mailto:ppgem@cchla.ufrn.br"
+                                class="hover:text-white/80 transition">ppgem@cchla.ufrn.br</a>
+                            <a href="tel:+558433422245" class="hover:text-white/80 transition">+55 84 3342-2245</a>
+                        </div>
+                        <div class="flex items-center space-x-8 lg:space-x-4">
+                            <a href="#" class="hover:text-white/80 transition"><i
+                                    class="fab fa-youtube text-2xl lg:text-xl"></i></a>
+                            <a href="#" class="hover:text-white/80 transition"><i
+                                    class="fab fa-instagram text-2xl lg:text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bg-blue-50" aria-label="Navegação principal">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-3">
+                    <div class="flex items-center space-x-3 flex-shrink-0">
+                        <a href="index.html">
+                            <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-12 md:h-14 lg:h-16 w-auto">
+                        </a>
+                    </div>
+                    <ul class="hidden lg:flex items-center space-x-1 flex-grow justify-end">
+                        <li><a href="#" class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">O
+                                PROGRAMA</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">ACADÊMICO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">SELEÇÃO</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">PRODUÇÃO</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">DOCUMENTOS</a>
+                        </li>
+                    </ul>
+                    <button class="lg:hidden text-blue-800 p-2" aria-label="Menu" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="bg-white border-b border-gray-200 py-4">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <nav aria-label="Breadcrumb">
+                    <ol class="flex items-center gap-2 text-sm">
+                        <li><a href="index.html" class="text-blue-600 hover:text-blue-700 transition">Início</a></li>
+                        <li><i class="ph ph-caret-right text-gray-400"></i></li>
+                        <li><a href="noticias.html" class="text-blue-600 hover:text-blue-700 transition">Notícias</a>
+                        </li>
+                        <li><i class="ph ph-caret-right text-gray-400"></i></li>
+                        <li class="text-gray-600">PPgEM divulga resultado...</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article Header -->
+        <article class="py-12 lg:py-16">
+            <div class="container mx-auto px-4 max-w-4xl">
+
+                <!-- Meta Info -->
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold">
+                        Eventos
+                    </span>
+                    <time class="text-gray-500 flex items-center gap-2">
+                        <i class="ph ph-calendar-blank text-lg"></i>
+                        15 de Novembro de 2025
+                    </time>
+                    <span class="text-gray-500 flex items-center gap-2">
+                        <i class="ph ph-user text-lg"></i>
+                        Por Coordenação PPgEM
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                    PPgEM divulga resultado da avaliação dos projetos de pesquisa do processo seletivo 2026.1
+                </h1>
+
+                <!-- Lead/Subtitle -->
+                <p class="text-xl text-gray-600 leading-relaxed mb-8 border-l-4 border-blue-500 pl-6">
+                    O Programa de Pós-graduação em Estudos da Mídia (PPgEM) divulgou nesta segunda-feira, 20, o
+                    resultado da avaliação dos projetos de pesquisa do processo seletivo dos cursos de Mestrado e
+                    Doutorado 2026.1.
+                </p>
+
+                <!-- Featured Image -->
+                <figure class="mb-12">
+                    <img src="assets/img/ppgem.png" alt="Divulgação de resultado PPgEM"
+                        class="w-full rounded-lg shadow-lg">
+                    <figcaption class="text-sm text-gray-500 mt-3 text-center">
+                        Cerimônia de divulgação dos resultados do processo seletivo 2026.1
+                    </figcaption>
+                </figure>
+
+                <!-- Share Buttons -->
+                <div class="flex items-center gap-4 mb-8 pb-8 border-b border-gray-200">
+                    <span class="text-gray-600 font-semibold">Compartilhar:</span>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-600 text-white flex items-center justify-center hover:bg-gray-700 transition">
+                        <i class="ph ph-link-simple text-lg"></i>
+                    </a>
+                </div>
+
+                <!-- Article Content -->
+                <div class="article-content prose prose-lg max-w-none">
+                    <p>
+                        Os resultados estão disponíveis na área do candidato na plataforma SIGAA. Os candidatos
+                        aprovados devem seguir as orientações contidas no edital para realizar a matrícula no programa.
+                    </p>
+
+                    <h2>Próximas etapas do processo seletivo</h2>
+
+                    <p>
+                        Após a divulgação dos resultados, os candidatos aprovados terão um prazo de 10 dias úteis para
+                        efetuar sua matrícula através do sistema SIGAA. É importante que todos os documentos necessários
+                        sejam enviados dentro do prazo estabelecido.
+                    </p>
+
+                    <h3>Documentos necessários para matrícula</h3>
+
+                    <ul>
+                        <li>RG e CPF (cópias autenticadas)</li>
+                        <li>Diploma de graduação (para mestrado) ou diploma de mestrado (para doutorado)</li>
+                        <li>Histórico escolar completo</li>
+                        <li>Comprovante de residência</li>
+                        <li>Duas fotos 3x4 recentes</li>
+                    </ul>
+
+                    <blockquote>
+                        "Parabenizamos todos os candidatos aprovados e desejamos sucesso nesta nova etapa acadêmica. O
+                        PPgEM está comprometido em oferecer uma formação de excelência em Estudos da Mídia."
+                        <br><br>
+                        <strong>— Prof. Dr. João Silva, Coordenador do PPgEM</strong>
+                    </blockquote>
+
+                    <h2>Informações sobre o programa</h2>
+
+                    <p>
+                        O Programa de Pós-graduação em Estudos da Mídia oferece cursos de mestrado e doutorado focados
+                        na análise crítica dos processos de comunicação midiática na contemporaneidade. Com corpo
+                        docente qualificado e infraestrutura adequada, o PPgEM busca formar pesquisadores capacitados
+                        para compreender e investigar os fenômenos midiáticos em suas múltiplas dimensões.
+                    </p>
+
+                    <h3>Linhas de pesquisa</h3>
+
+                    <ol>
+                        <li>Estudos de Jornalismo</li>
+                        <li>Práticas Sociais e Processos Comunicacionais</li>
+                        <li>Produção de Sentido</li>
+                    </ol>
+
+                    <p>
+                        Para mais informações sobre o programa, acesse o site oficial ou entre em contato com a
+                        secretaria através do e-mail <a href="mailto:ppgem@cchla.ufrn.br">ppgem@cchla.ufrn.br</a> ou
+                        telefone (84) 3342-2245.
+                    </p>
+
+                    <h2>Calendário acadêmico</h2>
+
+                    <p>
+                        O início das aulas está previsto para março de 2026. O calendário completo com as datas de
+                        aulas, seminários e outras atividades acadêmicas será disponibilizado após a conclusão do
+                        processo de matrícula.
+                    </p>
+                </div>
+
+                <!-- Tags -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="text-sm font-semibold text-gray-600 mb-4">Tags:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition">
+                            Processo Seletivo
+                        </a>
+                        <a href="#"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition">
+                            Mestrado
+                        </a>
+                        <a href="#"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition">
+                            Doutorado
+                        </a>
+                        <a href="#"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition">
+                            Resultado
+                        </a>
+                        <a href="#"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition">
+                            2026.1
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Related News -->
+        <section class="bg-gray-100 py-16 lg:py-20">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
+                    Notícias Relacionadas
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Related News Card 1 -->
+                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <time class="text-gray-500 text-sm block mb-2">10 Nov 2025</time>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition">
+                                Edital de seleção para mestrado 2026.1
+                            </h3>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                                <span>Leia mais</span>
+                                <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Related News Card 2 -->
+                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <time class="text-gray-500 text-sm block mb-2">08 Nov 2025</time>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition">
+                                Aula inaugural do semestre 2025.2
+                            </h3>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                                <span>Leia mais</span>
+                                <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Related News Card 3 -->
+                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="assets/img/ppgem.png" alt="Notícia"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <time class="text-gray-500 text-sm block mb-2">05 Nov 2025</time>
+                            <h3
+                                class="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition">
+                                Calendário acadêmico 2026
+                            </h3>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                                <span>Leia mais</span>
+                                <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center mt-12">
+                    <a href="noticias.html"
+                        class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md hover:shadow-lg group">
+                        <span>Ver Todas as Notícias</span>
+                        <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Same as noticias.html) -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4">
+            <div class="py-16 lg:py-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+                    <div class="lg:col-span-4">
+                        <div class="mb-6">
+                            <img src="assets/img/logo-white.png" alt="PPGEM" class="h-12 w-auto mb-6">
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                Programa de Pós-Graduação em Estudos da Mídia da Universidade Federal do Rio Grande do
+                                Norte.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <div class="grid grid-cols-2 md:grid-cols-2 gap-8 lg:gap-6">
+                            <nav>
+                                <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Institucional
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Sobre o
+                                            Programa</a></li>
+                                    <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Corpo
+                                            Docente</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-400 hover:text-white transition text-sm">Coordenação</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav>
+                                <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Acadêmico
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Linhas de
+                                            Pesquisa</a></li>
+                                    <li><a href="#"
+                                            class="text-gray-400 hover:text-white transition text-sm">Disciplinas</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="text-gray-400 hover:text-white transition text-sm">Publicações</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-gray-400 text-sm text-center md:text-left">
+                        <strong class="text-white">UFRN - CCHLA</strong><br>
+                        Campus Universitário, Lagoa Nova<br>
+                        Natal/RN - CEP: 59078-970<br>
+                        <a href="mailto:ppgem@cchla.ufrn.br" class="hover:text-white transition">ppgem@cchla.ufrn.br</a>
+                        |
+                        <a href="tel:+558433422245" class="hover:text-white transition">+55 84 3342-2245</a>
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        © 2025 PPGEM/UFRN · Todos os direitos reservados
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
