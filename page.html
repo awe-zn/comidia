@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentos e normas do PPGEM - UFRN">
+    <title>Documentos | PPGEM - UFRN</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    screens: {
+                        sm: '640px',
+                        md: '768px',
+                        lg: '1024px',
+                        xl: '1280px',
+                        '2xl': '1280px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            500: '#3185c6',
+                            600: '#2471b5',
+                            700: '#1c5488',
+                            800: '#1b4871',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* ====================================
+           ESTILOS PARA CONTEÚDO DO WORDPRESS
+           Sobrescreve qualquer CSS vindo do CMS
+           ==================================== */
+
+        .wp-content-wrapper {
+            @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden;
+        }
+
+        /* TIPOGRAFIA */
+        .wp-content h1 {
+            @apply text-3xl lg:text-4xl font-bold text-gray-900 mb-6 pb-4 border-b-2 border-blue-600;
+            line-height: 1.2;
+        }
+
+        .wp-content h2 {
+            @apply text-2xl lg:text-3xl font-bold text-blue-800 mt-10 mb-5 pb-3 border-b border-gray-200;
+        }
+
+        .wp-content h3 {
+            @apply text-xl lg:text-2xl font-bold text-gray-800 mt-8 mb-4;
+        }
+
+        .wp-content h4 {
+            @apply text-lg lg:text-xl font-semibold text-gray-800 mt-6 mb-3;
+        }
+
+        .wp-content h5 {
+            @apply text-base lg:text-lg font-semibold text-gray-700 mt-5 mb-3;
+        }
+
+        .wp-content h6 {
+            @apply text-base font-semibold text-gray-700 mt-4 mb-2 uppercase tracking-wide;
+        }
+
+        .wp-content p {
+            @apply text-gray-700 leading-relaxed mb-6 text-base;
+            line-height: 1.8;
+        }
+
+        /* LINKS */
+        .wp-content a {
+            @apply text-blue-600 hover:text-blue-700 transition-colors duration-200 underline decoration-1 underline-offset-2;
+        }
+
+        .wp-content a[href$=".pdf"]::after {
+            content: " 📄";
+        }
+
+        .wp-content a[target="_blank"]::after {
+            content: " ↗";
+            @apply text-xs ml-1;
+        }
+
+        /* LISTAS */
+        .wp-content ul {
+            @apply list-none ml-0 mb-6 space-y-3;
+        }
+
+        .wp-content ul li {
+            @apply relative pl-7 text-gray-700 leading-relaxed;
+        }
+
+        .wp-content ul li::before {
+            content: "▸";
+            @apply absolute left-0 text-blue-600 font-bold;
+        }
+
+        .wp-content ol {
+            @apply list-none ml-0 mb-6 space-y-3;
+            counter-reset: item;
+        }
+
+        .wp-content ol li {
+            @apply relative pl-8 text-gray-700 leading-relaxed;
+            counter-increment: item;
+        }
+
+        .wp-content ol li::before {
+            content: counter(item) ".";
+            @apply absolute left-0 font-bold text-blue-600;
+        }
+
+        /* BLOCKQUOTE */
+        .wp-content blockquote {
+            @apply border-l-4 border-blue-500 bg-blue-50 pl-6 pr-6 py-5 my-8 italic text-gray-800 rounded-r-lg;
+        }
+
+        /* TABELAS */
+        .wp-content table {
+            @apply w-full border-collapse mb-8 text-sm;
+        }
+
+        .wp-content table thead {
+            @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white;
+        }
+
+        .wp-content table thead th {
+            @apply px-6 py-4 text-left font-semibold uppercase tracking-wider text-xs;
+        }
+
+        .wp-content table tbody tr {
+            @apply border-b border-gray-200 hover:bg-gray-50 transition-colors;
+        }
+
+        .wp-content table tbody td {
+            @apply px-6 py-4 text-gray-700;
+        }
+
+        /* IMAGENS */
+        .wp-content img {
+            @apply max-w-full h-auto rounded-lg shadow-md my-6;
+        }
+
+        .wp-content figcaption {
+            @apply text-sm text-gray-600 mt-3 text-center italic;
+        }
+
+        /* CÓDIGO */
+        .wp-content code {
+            @apply bg-gray-100 text-pink-600 px-2 py-1 rounded text-sm font-mono;
+        }
+
+        .wp-content pre {
+            @apply bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-6;
+        }
+
+        .wp-content pre code {
+            @apply bg-transparent text-gray-100 p-0;
+        }
+
+        /* HR */
+        .wp-content hr {
+            @apply border-0 border-t-2 border-gray-200 my-10;
+        }
+
+        /* SPAN E INLINE */
+        .wp-content strong,
+        .wp-content b {
+            @apply font-bold text-gray-900;
+        }
+
+        .wp-content em,
+        .wp-content i {
+            @apply italic;
+        }
+
+        .wp-content mark {
+            @apply bg-yellow-200 px-1 rounded;
+        }
+
+        /* SIDEBAR */
+        .sidebar-nav a {
+            @apply block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 rounded-lg border-l-4 border-transparent hover:border-blue-600;
+        }
+
+        .sidebar-nav a.active {
+            @apply bg-blue-50 text-blue-700 border-blue-600 font-semibold;
+        }
+
+        @media (max-width: 768px) {
+            .wp-content table {
+                @apply block overflow-x-auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="ppgem-content-style.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Header -->
+    <header class="shadow-md sticky top-0 z-40">
+        <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white">
+            <div class="container mx-auto px-4 py-4 lg:py-3">
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-8 lg:space-x-4">
+                        <a href="#" class="hover:text-blue-200 transition">
+                            <i class="fas fa-universal-access text-2xl lg:text-xl"></i>
+                            <span class="ml-1 hidden md:inline">ACESSIBILIDADE</span>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition">
+                            <i class="fas fa-adjust text-2xl lg:text-xl"></i>
+                            <span class="ml-1 hidden md:inline">ALTO CONTRASTE</span>
+                        </a>
+                    </div>
+                    <div class="items-center flex space-x-4">
+                        <div class="hidden lg:flex items-center space-x-8 lg:space-x-4">
+                            <a href="mailto:ppgem@cchla.ufrn.br"
+                                class="hover:text-white/80 transition">ppgem@cchla.ufrn.br</a>
+                            <a href="tel:+558433422245" class="hover:text-white/80 transition">+55 84 3342-2245</a>
+                        </div>
+                        <div class="flex items-center space-x-8 lg:space-x-4">
+                            <a href="#"><i class="fab fa-youtube text-2xl lg:text-xl"></i></a>
+                            <a href="#"><i class="fab fa-instagram text-2xl lg:text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bg-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-3">
+                    <div class="flex items-center space-x-3 flex-shrink-0">
+                        <a href="index.html">
+                            <img src="assets/img/logo.png" alt="Logo PPGEM" class="h-12 md:h-14 lg:h-16 w-auto">
+                        </a>
+                    </div>
+                    <ul class="hidden lg:flex items-center space-x-1 flex-grow justify-end">
+                        <li><a href="#" class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">O
+                                PROGRAMA</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">ACADÊMICO</a>
+                        </li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">SELEÇÃO</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 hover:bg-blue-800/5 px-4 py-2 rounded transition">PRODUÇÃO</a></li>
+                        <li><span class="text-white/50">|</span></li>
+                        <li><a href="#"
+                                class="text-blue-800 bg-blue-800/10 px-4 py-2 rounded transition font-semibold">DOCUMENTOS</a>
+                        </li>
+                    </ul>
+                    <button class="lg:hidden text-blue-800 p-2" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="bg-white border-b border-gray-200 py-4">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <nav aria-label="Breadcrumb">
+                    <ol class="flex items-center gap-2 text-sm">
+                        <li><a href="index.html" class="text-blue-600 hover:text-blue-700">Início</a></li>
+                        <li><i class="ph ph-caret-right text-gray-400"></i></li>
+                        <li class="text-gray-600">Documentos</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Header -->
+        <section class="bg-gradient-to-r from-blue-800 to-blue-600 py-12 lg:py-16">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center">
+                    <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4">Documentos</h1>
+                    <p class="text-blue-100 text-lg max-w-2xl mx-auto">
+                        Acesse manuais, formulários, regulamentos e demais documentos do programa
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content with Sidebar -->
+        <section class="py-12 lg:py-16">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                    <!-- Sidebar -->
+                    <aside class="lg:col-span-3">
+
+                        <!-- Sidebar Container -->
+                        <div class="sidebar-container">
+
+                            <!-- Header do Sidebar -->
+                            <div class="sidebar-header">
+                                <div class="flex items-center justify-between">
+                                    <h2 class="sidebar-title">
+                                        <i class="ph ph-list-dashes text-blue-600"></i>
+                                        Navegação Rápida
+                                    </h2>
+                                    <button class="sidebar-collapse-btn lg:hidden" id="sidebar-toggle">
+                                        <i class="ph ph-caret-down text-gray-500 text-xl"></i>
+                                    </button>
+                                </div>
+                                <p class="sidebar-subtitle">Escolha uma seção</p>
+                            </div>
+
+                            <!-- Sidebar Navigation -->
+                            <nav class="sidebar-nav" id="sidebar-menu">
+
+                                <!-- Menu Item: Manuais -->
+                                <a href="#manuais" class="sidebar-item active" data-section="manuais">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-book-open"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Manuais</span>
+                                        <span class="sidebar-item-description">Guias e orientações</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Menu Item: Requerimentos -->
+                                <a href="#requerimentos" class="sidebar-item" data-section="requerimentos">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-file-text"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Requerimentos</span>
+                                        <span class="sidebar-item-description">Formulários oficiais</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Menu Item: Solicitações -->
+                                <a href="#solicitacoes" class="sidebar-item" data-section="solicitacoes">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-paper-plane-tilt"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Solicitações</span>
+                                        <span class="sidebar-item-description">Pedidos diversos</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Menu Item: Termos -->
+                                <a href="#termos" class="sidebar-item" data-section="termos">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-file-doc"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Termos</span>
+                                        <span class="sidebar-item-description">Compromissos formais</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Menu Item: Formulários -->
+                                <a href="#formularios" class="sidebar-item" data-section="formularios">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-note"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Formulários</span>
+                                        <span class="sidebar-item-description">Cadastros e fichas</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Menu Item: Regimento Interno -->
+                                <a href="#regimento-interno" class="sidebar-item" data-section="regimento-interno">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-scales"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Regimento Interno</span>
+                                        <span class="sidebar-item-description">Normas do programa</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Menu Item: Resoluções -->
+                                <a href="#resolucoes" class="sidebar-item" data-section="resolucoes">
+                                    <div class="sidebar-item-icon">
+                                        <i class="ph ph-gavel"></i>
+                                    </div>
+                                    <div class="sidebar-item-content">
+                                        <span class="sidebar-item-title">Resoluções</span>
+                                        <span class="sidebar-item-description">Decisões oficiais</span>
+                                    </div>
+                                    <div class="sidebar-item-arrow">
+                                        <i class="ph ph-caret-right"></i>
+                                    </div>
+                                </a>
+
+                            </nav>
+
+                            <!-- Sidebar Footer (Opcional) -->
+                            <div class="sidebar-footer">
+                                <div class="sidebar-cta">
+                                    <i class="ph ph-question text-blue-600 text-2xl mb-2"></i>
+                                    <h3 class="text-sm font-semibold text-gray-900 mb-1">Precisa de Ajuda?</h3>
+                                    <p class="text-xs text-gray-600 mb-3">Entre em contato com a secretaria</p>
+                                    <a href="#contato" class="sidebar-cta-button">
+                                        <i class="ph ph-phone mr-1"></i>
+                                        Falar com a Secretaria
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                    <!-- Content -->
+                    <div class="lg:col-span-9">
+                        <div class="wp-content-wrapper p-8 lg:p-10">
+                            <div class="wp-content">
+
+                                <!-- MANUAIS -->
+                                <section id="manuais">
+                                    <h2>Manuais</h2>
+                                    <p>Consulte os manuais oficiais do programa para orientações sobre procedimentos
+                                        acadêmicos e administrativos.</p>
+                                    <ul>
+                                        <li><a href="#">Manual do Discente - PPgEM</a></li>
+                                        <li><a href="#">Manual de Qualificação</a></li>
+                                        <li>
+                                            <a href="#">Manual da Metodologia</a>
+                                            <p class="text-sm text-gray-600 mt-1 ml-7">Elaborado pela Profª. Maria
+                                                Érica, não se tratando de um documento oficial do programa.</p>
+                                        </li>
+                                    </ul>
+                                </section>
+
+                                <!-- REQUERIMENTOS -->
+                                <section id="requerimentos">
+                                    <h2>Requerimentos</h2>
+                                    <p>Documentos necessários para formalizar solicitações junto ao programa.</p>
+
+                                    <h3>Requerimentos Acadêmicos</h3>
+                                    <ul>
+                                        <li><a href="#" target="_blank">Requerimento PADRÃO – PPgEM</a></li>
+                                        <li><a href="#">Requerimento para Banca de Defesa de Tese</a></li>
+                                        <li><a href="#">Requerimento para Banca de Defesa de Dissertação</a></li>
+                                        <li><a href="#">Requerimento de banca de qualificação Mestrado e Doutorado</a>
+                                        </li>
+                                        <li><a href="#">Requerimento de auxílio para participação em eventos</a></li>
+                                    </ul>
+
+                                    <blockquote>
+                                        <p><strong>Atenção:</strong> Todos os requerimentos devem ser preenchidos
+                                            completamente e assinados antes do envio.</p>
+                                    </blockquote>
+                                </section>
+
+                                <!-- SOLICITAÇÕES -->
+                                <section id="solicitacoes">
+                                    <h2>Solicitações</h2>
+                                    <ul>
+                                        <li><a href="#">Solicitação de Mudança de Orientação</a></li>
+                                        <li><a href="#">Termo de Concentração</a></li>
+                                    </ul>
+                                </section>
+
+                                <!-- TERMOS -->
+                                <section id="termos">
+                                    <h2>Termos</h2>
+                                    <ul>
+                                        <li><a href="#">Termo de Consentimento Livre e Esclarecido para Pesquisa de
+                                                Campo</a></li>
+                                        <li><a href="#">Termo de Compromisso para Bolsista</a></li>
+                                        <li><a href="#">Termo de responsabilidade para viagem</a></li>
+                                    </ul>
+                                </section>
+
+                                <!-- FORMULÁRIOS -->
+                                <section id="formularios">
+                                    <h2>Formulários</h2>
+                                    <ul>
+                                        <li><a href="#">Formulário de Cadastro de Bolsista</a></li>
+                                        <li><a href="#">Formulário de Cancelamento de Bolsista</a></li>
+                                    </ul>
+                                </section>
+
+                                <!-- REGIMENTO -->
+                                <section id="regimento-interno">
+                                    <h2>Regimento Interno</h2>
+                                    <ul>
+                                        <li><a href="#" target="_blank">NOVO REGIMENTO INTERNO DO PPGEM</a></li>
+                                    </ul>
+                                </section>
+
+                                <!-- RESOLUÇÕES -->
+                                <section id="resolucoes">
+                                    <h2>Resoluções</h2>
+                                    <div class="space-y-6">
+                                        <div>
+                                            <h3><a href="#" target="_blank">RESOLUÇÃO DE PROFICIÊNCIA nº 01-2021</a>
+                                            </h3>
+                                            <p>Define normas transitórias aplicáveis em língua estrangeira exigida aos
+                                                alunos regulares do Programa.</p>
+                                        </div>
+                                        <div>
+                                            <h3><a href="#">Resolução 041-2019-CONSEPE</a></h3>
+                                            <p>Dispõe sobre o regulamento do programa de assistência à docência na
+                                                Graduação.</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- EXEMPLO: TABELA -->
+                                <section>
+                                    <h2>Prazos e Procedimentos</h2>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Procedimento</th>
+                                                <th>Prazo Mínimo</th>
+                                                <th>Documento</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Banca de Qualificação</td>
+                                                <td>30 dias</td>
+                                                <td>Requerimento + Projeto</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Banca de Defesa</td>
+                                                <td>45 dias</td>
+                                                <td>Requerimento + Dissertação</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Trancamento</td>
+                                                <td>15 dias</td>
+                                                <td>Requerimento + Justificativa</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4 py-16 lg:py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+                <div class="lg:col-span-4">
+                    <p class="text-gray-400 mb-6">Programa de Pós-Graduação em Estudos da Mídia da UFRN.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500 text-sm">© 2025 PPGEM/UFRN · Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ==========================================
+            // SIDEBAR NAVIGATION
+            // ==========================================
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebarMenu = document.getElementById('sidebar-menu');
+
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Active state handler
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                });
+            });
+
+            // Mobile toggle
+            if (sidebarToggle && sidebarMenu) {
+                sidebarToggle.addEventListener('click', function () {
+                    sidebarMenu.classList.toggle('show');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // ==========================================
+            // SMOOTH SCROLL WITH OFFSET
+            // ==========================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+
+                    if (target) {
+                        const headerOffset = 120;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        if (window.innerWidth < 1024 && sidebarMenu) {
+                            sidebarMenu.classList.remove('show');
+                            if (sidebarToggle) {
+                                sidebarToggle.classList.remove('active');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // ==========================================
+            // SCROLL SPY (HIGHLIGHT ON SCROLL)
+            // ==========================================
+            const sections = document.querySelectorAll('section[id]');
+
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY + 150;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        sidebarItems.forEach(item => {
+                            item.classList.remove('active');
+                            if (item.getAttribute('data-section') === sectionId) {
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveSection);
+
+            // Initial check
+            updateActiveSection();
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
